@@ -1,0 +1,196 @@
+{
+  "relational_links": [
+    {
+      "relationship": "FOREIGN_KEY_LIKE",
+      "source_table": "account",
+      "source_column": "account_id",
+      "target_table": "loan",
+      "target_column": "account_id",
+      "cardinality": "ONE_TO_ONE",
+      "confidence": 0.9,
+      "join_constraints": {
+        "duplication_risk": false,
+        "parent_table": "loan",
+        "child_table": "account",
+        "recommended_count": "COUNT(loan.account_id)"
+      },
+      "evidence": {
+        "child_row_count": 1000,
+        "child_distinct_count": 1000,
+        "child_unique_ratio": 1.0,
+        "parent_row_count": 682,
+        "parent_distinct_count": 682,
+        "parent_unique_ratio": 1.0
+      },
+      "rationale": "Identifier column appears in multiple tables; parent selected by higher uniqueness ratio."
+    },
+    {
+      "relationship": "FOREIGN_KEY_LIKE",
+      "source_table": "disp",
+      "source_column": "account_id",
+      "target_table": "loan",
+      "target_column": "account_id",
+      "cardinality": "ONE_TO_ONE",
+      "confidence": 0.9,
+      "join_constraints": {
+        "duplication_risk": false,
+        "parent_table": "loan",
+        "child_table": "disp",
+        "recommended_count": "COUNT(loan.account_id)"
+      },
+      "evidence": {
+        "child_row_count": 1000,
+        "child_distinct_count": 834,
+        "child_unique_ratio": 0.834,
+        "parent_row_count": 682,
+        "parent_distinct_count": 682,
+        "parent_unique_ratio": 1.0
+      },
+      "rationale": "Identifier column appears in multiple tables; parent selected by higher uniqueness ratio."
+    },
+    {
+      "relationship": "FOREIGN_KEY_LIKE",
+      "source_table": "order",
+      "source_column": "account_id",
+      "target_table": "loan",
+      "target_column": "account_id",
+      "cardinality": "MANY_TO_ONE",
+      "confidence": 0.95,
+      "join_constraints": {
+        "duplication_risk": true,
+        "parent_table": "loan",
+        "child_table": "order",
+        "recommended_count": "COUNT(DISTINCT loan.account_id)"
+      },
+      "evidence": {
+        "child_row_count": 1000,
+        "child_distinct_count": 601,
+        "child_unique_ratio": 0.601,
+        "parent_row_count": 682,
+        "parent_distinct_count": 682,
+        "parent_unique_ratio": 1.0
+      },
+      "rationale": "Identifier column appears in multiple tables; parent selected by higher uniqueness ratio."
+    },
+    {
+      "relationship": "FOREIGN_KEY_LIKE",
+      "source_table": "trans",
+      "source_column": "account_id",
+      "target_table": "loan",
+      "target_column": "account_id",
+      "cardinality": "MANY_TO_ONE",
+      "confidence": 0.95,
+      "join_constraints": {
+        "duplication_risk": true,
+        "parent_table": "loan",
+        "child_table": "trans",
+        "recommended_count": "COUNT(DISTINCT loan.account_id)"
+      },
+      "evidence": {
+        "child_row_count": 1000,
+        "child_distinct_count": 10,
+        "child_unique_ratio": 0.01,
+        "parent_row_count": 682,
+        "parent_distinct_count": 682,
+        "parent_unique_ratio": 1.0
+      },
+      "rationale": "Identifier column appears in multiple tables; parent selected by higher uniqueness ratio."
+    },
+    {
+      "relationship": "FOREIGN_KEY_LIKE",
+      "source_table": "account",
+      "source_column": "district_id",
+      "target_table": "district",
+      "target_column": "district_id",
+      "cardinality": "MANY_TO_ONE",
+      "confidence": 0.95,
+      "join_constraints": {
+        "duplication_risk": true,
+        "parent_table": "district",
+        "child_table": "account",
+        "recommended_count": "COUNT(DISTINCT district.district_id)"
+      },
+      "evidence": {
+        "child_row_count": 1000,
+        "child_distinct_count": 77,
+        "child_unique_ratio": 0.077,
+        "parent_row_count": 77,
+        "parent_distinct_count": 77,
+        "parent_unique_ratio": 1.0
+      },
+      "rationale": "Identifier column appears in multiple tables; parent selected by higher uniqueness ratio."
+    },
+    {
+      "relationship": "FOREIGN_KEY_LIKE",
+      "source_table": "client",
+      "source_column": "district_id",
+      "target_table": "district",
+      "target_column": "district_id",
+      "cardinality": "MANY_TO_ONE",
+      "confidence": 0.95,
+      "join_constraints": {
+        "duplication_risk": true,
+        "parent_table": "district",
+        "child_table": "client",
+        "recommended_count": "COUNT(DISTINCT district.district_id)"
+      },
+      "evidence": {
+        "child_row_count": 1000,
+        "child_distinct_count": 77,
+        "child_unique_ratio": 0.077,
+        "parent_row_count": 77,
+        "parent_distinct_count": 77,
+        "parent_unique_ratio": 1.0
+      },
+      "rationale": "Identifier column appears in multiple tables; parent selected by higher uniqueness ratio."
+    },
+    {
+      "relationship": "FOREIGN_KEY_LIKE",
+      "source_table": "disp",
+      "source_column": "disp_id",
+      "target_table": "card",
+      "target_column": "disp_id",
+      "cardinality": "ONE_TO_ONE",
+      "confidence": 0.9,
+      "join_constraints": {
+        "duplication_risk": false,
+        "parent_table": "card",
+        "child_table": "disp",
+        "recommended_count": "COUNT(card.disp_id)"
+      },
+      "evidence": {
+        "child_row_count": 1000,
+        "child_distinct_count": 1000,
+        "child_unique_ratio": 1.0,
+        "parent_row_count": 892,
+        "parent_distinct_count": 892,
+        "parent_unique_ratio": 1.0
+      },
+      "rationale": "Identifier column appears in multiple tables; parent selected by higher uniqueness ratio."
+    },
+    {
+      "relationship": "FOREIGN_KEY_LIKE",
+      "source_table": "disp",
+      "source_column": "client_id",
+      "target_table": "client",
+      "target_column": "client_id",
+      "cardinality": "ONE_TO_ONE",
+      "confidence": 0.9,
+      "join_constraints": {
+        "duplication_risk": false,
+        "parent_table": "client",
+        "child_table": "disp",
+        "recommended_count": "COUNT(client.client_id)"
+      },
+      "evidence": {
+        "child_row_count": 1000,
+        "child_distinct_count": 1000,
+        "child_unique_ratio": 1.0,
+        "parent_row_count": 1000,
+        "parent_distinct_count": 1000,
+        "parent_unique_ratio": 1.0
+      },
+      "rationale": "Identifier column appears in multiple tables; parent selected by higher uniqueness ratio."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "database": "financial",
+  "schema": "public",
+  "tables": [
+    {
+      "table": "account",
+      "path": "demos/bird_finance_vsl/account_vsl.json"
+    },
+    {
+      "table": "card",
+      "path": "demos/bird_finance_vsl/card_vsl.json"
+    },
+    {
+      "table": "client",
+      "path": "demos/bird_finance_vsl/client_vsl.json"
+    },
+    {
+      "table": "disp",
+      "path": "demos/bird_finance_vsl/disp_vsl.json"
+    },
+    {
+      "table": "district",
+      "path": "demos/bird_finance_vsl/district_vsl.json"
+    },
+    {
+      "table": "loan",
+      "path": "demos/bird_finance_vsl/loan_vsl.json"
+    },
+    {
+      "table": "order",
+      "path": "demos/bird_finance_vsl/order_vsl.json"
+    },
+    {
+      "table": "trans",
+      "path": "demos/bird_finance_vsl/trans_vsl.json"
+    }
+  ],
+  "database_vsl": "demos/bird_finance_vsl/database_vsl.json"
+}

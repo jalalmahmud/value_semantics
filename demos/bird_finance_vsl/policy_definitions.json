@@ -1,0 +1,335 @@
+{
+  "domain": "finance",
+  "policies": [
+    {
+      "concept": "reportable_withdrawal",
+      "description": "Cash withdrawal reportable under US Bank Secrecy Act — single transaction > $10,000",
+      "keywords": [
+        "reportable large cash",
+        "reportable withdrawal",
+        "reportable cash withdrawal"
+      ],
+      "is_gap": false,
+      "sql_condition": "amount > 10000 AND operation IN ('VYBER', 'VYBER KARTOU')",
+      "threshold": 10000,
+      "column_mappings": {
+        "operation": [
+          "VYBER",
+          "VYBER KARTOU"
+        ],
+        "amount": "> 10000"
+      },
+      "source": "US Bank Secrecy Act (BSA), 31 U.S.C. § 5313 — Currency Transaction Report threshold"
+    },
+    {
+      "concept": "dormant_account",
+      "description": "Account with no transaction activity in the past 12 months",
+      "keywords": [
+        "dormant"
+      ],
+      "is_gap": false,
+      "time_window_days": 365,
+      "sql_condition": "NOT EXISTS (SELECT 1 FROM trans t WHERE t.account_id = account.account_id AND t.date >= (SELECT MAX(date) FROM trans) - INTERVAL '365 days')",
+      "source": "Standard banking dormancy definition (12-month inactivity)"
+    },
+    {
+      "concept": "sar_threshold",
+      "description": "Suspicious activity requiring SAR filing — transaction >= $5,000 with suspicious indicators",
+      "keywords": [
+        "suspicious activity report",
+        "SAR",
+        "sar filing",
+        "suspicious activity",
+        "flagged for sar"
+      ],
+      "is_gap": false,
+      "sql_condition": "amount >= 5000 AND operation IN ('PREVOD Z UCTU', 'PREVOD NA UCET', 'VYBER', 'VYBER KARTOU')",
+      "threshold": 5000,
+      "column_mappings": {
+        "operation": [
+          "PREVOD Z UCTU",
+          "PREVOD NA UCET",
+          "VYBER",
+          "VYBER KARTOU"
+        ]
+      },
+      "source": "Bank Secrecy Act, 31 CFR § 1020.320 — SAR filing threshold for banks: $5,000 for known suspect; used as conservative lower bound"
+    },
+    {
+      "concept": "wire_transfer_recordkeeping",
+      "description": "Wire transfer requiring mandatory recordkeeping — single outbound transfer >= $3,000",
+      "keywords": [
+        "wire transfer recordkeeping",
+        "recordable transfer",
+        "transfer recordkeeping",
+        "transfers requiring records"
+      ],
+      "is_gap": false,
+      "sql_condition": "amount >= 3000 AND operation = 'PREVOD Z UCTU'",
+      "threshold": 3000,
+      "column_mappings": {
+        "operation": [
+          "PREVOD Z UCTU"
+        ]
+      },
+      "source": "Bank Secrecy Act, 31 CFR § 1020.410 — funds transfer recordkeeping rule: >= $3,000"
+    },
+    {
+      "concept": "structuring",
+      "description": "Structuring — deliberately splitting transactions below $10,000 to avoid CTR reporting (31 U.S.C. § 5324)",
+      "keywords": [
+        "structuring",
+        "structured transactions",
+        "smurfing",
+        "split transactions",
+        "transaction splitting"
+      ],
+      "is_gap": true,
+      "gap_message": "Structuring (31 U.S.C. § 5324) requires detecting a pattern of deliberate transaction splitting to avoid the $10,000 CTR threshold. This cannot be determined from any single transaction row — it requires sequence analysis: multiple withdrawals by the same account on the same or consecutive days that individually fall below $10,000 but collectively exceed it. Do not use WHERE amount BETWEEN 9000 AND 9999. Surface the pattern proxy and explicitly flag it as an approximation requiring compliance review.",
+      "gap_alternatives": [
+        "account_id with multiple same-day withdrawals each < 10000 summing to >= 10000",
+        "account_id with >= 3 withdrawals on consecutive days each between 5000 and 9999"
+      ]
+    },
+    {
+      "concept": "suspicious_pattern",
+      "description": "Pattern-based suspicion (structuring, velocity) — compliance concept with no authoritative schema definition",
+      "keywords": [
+        "suspicious cash withdrawal pattern",
+        "suspicious pattern",
+        "structuring"
+      ],
+      "is_gap": true,
+      "gap_message": "Suspicious withdrawal patterns involve compliance concepts (structuring, velocity rules) that require a regulatory definition not present in this schema. Do not apply arbitrary thresholds such as amount > 9000. Instead, surface the best available proxy: multiple withdrawals on the same date by the same account, flagged as an approximation only.",
+      "gap_alternatives": [
+        "multiple withdrawals on the same date per account_id",
+        "high-frequency same-day withdrawal days"
+      ]
+    },
+    {
+      "concept": "default_risk",
+      "description": "Accounts at risk of default — modeled risk concept with no authoritative schema definition",
+      "keywords": [
+        "at risk of default",
+        "default risk",
+        "accounts at risk"
+      ],
+      "is_gap": true,
+      "gap_message": "Default risk is a modeled concept (loan-to-value ratio, payment-to-income thresholds, delinquency history) not defined in this schema. Do not use WHERE balance < 0 alone as a default risk proxy. If a query is required, combine loan status, sustained negative balance, and payment history, and explicitly flag the result as an approximation without a policy definition.",
+      "gap_alternatives": [
+        "loan status = 'D' (in debt) combined with sustained negative balance trend",
+        "payment amount consistently below scheduled loan payment"
+      ]
+    },
+    {
+      "concept": "vip_client",
+      "description": "VIP client classification — multi-signal concept with no authoritative schema definition",
+      "keywords": [
+        "vip client",
+        "vip clients",
+        "vip customers",
+        "vip"
+      ],
+      "is_gap": true,
+      "gap_message": "VIP classification requires a policy definition combining multiple signals (assets under management, tenure, product usage, transaction volume) with defined thresholds. This schema has no VIP indicator column. Do not infer VIP status from a single metric such as total balance > X. Acknowledge the missing definition and surface a multi-signal proxy explicitly flagged as approximate.",
+      "gap_alternatives": [
+        "top decile by total balance AND account tenure > 5 years",
+        "multi-product holder (loan + savings) with high monthly transaction volume"
+      ]
+    },
+    {
+      "concept": "healthy_profile",
+      "description": "Healthy financial profile — composite concept with no authoritative schema definition",
+      "keywords": [
+        "healthy financial profile",
+        "healthy profile",
+        "financially healthy"
+      ],
+      "is_gap": true,
+      "gap_message": "Financial health is a composite concept requiring positive balance, low debt-to-income, regular deposits, and on-time repayments. This schema has no health score column. Do not reduce it to balance > 0 alone. If required, combine positive balance, absence of overdraft history, and regular deposit pattern, and explicitly flag the result as an approximation.",
+      "gap_alternatives": [
+        "positive balance AND no sustained negative balance in past 12 months AND regular deposit transactions"
+      ]
+    },
+    {
+      "concept": "loan_default",
+      "description": "Defaulted loan: status 'B' (default) or 'D' (running contract in debt) per internal credit risk classification",
+      "keywords": [
+        "defaulted loan",
+        "loan default",
+        "default status",
+        "loan in default",
+        "loans in default",
+        "in default",
+        "defaulted",
+        "portfolio have defaulted"
+      ],
+      "is_gap": false,
+      "sql_condition": "status IN ('B', 'D')",
+      "column_mappings": {
+        "status": [
+          "B",
+          "D"
+        ]
+      },
+      "source": "Internal credit risk policy — loan status B (default) and D (running contract in debt) per Czech banking dataset classification"
+    },
+    {
+      "concept": "high_value_loan",
+      "description": "High-value loan requiring senior credit committee approval: loan amount >= 200,000",
+      "keywords": [
+        "high-value loan",
+        "high value loan",
+        "senior credit approval",
+        "large loan",
+        "major loan",
+        "credit committee",
+        "credit approval threshold",
+        "loans above the credit",
+        "above the approval threshold"
+      ],
+      "is_gap": false,
+      "sql_condition": "amount >= 200000",
+      "threshold": 200000,
+      "column_mappings": {
+        "amount": ">= 200000"
+      },
+      "source": "Internal credit policy — loans >= 200,000 require senior credit committee review before disbursement"
+    },
+    {
+      "concept": "standing_order_monitoring",
+      "description": "Standing order requiring AML monitoring: regular payment order of 5,000 or more",
+      "keywords": [
+        "large regular payment",
+        "high-value standing order",
+        "standing order monitoring",
+        "large standing order",
+        "monitored standing order",
+        "require AML monitoring",
+        "monitoring threshold",
+        "standing orders above",
+        "AML standing"
+      ],
+      "is_gap": false,
+      "sql_condition": "amount >= 5000",
+      "threshold": 5000,
+      "column_mappings": {
+        "amount": ">= 5000"
+      },
+      "source": "Internal AML policy — standing orders >= 5,000 flagged for periodic compliance review"
+    },
+    {
+      "concept": "layering_risk",
+      "description": "Layering — moving funds through multiple accounts to obscure origin; no direct schema indicator",
+      "keywords": [
+        "layering",
+        "layering funds",
+        "fund layering",
+        "layering behavior",
+        "layering activity",
+        "multiple hops",
+        "obscure the source",
+        "layering through"
+      ],
+      "is_gap": true,
+      "gap_message": "Layering requires detecting multi-hop fund movement across accounts, which cannot be expressed as a simple predicate on a single transaction or account. The schema has no intermediary-account flag. A reasonable proxy is accounts with both high incoming transfers (PREVOD NA UCET) and high outgoing transfers (PREVOD Z UCTU) within the same period, but this approximates the pattern rather than identifying it definitively. Flag as such and disclose the schema limitation.",
+      "gap_alternatives": [
+        "accounts with both PREVOD NA UCET and PREVOD Z UCTU above threshold in the same month"
+      ]
+    },
+    {
+      "concept": "credit_concentration",
+      "description": "Credit concentration risk — single client holding disproportionately large loan exposure; no direct threshold in schema",
+      "keywords": [
+        "credit concentration",
+        "concentrated credit risk",
+        "multiple large loans",
+        "credit risk concentration",
+        "concentrated exposure",
+        "concentrated credit exposure",
+        "credit exposure",
+        "excessive loan amounts"
+      ],
+      "is_gap": true,
+      "gap_message": "Credit concentration risk has no authoritative threshold in this schema. Since the dataset records at most one loan per account, multi-loan concentration cannot be summed directly. Acknowledge the schema constraint and surface the best proxy — loans in the top decile by amount, or loan-to-balance ratio above a disclosed cutoff — while flagging it as an approximation requiring further risk analysis.",
+      "gap_alternatives": [
+        "loan amount in top decile across all loans",
+        "loan amount / account balance ratio above 0.8 as leverage proxy"
+      ]
+    },
+    {
+      "concept": "overdraft_event",
+      "description": "Account transaction resulting in a negative balance, constituting an overdraft event requiring fee processing and notification under EU Banking Regulation Article 18.",
+      "keywords": [
+        "overdraft",
+        "negative balance",
+        "overdrawn account",
+        "overdraft event",
+        "balance below zero",
+        "overdraft transactions"
+      ],
+      "is_gap": false,
+      "sql_condition": "balance < 0",
+      "threshold": 0,
+      "column_mappings": {
+        "balance": "< 0"
+      },
+      "source": "EU Banking Regulation (CRR) Article 18; Directive 2008/48/EC — overdraft notification and fee transparency requirements"
+    },
+    {
+      "concept": "completed_loan_paid",
+      "description": "Loan that has finished with no outstanding debt: loan status 'A' (finished, no issues) indicating full repayment.",
+      "keywords": [
+        "fully repaid loan",
+        "paid off loan",
+        "completed loan",
+        "loan paid in full",
+        "finished loan",
+        "no outstanding debt"
+      ],
+      "is_gap": false,
+      "sql_condition": "status = 'A'",
+      "column_mappings": {
+        "status": [
+          "A"
+        ]
+      },
+      "source": "Internal credit classification — status A: contract finished, no problems; eligible for loyalty offers and refinancing programs"
+    },
+    {
+      "concept": "account_takeover_risk",
+      "description": "Account showing behavioral patterns consistent with unauthorized access — sudden spike in high-value withdrawals by a previously low-activity account; no direct schema indicator.",
+      "keywords": [
+        "account takeover",
+        "unauthorized access",
+        "suspicious account activity",
+        "account compromise",
+        "sudden withdrawal spike",
+        "anomalous withdrawal pattern"
+      ],
+      "is_gap": true,
+      "gap_message": "Account takeover risk requires behavioral analysis comparing a recent period against historical baseline — specifically, a sudden spike in withdrawal amount or frequency relative to the account's own history. This schema has no baseline reference period column and no session/device data. A crude proxy is accounts where the maximum single-day withdrawal amount in the last 30 days exceeds 3x the account's historical average daily withdrawal, but this cannot be expressed in a single SQL predicate without window functions and a defined reference window. Disclose the limitation and flag as approximate.",
+      "gap_alternatives": [
+        "accounts with a withdrawal in the last 30 days exceeding 3x their average withdrawal over prior 12 months (requires window function and date anchor)",
+        "accounts where a single transaction equals or exceeds 80% of total prior-year balance"
+      ]
+    },
+    {
+      "concept": "loan_early_repayment",
+      "description": "Loan fully repaid before the scheduled end of the loan term — triggers potential prepayment penalty calculation and disclosure under EU Mortgage Credit Directive.",
+      "keywords": [
+        "early repayment",
+        "prepayment",
+        "paid off early",
+        "loan prepayment",
+        "early payoff",
+        "prepaid loan"
+      ],
+      "is_gap": true,
+      "gap_message": "Early repayment cannot be directly determined from the schema. The loan table contains loan.date (origination), loan.duration (months), and loan.status, but does not record the actual payoff date. Status 'A' or 'C' indicates completion but not whether it was early. Determining early repayment requires comparing the payoff date (not stored) against the expected maturity date (loan.date + loan.duration months). Without a payoff_date column, early repayment cannot be reliably identified. Disclose this gap rather than approximating.",
+      "gap_alternatives": [
+        "loans with status 'A' or 'C' where the most recent trans balance = 0 earlier than loan.date + loan.duration (requires joining trans table and date arithmetic)"
+      ]
+    }
+  ]
+}

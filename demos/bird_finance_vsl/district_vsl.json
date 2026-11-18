@@ -1,0 +1,5137 @@
+{
+  "table": "district",
+  "columns": {
+    "district_id": {
+      "declared_type": "int64",
+      "sample_values": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "stats": {
+        "row_count": 77,
+        "distinct_count": 77,
+        "null_count": 0,
+        "null_fraction": 0.0
+      }
+    },
+    "a2": {
+      "declared_type": "str",
+      "sample_values": [
+        "Hl.m. Praha",
+        "Benesov",
+        "Beroun",
+        "Kladno",
+        "Kolin"
+      ],
+      "stats": {
+        "row_count": 77,
+        "distinct_count": 77,
+        "null_count": 0,
+        "null_fraction": 0.0
+      }
+    },
+    "a3": {
+      "declared_type": "str",
+      "sample_values": [
+        "Prague",
+        "central Bohemia",
+        "central Bohemia",
+        "central Bohemia",
+        "central Bohemia"
+      ],
+      "stats": {
+        "row_count": 77,
+        "distinct_count": 8,
+        "null_count": 0,
+        "null_fraction": 0.0
+      }
+    },
+    "a4": {
+      "declared_type": "str",
+      "sample_values": [
+        "1204953",
+        "88884",
+        "75232",
+        "149893",
+        "95616"
+      ],
+      "stats": {
+        "row_count": 77,
+        "distinct_count": 77,
+        "null_count": 0,
+        "null_fraction": 0.0
+      }
+    },
+    "a5": {
+      "declared_type": "str",
+      "sample_values": [
+        "0",
+        "80",
+        "55",
+        "63",
+        "65"
+      ],
+      "stats": {
+        "row_count": 77,
+        "distinct_count": 53,
+        "null_count": 0,
+        "null_fraction": 0.0
+      }
+    },
+    "a6": {
+      "declared_type": "str",
+      "sample_values": [
+        "0",
+        "26",
+        "26",
+        "29",
+        "30"
+      ],
+      "stats": {
+        "row_count": 77,
+        "distinct_count": 36,
+        "null_count": 0,
+        "null_fraction": 0.0
+      }
+    },
+    "a7": {
+      "declared_type": "str",
+      "sample_values": [
+        "0",
+        "6",
+        "4",
+        "6",
+        "4"
+      ],
+      "stats": {
+        "row_count": 77,
+        "distinct_count": 17,
+        "null_count": 0,
+        "null_fraction": 0.0
+      }
+    },
+    "a8": {
+      "declared_type": "int64",
+      "sample_values": [
+        1,
+        2,
+        1,
+        2,
+        1
+      ],
+      "stats": {
+        "row_count": 77,
+        "distinct_count": 6,
+        "null_count": 0,
+        "null_fraction": 0.0
+      }
+    },
+    "a9": {
+      "declared_type": "int64",
+      "sample_values": [
+        1,
+        5,
+        5,
+        6,
+        6
+      ],
+      "stats": {
+        "row_count": 77,
+        "distinct_count": 11,
+        "null_count": 0,
+        "null_fraction": 0.0
+      }
+    },
+    "a10": {
+      "declared_type": "float64",
+      "sample_values": [
+        100.0,
+        46.7,
+        41.7,
+        67.4,
+        51.4
+      ],
+      "stats": {
+        "row_count": 77,
+        "distinct_count": 70,
+        "null_count": 0,
+        "null_fraction": 0.0
+      }
+    },
+    "a11": {
+      "declared_type": "int64",
+      "sample_values": [
+        12541,
+        8507,
+        8980,
+        9753,
+        9307
+      ],
+      "stats": {
+        "row_count": 77,
+        "distinct_count": 76,
+        "null_count": 0,
+        "null_fraction": 0.0
+      }
+    },
+    "a12": {
+      "declared_type": "float64",
+      "sample_values": [
+        0.2,
+        1.6,
+        1.9,
+        4.6,
+        3.8
+      ],
+      "stats": {
+        "row_count": 77,
+        "distinct_count": 41,
+        "null_count": 1,
+        "null_fraction": 0.012987012987012988
+      }
+    },
+    "a13": {
+      "declared_type": "float64",
+      "sample_values": [
+        0.43,
+        1.85,
+        2.21,
+        5.05,
+        4.43
+      ],
+      "stats": {
+        "row_count": 77,
+        "distinct_count": 73,
+        "null_count": 0,
+        "null_fraction": 0.0
+      }
+    },
+    "a14": {
+      "declared_type": "int64",
+      "sample_values": [
+        167,
+        132,
+        111,
+        109,
+        118
+      ],
+      "stats": {
+        "row_count": 77,
+        "distinct_count": 44,
+        "null_count": 0,
+        "null_fraction": 0.0
+      }
+    },
+    "a15": {
+      "declared_type": "float64",
+      "sample_values": [
+        85677.0,
+        2159.0,
+        2824.0,
+        5244.0,
+        2616.0
+      ],
+      "stats": {
+        "row_count": 77,
+        "distinct_count": 75,
+        "null_count": 1,
+        "null_fraction": 0.012987012987012988
+      }
+    },
+    "a16": {
+      "declared_type": "int64",
+      "sample_values": [
+        99107,
+        2674,
+        2813,
+        5892,
+        3040
+      ],
+      "stats": {
+        "row_count": 77,
+        "distinct_count": 76,
+        "null_count": 0,
+        "null_fraction": 0.0
+      }
+    }
+  },
+  "semantics": {
+    "district_id": {
+      "value_semantics": {
+        "semantic_type": "ID_NUMERIC",
+        "is_identifier": true,
+        "is_categorical": false,
+        "is_free_text": false,
+        "numeric": {
+          "is_numeric": false,
+          "is_continuous": false,
+          "is_discrete": false,
+          "min": null,
+          "max": null
+        },
+        "temporal": {
+          "is_date": false,
+          "is_datetime": false,
+          "is_duration": false,
+          "granularity": null
+        },
+        "confidence": 0.95,
+        "rationale": "Column name and numeric values indicate identifier semantics."
+      },
+      "semantic_role": {
+        "primary_role": "IDENTIFIER",
+        "confidence": 0.95,
+        "role_arguments": {},
+        "query_constraints": {
+          "can_select": true,
+          "can_join": true,
+          "can_group_by": false,
+          "can_filter_equality": true,
+          "can_order_as_measure": false,
+          "can_aggregate": false
+        },
+        "justification": {
+          "rule": "identifier_flag"
+        }
+      },
+      "query_constraints": {
+        "query_constraints": {
+          "should_not_sum": true,
+          "should_not_average": true,
+          "should_not_compare_magnitude": true,
+          "allowed_operations": [
+            "SELECT",
+            "JOIN",
+            "GROUP_BY",
+            "COUNT_DISTINCT",
+            "EQUALITY_FILTER"
+          ],
+          "disallowed_operations": [
+            "SUM",
+            "AVG",
+            "MIN",
+            "MAX",
+            "GREATER_THAN",
+            "LESS_THAN"
+          ],
+          "reason": "Identifiers support equality/join semantics only."
+        },
+        "confidence": 0.85,
+        "rationale": "Operational query constraints inferred from semantic roles and value semantics."
+      }
+    },
+    "a2": {
+      "value_semantics": {
+        "semantic_type": "STRING",
+        "is_identifier": false,
+        "is_categorical": false,
+        "is_free_text": false,
+        "numeric": {
+          "is_numeric": false,
+          "is_continuous": false,
+          "is_discrete": false,
+          "min": null,
+          "max": null
+        },
+        "temporal": {
+          "is_date": false,
+          "is_datetime": false,
+          "is_duration": false,
+          "granularity": null
+        },
+        "confidence": 0.7,
+        "rationale": "String values without stronger detected semantics."
+      },
+      "semantic_role": {
+        "primary_role": "SEGMENTATION_DRIVER",
+        "confidence": 0.75,
+        "role_arguments": {
+          "segments": [
+            "a4",
+            "a5",
+            "a6",
+            "a7",
+            "a8",
+            "a9",
+            "a10",
+            "a11",
+            "a12",
+            "a13",
+            "a14",
+            "a15",
+            "a16"
+          ]
+        },
+        "query_constraints": {
+          "can_group_by": true,
+          "can_filter_equality": true,
+          "can_compare_magnitude": false
+        },
+        "justification": {
+          "source": "validated_semantic_links",
+          "previous_role": "DESCRIPTIVE",
+          "link_count": 13
+        }
+      },
+      "query_constraints": {
+        "query_constraints": {
+          "supports_conditional_distribution": true,
+          "supports_group_conditioning": true,
+          "supports_cohort_analysis": true
+        },
+        "confidence": 0.85,
+        "rationale": "Operational query constraints inferred from semantic roles and value semantics."
+      }
+    },
+    "a3": {
+      "value_semantics": {
+        "semantic_type": "ENUM_CATEGORY",
+        "is_identifier": false,
+        "is_categorical": true,
+        "is_free_text": false,
+        "numeric": {
+          "is_numeric": false,
+          "is_continuous": false,
+          "is_discrete": false,
+          "min": null,
+          "max": null
+        },
+        "temporal": {
+          "is_date": false,
+          "is_datetime": false,
+          "is_duration": false,
+          "granularity": null
+        },
+        "confidence": 0.85,
+        "rationale": "Low-cardinality string values indicate categorical semantics."
+      },
+      "semantic_role": {
+        "primary_role": "SEGMENTATION_DRIVER",
+        "confidence": 0.75,
+        "role_arguments": {
+          "segments": [
+            "a4",
+            "a5",
+            "a6",
+            "a7",
+            "a8",
+            "a9",
+            "a10",
+            "a11",
+            "a12",
+            "a13",
+            "a14",
+            "a15",
+            "a16"
+          ]
+        },
+        "query_constraints": {
+          "can_group_by": true,
+          "can_filter_equality": true,
+          "can_compare_magnitude": false
+        },
+        "justification": {
+          "source": "validated_semantic_links",
+          "previous_role": "DESCRIPTIVE",
+          "link_count": 13
+        }
+      },
+      "query_constraints": {
+        "query_constraints": {
+          "supports_grouping": true,
+          "supports_equality_filtering": true,
+          "supports_segmentation": true,
+          "should_not_average": true,
+          "should_not_sum": true,
+          "supports_conditional_distribution": true,
+          "supports_group_conditioning": true,
+          "supports_cohort_analysis": true
+        },
+        "confidence": 0.85,
+        "rationale": "Operational query constraints inferred from semantic roles and value semantics."
+      }
+    },
+    "a4": {
+      "value_semantics": {
+        "semantic_type": "CURRENCY_AMOUNT",
+        "is_identifier": false,
+        "is_categorical": false,
+        "is_free_text": false,
+        "numeric": {
+          "is_numeric": true,
+          "is_continuous": true,
+          "is_discrete": false,
+          "min": 51428.0,
+          "max": 1204953.0
+        },
+        "temporal": {
+          "is_date": false,
+          "is_datetime": false,
+          "is_duration": false,
+          "granularity": null
+        },
+        "confidence": 0.8,
+        "rationale": "Column name or values suggest monetary amount."
+      },
+      "quantitative_vst": {
+        "role": "MEASUREMENT",
+        "confidence": 0.9,
+        "rationale": "CURRENCY_AMOUNT represents a measurable quantity.",
+        "safe_aggregation": {
+          "default": "SUM",
+          "allowed": [
+            "SUM",
+            "AVG",
+            "MIN",
+            "MAX"
+          ],
+          "forbidden": [],
+          "reason": "Currency amount is commonly additive unless marked as a state/snapshot measure, rate, or ratio.",
+          "confidence": 0.75
+        },
+        "derived_metric_candidates": [
+          {
+            "metric_type": "NORMALIZED_RATE",
+            "intent_terms": [
+              "rate",
+              "risk",
+              "per",
+              "ratio"
+            ],
+            "formula_template": "SUM(a4) / COUNT({denominator})",
+            "numerator": "a4",
+            "denominator_candidates": [
+              {
+                "attribute": "district_id",
+                "denominator_role": "IDENTIFIER",
+                "reason": "Identifier-like attribute can serve as COUNT denominator.",
+                "confidence": 0.75,
+                "source": "name_heuristic"
+              },
+              {
+                "attribute": "a2",
+                "denominator_role": "UNIQUE_KEY",
+                "reason": "Column appears unique and can serve as count denominator.",
+                "confidence": 0.65,
+                "source": "profile_statistics"
+              }
+            ],
+            "preferred_denominator": "district_id",
+            "requires_query_context": true,
+            "confidence": 0.75
+          }
+        ]
+      },
+      "semantic_role": {
+        "primary_role": "EVIDENCE",
+        "confidence": 0.9,
+        "role_arguments": {
+          "quantitative_role": "MEASUREMENT"
+        },
+        "query_constraints": {
+          "can_aggregate": true,
+          "can_compare": true,
+          "can_order_as_measure": true
+        },
+        "justification": {
+          "source": "quantitative_vst"
+        }
+      },
+      "conditional_value_distribution": {
+        "a3": {
+          "group_attribute": "a3",
+          "value_attribute": "a4",
+          "profiles": {
+            "Prague": {
+              "count": 1,
+              "typical_range": [],
+              "extreme_range": [],
+              "recommended_stat": null,
+              "confidence": 0.3,
+              "fallback": {
+                "strategy": "GLOBAL_VALUE_AXIS",
+                "axis_attribute": "a4",
+                "reason": "insufficient samples for stable conditional statistics",
+                "min_support": 10
+              }
+            },
+            "central Bohemia": {
+              "count": 12,
+              "p50": 90484.0,
+              "p90": 111645.5,
+              "p99": 145731.92,
+              "typical_range": [
+                53921.0,
+                111645.5
+              ],
+              "extreme_range": [
+                111645.5,
+                149893.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "south Bohemia": {
+              "count": 8,
+              "typical_range": [],
+              "extreme_range": [],
+              "recommended_stat": null,
+              "confidence": 0.3,
+              "fallback": {
+                "strategy": "GLOBAL_VALUE_AXIS",
+                "axis_attribute": "a4",
+                "reason": "insufficient samples for stable conditional statistics",
+                "min_support": 10
+              }
+            },
+            "west Bohemia": {
+              "count": 10,
+              "p50": 79980.0,
+              "p90": 127387.6,
+              "p99": 166142.86,
+              "typical_range": [
+                45714.0,
+                127387.6
+              ],
+              "extreme_range": [
+                127387.6,
+                170449.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "north Bohemia": {
+              "count": 10,
+              "p50": 119272.5,
+              "p90": 136361.0,
+              "p99": 157291.4,
+              "typical_range": [
+                85852.0,
+                136361.0
+              ],
+              "extreme_range": [
+                136361.0,
+                159617.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "east Bohemia": {
+              "count": 11,
+              "p50": 105606.0,
+              "p90": 161854.0,
+              "p99": 162507.4,
+              "typical_range": [
+                75685.0,
+                161854.0
+              ],
+              "extreme_range": [
+                161854.0,
+                162580.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "south Moravia": {
+              "count": 14,
+              "p50": 121251.0,
+              "p90": 186555.5,
+              "p99": 362808.77,
+              "typical_range": [
+                86513.0,
+                186555.5
+              ],
+              "extreme_range": [
+                186555.5,
+                387570.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "north Moravia": {
+              "count": 11,
+              "p50": 161227.0,
+              "p90": 285387.0,
+              "p99": 320021.7,
+              "typical_range": [
+                42821.0,
+                285387.0
+              ],
+              "extreme_range": [
+                285387.0,
+                323870.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            }
+          },
+          "recommended_stat": "p99",
+          "confidence": 0.7,
+          "rationale": "Conditional distributions inferred from row-aligned numeric behavior; fallback used for sparse groups."
+        }
+      },
+      "query_constraints": {
+        "query_constraints": {
+          "supports_aggregation": true,
+          "allowed_aggregations": [
+            "SUM",
+            "AVG",
+            "MIN",
+            "MAX"
+          ],
+          "supports_range_filtering": true,
+          "supports_distributional_reasoning": true,
+          "supports_outlier_detection": true
+        },
+        "confidence": 0.85,
+        "rationale": "Operational query constraints inferred from semantic roles and value semantics."
+      }
+    },
+    "a5": {
+      "value_semantics": {
+        "semantic_type": "CURRENCY_AMOUNT",
+        "is_identifier": false,
+        "is_categorical": false,
+        "is_free_text": false,
+        "numeric": {
+          "is_numeric": true,
+          "is_continuous": true,
+          "is_discrete": false,
+          "min": 0.0,
+          "max": 99.0
+        },
+        "temporal": {
+          "is_date": false,
+          "is_datetime": false,
+          "is_duration": false,
+          "granularity": null
+        },
+        "confidence": 0.8,
+        "rationale": "Column name or values suggest monetary amount."
+      },
+      "quantitative_vst": {
+        "role": "MEASUREMENT",
+        "confidence": 0.9,
+        "rationale": "CURRENCY_AMOUNT represents a measurable quantity.",
+        "safe_aggregation": {
+          "default": "SUM",
+          "allowed": [
+            "SUM",
+            "AVG",
+            "MIN",
+            "MAX"
+          ],
+          "forbidden": [],
+          "reason": "Currency amount is commonly additive unless marked as a state/snapshot measure, rate, or ratio.",
+          "confidence": 0.75
+        },
+        "derived_metric_candidates": [
+          {
+            "metric_type": "NORMALIZED_RATE",
+            "intent_terms": [
+              "rate",
+              "risk",
+              "per",
+              "ratio"
+            ],
+            "formula_template": "SUM(a5) / COUNT({denominator})",
+            "numerator": "a5",
+            "denominator_candidates": [
+              {
+                "attribute": "district_id",
+                "denominator_role": "IDENTIFIER",
+                "reason": "Identifier-like attribute can serve as COUNT denominator.",
+                "confidence": 0.75,
+                "source": "name_heuristic"
+              },
+              {
+                "attribute": "a2",
+                "denominator_role": "UNIQUE_KEY",
+                "reason": "Column appears unique and can serve as count denominator.",
+                "confidence": 0.65,
+                "source": "profile_statistics"
+              },
+              {
+                "attribute": "a4",
+                "denominator_role": "UNIQUE_KEY",
+                "reason": "Column appears unique and can serve as count denominator.",
+                "confidence": 0.65,
+                "source": "profile_statistics"
+              }
+            ],
+            "preferred_denominator": "district_id",
+            "requires_query_context": true,
+            "confidence": 0.75
+          }
+        ]
+      },
+      "semantic_role": {
+        "primary_role": "EVIDENCE",
+        "confidence": 0.9,
+        "role_arguments": {
+          "quantitative_role": "MEASUREMENT"
+        },
+        "query_constraints": {
+          "can_aggregate": true,
+          "can_compare": true,
+          "can_order_as_measure": true
+        },
+        "justification": {
+          "source": "quantitative_vst"
+        }
+      },
+      "conditional_value_distribution": {
+        "a3": {
+          "group_attribute": "a3",
+          "value_attribute": "a5",
+          "profiles": {
+            "Prague": {
+              "count": 1,
+              "typical_range": [],
+              "extreme_range": [],
+              "recommended_stat": null,
+              "confidence": 0.3,
+              "fallback": {
+                "strategy": "GLOBAL_VALUE_AXIS",
+                "axis_attribute": "a5",
+                "reason": "insufficient samples for stable conditional statistics",
+                "min_support": 10
+              }
+            },
+            "central Bohemia": {
+              "count": 12,
+              "p50": 61.0,
+              "p90": 83.6,
+              "p99": 93.79,
+              "typical_range": [
+                35.0,
+                83.6
+              ],
+              "extreme_range": [
+                83.6,
+                95.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "south Bohemia": {
+              "count": 8,
+              "typical_range": [],
+              "extreme_range": [],
+              "recommended_stat": null,
+              "confidence": 0.3,
+              "fallback": {
+                "strategy": "GLOBAL_VALUE_AXIS",
+                "axis_attribute": "a5",
+                "reason": "insufficient samples for stable conditional statistics",
+                "min_support": 10
+              }
+            },
+            "west Bohemia": {
+              "count": 10,
+              "p50": 43.0,
+              "p90": 66.5,
+              "p99": 70.55,
+              "typical_range": [
+                0.0,
+                66.5
+              ],
+              "extreme_range": [
+                66.5,
+                71.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "north Bohemia": {
+              "count": 10,
+              "p50": 26.0,
+              "p90": 44.0,
+              "p99": 68.3,
+              "typical_range": [
+                8.0,
+                44.0
+              ],
+              "extreme_range": [
+                44.0,
+                71.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "east Bohemia": {
+              "count": 11,
+              "p50": 73.0,
+              "p90": 85.0,
+              "p99": 86.8,
+              "typical_range": [
+                31.0,
+                85.0
+              ],
+              "extreme_range": [
+                85.0,
+                87.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "south Moravia": {
+              "count": 14,
+              "p50": 45.0,
+              "p90": 127.6,
+              "p99": 149.44,
+              "typical_range": [
+                0.0,
+                127.6
+              ],
+              "extreme_range": [
+                127.6,
+                151.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "north Moravia": {
+              "count": 11,
+              "p50": 15.0,
+              "p90": 38.0,
+              "p99": 64.1,
+              "typical_range": [
+                0.0,
+                38.0
+              ],
+              "extreme_range": [
+                38.0,
+                67.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            }
+          },
+          "recommended_stat": "p99",
+          "confidence": 0.7,
+          "rationale": "Conditional distributions inferred from row-aligned numeric behavior; fallback used for sparse groups."
+        }
+      },
+      "query_constraints": {
+        "query_constraints": {
+          "supports_aggregation": true,
+          "allowed_aggregations": [
+            "SUM",
+            "AVG",
+            "MIN",
+            "MAX"
+          ],
+          "supports_range_filtering": true,
+          "supports_distributional_reasoning": true,
+          "supports_outlier_detection": true
+        },
+        "confidence": 0.85,
+        "rationale": "Operational query constraints inferred from semantic roles and value semantics."
+      }
+    },
+    "a6": {
+      "value_semantics": {
+        "semantic_type": "CURRENCY_AMOUNT",
+        "is_identifier": false,
+        "is_categorical": false,
+        "is_free_text": false,
+        "numeric": {
+          "is_numeric": true,
+          "is_continuous": true,
+          "is_discrete": false,
+          "min": 0.0,
+          "max": 36.0
+        },
+        "temporal": {
+          "is_date": false,
+          "is_datetime": false,
+          "is_duration": false,
+          "granularity": null
+        },
+        "confidence": 0.8,
+        "rationale": "Column name or values suggest monetary amount."
+      },
+      "quantitative_vst": {
+        "role": "MEASUREMENT",
+        "confidence": 0.9,
+        "rationale": "CURRENCY_AMOUNT represents a measurable quantity.",
+        "safe_aggregation": {
+          "default": "SUM",
+          "allowed": [
+            "SUM",
+            "AVG",
+            "MIN",
+            "MAX"
+          ],
+          "forbidden": [],
+          "reason": "Currency amount is commonly additive unless marked as a state/snapshot measure, rate, or ratio.",
+          "confidence": 0.75
+        },
+        "derived_metric_candidates": [
+          {
+            "metric_type": "NORMALIZED_RATE",
+            "intent_terms": [
+              "rate",
+              "risk",
+              "per",
+              "ratio"
+            ],
+            "formula_template": "SUM(a6) / COUNT({denominator})",
+            "numerator": "a6",
+            "denominator_candidates": [
+              {
+                "attribute": "district_id",
+                "denominator_role": "IDENTIFIER",
+                "reason": "Identifier-like attribute can serve as COUNT denominator.",
+                "confidence": 0.75,
+                "source": "name_heuristic"
+              },
+              {
+                "attribute": "a2",
+                "denominator_role": "UNIQUE_KEY",
+                "reason": "Column appears unique and can serve as count denominator.",
+                "confidence": 0.65,
+                "source": "profile_statistics"
+              },
+              {
+                "attribute": "a4",
+                "denominator_role": "UNIQUE_KEY",
+                "reason": "Column appears unique and can serve as count denominator.",
+                "confidence": 0.65,
+                "source": "profile_statistics"
+              }
+            ],
+            "preferred_denominator": "district_id",
+            "requires_query_context": true,
+            "confidence": 0.75
+          }
+        ]
+      },
+      "semantic_role": {
+        "primary_role": "EVIDENCE",
+        "confidence": 0.9,
+        "role_arguments": {
+          "quantitative_role": "MEASUREMENT"
+        },
+        "query_constraints": {
+          "can_aggregate": true,
+          "can_compare": true,
+          "can_order_as_measure": true
+        },
+        "justification": {
+          "source": "quantitative_vst"
+        }
+      },
+      "conditional_value_distribution": {
+        "a3": {
+          "group_attribute": "a3",
+          "value_attribute": "a6",
+          "profiles": {
+            "Prague": {
+              "count": 1,
+              "typical_range": [],
+              "extreme_range": [],
+              "recommended_stat": null,
+              "confidence": 0.3,
+              "fallback": {
+                "strategy": "GLOBAL_VALUE_AXIS",
+                "axis_attribute": "a6",
+                "reason": "insufficient samples for stable conditional statistics",
+                "min_support": 10
+              }
+            },
+            "central Bohemia": {
+              "count": 12,
+              "p50": 27.0,
+              "p90": 29.9,
+              "p99": 35.34,
+              "typical_range": [
+                19.0,
+                29.9
+              ],
+              "extreme_range": [
+                29.9,
+                36.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "south Bohemia": {
+              "count": 8,
+              "typical_range": [],
+              "extreme_range": [],
+              "recommended_stat": null,
+              "confidence": 0.3,
+              "fallback": {
+                "strategy": "GLOBAL_VALUE_AXIS",
+                "axis_attribute": "a6",
+                "reason": "insufficient samples for stable conditional statistics",
+                "min_support": 10
+              }
+            },
+            "west Bohemia": {
+              "count": 10,
+              "p50": 14.5,
+              "p90": 26.7,
+              "p99": 32.37,
+              "typical_range": [
+                0.0,
+                26.7
+              ],
+              "extreme_range": [
+                26.7,
+                33.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "north Bohemia": {
+              "count": 10,
+              "p50": 17.5,
+              "p90": 23.3,
+              "p99": 25.73,
+              "typical_range": [
+                4.0,
+                23.3
+              ],
+              "extreme_range": [
+                23.3,
+                26.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "east Bohemia": {
+              "count": 11,
+              "p50": 26.0,
+              "p90": 33.0,
+              "p99": 40.2,
+              "typical_range": [
+                19.0,
+                33.0
+              ],
+              "extreme_range": [
+                33.0,
+                41.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "south Moravia": {
+              "count": 14,
+              "p50": 39.0,
+              "p90": 41.7,
+              "p99": 66.36,
+              "typical_range": [
+                0.0,
+                41.7
+              ],
+              "extreme_range": [
+                41.7,
+                70.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "north Moravia": {
+              "count": 11,
+              "p50": 32.0,
+              "p90": 49.0,
+              "p99": 49.9,
+              "typical_range": [
+                0.0,
+                49.0
+              ],
+              "extreme_range": [
+                49.0,
+                50.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            }
+          },
+          "recommended_stat": "p99",
+          "confidence": 0.7,
+          "rationale": "Conditional distributions inferred from row-aligned numeric behavior; fallback used for sparse groups."
+        }
+      },
+      "query_constraints": {
+        "query_constraints": {
+          "supports_aggregation": true,
+          "allowed_aggregations": [
+            "SUM",
+            "AVG",
+            "MIN",
+            "MAX"
+          ],
+          "supports_range_filtering": true,
+          "supports_distributional_reasoning": true,
+          "supports_outlier_detection": true
+        },
+        "confidence": 0.85,
+        "rationale": "Operational query constraints inferred from semantic roles and value semantics."
+      }
+    },
+    "a7": {
+      "value_semantics": {
+        "semantic_type": "CURRENCY_AMOUNT",
+        "is_identifier": false,
+        "is_categorical": false,
+        "is_free_text": false,
+        "numeric": {
+          "is_numeric": true,
+          "is_continuous": true,
+          "is_discrete": false,
+          "min": 0.0,
+          "max": 10.0
+        },
+        "temporal": {
+          "is_date": false,
+          "is_datetime": false,
+          "is_duration": false,
+          "granularity": null
+        },
+        "confidence": 0.8,
+        "rationale": "Column name or values suggest monetary amount."
+      },
+      "quantitative_vst": {
+        "role": "MEASUREMENT",
+        "confidence": 0.9,
+        "rationale": "CURRENCY_AMOUNT represents a measurable quantity.",
+        "safe_aggregation": {
+          "default": "SUM",
+          "allowed": [
+            "SUM",
+            "AVG",
+            "MIN",
+            "MAX"
+          ],
+          "forbidden": [],
+          "reason": "Currency amount is commonly additive unless marked as a state/snapshot measure, rate, or ratio.",
+          "confidence": 0.75
+        },
+        "derived_metric_candidates": [
+          {
+            "metric_type": "NORMALIZED_RATE",
+            "intent_terms": [
+              "rate",
+              "risk",
+              "per",
+              "ratio"
+            ],
+            "formula_template": "SUM(a7) / COUNT({denominator})",
+            "numerator": "a7",
+            "denominator_candidates": [
+              {
+                "attribute": "district_id",
+                "denominator_role": "IDENTIFIER",
+                "reason": "Identifier-like attribute can serve as COUNT denominator.",
+                "confidence": 0.75,
+                "source": "name_heuristic"
+              },
+              {
+                "attribute": "a2",
+                "denominator_role": "UNIQUE_KEY",
+                "reason": "Column appears unique and can serve as count denominator.",
+                "confidence": 0.65,
+                "source": "profile_statistics"
+              },
+              {
+                "attribute": "a4",
+                "denominator_role": "UNIQUE_KEY",
+                "reason": "Column appears unique and can serve as count denominator.",
+                "confidence": 0.65,
+                "source": "profile_statistics"
+              }
+            ],
+            "preferred_denominator": "district_id",
+            "requires_query_context": true,
+            "confidence": 0.75
+          }
+        ]
+      },
+      "semantic_role": {
+        "primary_role": "EVIDENCE",
+        "confidence": 0.9,
+        "role_arguments": {
+          "quantitative_role": "MEASUREMENT"
+        },
+        "query_constraints": {
+          "can_aggregate": true,
+          "can_compare": true,
+          "can_order_as_measure": true
+        },
+        "justification": {
+          "source": "quantitative_vst"
+        }
+      },
+      "conditional_value_distribution": {
+        "a3": {
+          "group_attribute": "a3",
+          "value_attribute": "a7",
+          "profiles": {
+            "Prague": {
+              "count": 1,
+              "typical_range": [],
+              "extreme_range": [],
+              "recommended_stat": null,
+              "confidence": 0.3,
+              "fallback": {
+                "strategy": "GLOBAL_VALUE_AXIS",
+                "axis_attribute": "a7",
+                "reason": "insufficient samples for stable conditional statistics",
+                "min_support": 10
+              }
+            },
+            "central Bohemia": {
+              "count": 12,
+              "p50": 4.0,
+              "p90": 6.9,
+              "p99": 8.78,
+              "typical_range": [
+                1.0,
+                6.9
+              ],
+              "extreme_range": [
+                6.9,
+                9.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "south Bohemia": {
+              "count": 8,
+              "typical_range": [],
+              "extreme_range": [],
+              "recommended_stat": null,
+              "confidence": 0.3,
+              "fallback": {
+                "strategy": "GLOBAL_VALUE_AXIS",
+                "axis_attribute": "a7",
+                "reason": "insufficient samples for stable conditional statistics",
+                "min_support": 10
+              }
+            },
+            "west Bohemia": {
+              "count": 10,
+              "p50": 4.5,
+              "p90": 10.0,
+              "p99": 10.0,
+              "typical_range": [
+                0.0,
+                10.0
+              ],
+              "extreme_range": [
+                10.0,
+                10.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "north Bohemia": {
+              "count": 10,
+              "p50": 5.5,
+              "p90": 7.1,
+              "p99": 7.91,
+              "typical_range": [
+                1.0,
+                7.1
+              ],
+              "extreme_range": [
+                7.1,
+                8.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "east Bohemia": {
+              "count": 11,
+              "p50": 6.0,
+              "p90": 8.0,
+              "p99": 8.0,
+              "typical_range": [
+                2.0,
+                8.0
+              ],
+              "extreme_range": [
+                8.0,
+                8.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "south Moravia": {
+              "count": 14,
+              "p50": 6.0,
+              "p90": 16.8,
+              "p99": 19.74,
+              "typical_range": [
+                0.0,
+                16.8
+              ],
+              "extreme_range": [
+                16.8,
+                20.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "north Moravia": {
+              "count": 11,
+              "p50": 8.0,
+              "p90": 13.0,
+              "p99": 17.5,
+              "typical_range": [
+                0.0,
+                13.0
+              ],
+              "extreme_range": [
+                13.0,
+                18.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            }
+          },
+          "recommended_stat": "p99",
+          "confidence": 0.7,
+          "rationale": "Conditional distributions inferred from row-aligned numeric behavior; fallback used for sparse groups."
+        }
+      },
+      "query_constraints": {
+        "query_constraints": {
+          "supports_aggregation": true,
+          "allowed_aggregations": [
+            "SUM",
+            "AVG",
+            "MIN",
+            "MAX"
+          ],
+          "supports_range_filtering": true,
+          "supports_distributional_reasoning": true,
+          "supports_outlier_detection": true
+        },
+        "confidence": 0.85,
+        "rationale": "Operational query constraints inferred from semantic roles and value semantics."
+      }
+    },
+    "a8": {
+      "value_semantics": {
+        "semantic_type": "INTEGER",
+        "is_identifier": false,
+        "is_categorical": false,
+        "is_free_text": false,
+        "numeric": {
+          "is_numeric": true,
+          "is_continuous": false,
+          "is_discrete": true,
+          "min": 0.0,
+          "max": 3.0
+        },
+        "temporal": {
+          "is_date": false,
+          "is_datetime": false,
+          "is_duration": false,
+          "granularity": null
+        },
+        "confidence": 0.9,
+        "rationale": "Inferred INTEGER from value patterns."
+      },
+      "quantitative_vst": {
+        "role": "MEASUREMENT",
+        "subtype": "bounded_quantity",
+        "confidence": 0.75,
+        "rationale": "Integer values fall within a bounded real-world measurement range.",
+        "safe_aggregation": {
+          "default": "SUM",
+          "allowed": [
+            "SUM",
+            "AVG",
+            "MIN",
+            "MAX"
+          ],
+          "forbidden": [],
+          "reason": "Measurement values can often be summed or averaged unless constrained by context.",
+          "confidence": 0.7
+        },
+        "derived_metric_candidates": [
+          {
+            "metric_type": "NORMALIZED_RATE",
+            "intent_terms": [
+              "rate",
+              "risk",
+              "per",
+              "ratio"
+            ],
+            "formula_template": "SUM(a8) / COUNT({denominator})",
+            "numerator": "a8",
+            "denominator_candidates": [
+              {
+                "attribute": "district_id",
+                "denominator_role": "IDENTIFIER",
+                "reason": "Identifier-like attribute can serve as COUNT denominator.",
+                "confidence": 0.75,
+                "source": "name_heuristic"
+              },
+              {
+                "attribute": "a2",
+                "denominator_role": "UNIQUE_KEY",
+                "reason": "Column appears unique and can serve as count denominator.",
+                "confidence": 0.65,
+                "source": "profile_statistics"
+              },
+              {
+                "attribute": "a4",
+                "denominator_role": "UNIQUE_KEY",
+                "reason": "Column appears unique and can serve as count denominator.",
+                "confidence": 0.65,
+                "source": "profile_statistics"
+              }
+            ],
+            "preferred_denominator": "district_id",
+            "requires_query_context": true,
+            "confidence": 0.75
+          }
+        ]
+      },
+      "semantic_role": {
+        "primary_role": "EVIDENCE",
+        "confidence": 0.75,
+        "role_arguments": {
+          "quantitative_role": "MEASUREMENT"
+        },
+        "query_constraints": {
+          "can_aggregate": true,
+          "can_compare": true,
+          "can_order_as_measure": true
+        },
+        "justification": {
+          "source": "quantitative_vst"
+        }
+      },
+      "conditional_value_distribution": {
+        "a3": {
+          "group_attribute": "a3",
+          "value_attribute": "a8",
+          "profiles": {
+            "Prague": {
+              "count": 1,
+              "typical_range": [],
+              "extreme_range": [],
+              "recommended_stat": null,
+              "confidence": 0.3,
+              "fallback": {
+                "strategy": "GLOBAL_VALUE_AXIS",
+                "axis_attribute": "a8",
+                "reason": "insufficient samples for stable conditional statistics",
+                "min_support": 10
+              }
+            },
+            "central Bohemia": {
+              "count": 12,
+              "p50": 1.5,
+              "p90": 2.9,
+              "p99": 3.0,
+              "typical_range": [
+                0.0,
+                2.9
+              ],
+              "extreme_range": [
+                2.9,
+                3.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "south Bohemia": {
+              "count": 8,
+              "typical_range": [],
+              "extreme_range": [],
+              "recommended_stat": null,
+              "confidence": 0.3,
+              "fallback": {
+                "strategy": "GLOBAL_VALUE_AXIS",
+                "axis_attribute": "a8",
+                "reason": "insufficient samples for stable conditional statistics",
+                "min_support": 10
+              }
+            },
+            "west Bohemia": {
+              "count": 10,
+              "p50": 1.0,
+              "p90": 2.1,
+              "p99": 2.91,
+              "typical_range": [
+                0.0,
+                2.1
+              ],
+              "extreme_range": [
+                2.1,
+                3.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "north Bohemia": {
+              "count": 10,
+              "p50": 2.0,
+              "p90": 3.1,
+              "p99": 3.91,
+              "typical_range": [
+                1.0,
+                3.1
+              ],
+              "extreme_range": [
+                3.1,
+                4.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "east Bohemia": {
+              "count": 11,
+              "p50": 2.0,
+              "p90": 3.0,
+              "p99": 3.0,
+              "typical_range": [
+                1.0,
+                3.0
+              ],
+              "extreme_range": [
+                3.0,
+                3.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "south Moravia": {
+              "count": 14,
+              "p50": 1.0,
+              "p90": 2.7,
+              "p99": 3.0,
+              "typical_range": [
+                0.0,
+                2.7
+              ],
+              "extreme_range": [
+                2.7,
+                3.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "north Moravia": {
+              "count": 11,
+              "p50": 2.0,
+              "p90": 4.0,
+              "p99": 4.9,
+              "typical_range": [
+                1.0,
+                4.0
+              ],
+              "extreme_range": [
+                4.0,
+                5.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            }
+          },
+          "recommended_stat": "p99",
+          "confidence": 0.7,
+          "rationale": "Conditional distributions inferred from row-aligned numeric behavior; fallback used for sparse groups."
+        }
+      },
+      "query_constraints": {
+        "query_constraints": {
+          "supports_aggregation": true,
+          "allowed_aggregations": [
+            "SUM",
+            "AVG",
+            "MIN",
+            "MAX"
+          ],
+          "supports_range_filtering": true,
+          "supports_distributional_reasoning": true,
+          "supports_outlier_detection": true
+        },
+        "confidence": 0.85,
+        "rationale": "Operational query constraints inferred from semantic roles and value semantics."
+      }
+    },
+    "a9": {
+      "value_semantics": {
+        "semantic_type": "INTEGER",
+        "is_identifier": false,
+        "is_categorical": false,
+        "is_free_text": false,
+        "numeric": {
+          "is_numeric": true,
+          "is_continuous": false,
+          "is_discrete": true,
+          "min": 1.0,
+          "max": 9.0
+        },
+        "temporal": {
+          "is_date": false,
+          "is_datetime": false,
+          "is_duration": false,
+          "granularity": null
+        },
+        "confidence": 0.9,
+        "rationale": "Inferred INTEGER from value patterns."
+      },
+      "quantitative_vst": {
+        "role": "MEASUREMENT",
+        "subtype": "bounded_quantity",
+        "confidence": 0.75,
+        "rationale": "Integer values fall within a bounded real-world measurement range.",
+        "safe_aggregation": {
+          "default": "SUM",
+          "allowed": [
+            "SUM",
+            "AVG",
+            "MIN",
+            "MAX"
+          ],
+          "forbidden": [],
+          "reason": "Measurement values can often be summed or averaged unless constrained by context.",
+          "confidence": 0.7
+        },
+        "derived_metric_candidates": [
+          {
+            "metric_type": "NORMALIZED_RATE",
+            "intent_terms": [
+              "rate",
+              "risk",
+              "per",
+              "ratio"
+            ],
+            "formula_template": "SUM(a9) / COUNT({denominator})",
+            "numerator": "a9",
+            "denominator_candidates": [
+              {
+                "attribute": "district_id",
+                "denominator_role": "IDENTIFIER",
+                "reason": "Identifier-like attribute can serve as COUNT denominator.",
+                "confidence": 0.75,
+                "source": "name_heuristic"
+              },
+              {
+                "attribute": "a2",
+                "denominator_role": "UNIQUE_KEY",
+                "reason": "Column appears unique and can serve as count denominator.",
+                "confidence": 0.65,
+                "source": "profile_statistics"
+              },
+              {
+                "attribute": "a4",
+                "denominator_role": "UNIQUE_KEY",
+                "reason": "Column appears unique and can serve as count denominator.",
+                "confidence": 0.65,
+                "source": "profile_statistics"
+              }
+            ],
+            "preferred_denominator": "district_id",
+            "requires_query_context": true,
+            "confidence": 0.75
+          }
+        ]
+      },
+      "semantic_role": {
+        "primary_role": "EVIDENCE",
+        "confidence": 0.75,
+        "role_arguments": {
+          "quantitative_role": "MEASUREMENT"
+        },
+        "query_constraints": {
+          "can_aggregate": true,
+          "can_compare": true,
+          "can_order_as_measure": true
+        },
+        "justification": {
+          "source": "quantitative_vst"
+        }
+      },
+      "conditional_value_distribution": {
+        "a3": {
+          "group_attribute": "a3",
+          "value_attribute": "a9",
+          "profiles": {
+            "Prague": {
+              "count": 1,
+              "typical_range": [],
+              "extreme_range": [],
+              "recommended_stat": null,
+              "confidence": 0.3,
+              "fallback": {
+                "strategy": "GLOBAL_VALUE_AXIS",
+                "axis_attribute": "a9",
+                "reason": "insufficient samples for stable conditional statistics",
+                "min_support": 10
+              }
+            },
+            "central Bohemia": {
+              "count": 12,
+              "p50": 6.0,
+              "p90": 6.9,
+              "p99": 7.89,
+              "typical_range": [
+                2.0,
+                6.9
+              ],
+              "extreme_range": [
+                6.9,
+                8.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "south Bohemia": {
+              "count": 8,
+              "typical_range": [],
+              "extreme_range": [],
+              "recommended_stat": null,
+              "confidence": 0.3,
+              "fallback": {
+                "strategy": "GLOBAL_VALUE_AXIS",
+                "axis_attribute": "a9",
+                "reason": "insufficient samples for stable conditional statistics",
+                "min_support": 10
+              }
+            },
+            "west Bohemia": {
+              "count": 10,
+              "p50": 7.5,
+              "p90": 10.0,
+              "p99": 10.0,
+              "typical_range": [
+                1.0,
+                10.0
+              ],
+              "extreme_range": [
+                10.0,
+                10.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "north Bohemia": {
+              "count": 10,
+              "p50": 7.5,
+              "p90": 10.1,
+              "p99": 10.91,
+              "typical_range": [
+                3.0,
+                10.1
+              ],
+              "extreme_range": [
+                10.1,
+                11.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "east Bohemia": {
+              "count": 11,
+              "p50": 7.0,
+              "p90": 10.0,
+              "p99": 10.9,
+              "typical_range": [
+                5.0,
+                10.0
+              ],
+              "extreme_range": [
+                10.0,
+                11.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "south Moravia": {
+              "count": 14,
+              "p50": 5.5,
+              "p90": 8.7,
+              "p99": 9.87,
+              "typical_range": [
+                1.0,
+                8.7
+              ],
+              "extreme_range": [
+                8.7,
+                10.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "north Moravia": {
+              "count": 11,
+              "p50": 6.0,
+              "p90": 7.0,
+              "p99": 9.7,
+              "typical_range": [
+                1.0,
+                7.0
+              ],
+              "extreme_range": [
+                7.0,
+                10.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            }
+          },
+          "recommended_stat": "p99",
+          "confidence": 0.7,
+          "rationale": "Conditional distributions inferred from row-aligned numeric behavior; fallback used for sparse groups."
+        }
+      },
+      "query_constraints": {
+        "query_constraints": {
+          "supports_aggregation": true,
+          "allowed_aggregations": [
+            "SUM",
+            "AVG",
+            "MIN",
+            "MAX"
+          ],
+          "supports_range_filtering": true,
+          "supports_distributional_reasoning": true,
+          "supports_outlier_detection": true
+        },
+        "confidence": 0.85,
+        "rationale": "Operational query constraints inferred from semantic roles and value semantics."
+      }
+    },
+    "a10": {
+      "value_semantics": {
+        "semantic_type": "FLOAT",
+        "is_identifier": false,
+        "is_categorical": false,
+        "is_free_text": false,
+        "numeric": {
+          "is_numeric": true,
+          "is_continuous": true,
+          "is_discrete": false,
+          "min": 36.5,
+          "max": 100.0
+        },
+        "temporal": {
+          "is_date": false,
+          "is_datetime": false,
+          "is_duration": false,
+          "granularity": null
+        },
+        "confidence": 0.9,
+        "rationale": "Inferred FLOAT from value patterns."
+      },
+      "quantitative_vst": {
+        "role": "MAGNITUDE",
+        "confidence": 0.65,
+        "rationale": "Continuous numeric magnitude.",
+        "safe_aggregation": {
+          "default": "AVG",
+          "allowed": [
+            "AVG",
+            "MIN",
+            "MAX",
+            "SUM"
+          ],
+          "forbidden": [],
+          "reason": "Magnitude values are often compared or averaged; SUM may be valid depending on context.",
+          "confidence": 0.65
+        },
+        "derived_metric_candidates": [
+          {
+            "metric_type": "NORMALIZED_RATE",
+            "intent_terms": [
+              "rate",
+              "risk",
+              "per",
+              "ratio"
+            ],
+            "formula_template": "SUM(a10) / COUNT({denominator})",
+            "numerator": "a10",
+            "denominator_candidates": [
+              {
+                "attribute": "district_id",
+                "denominator_role": "IDENTIFIER",
+                "reason": "Identifier-like attribute can serve as COUNT denominator.",
+                "confidence": 0.75,
+                "source": "name_heuristic"
+              },
+              {
+                "attribute": "a2",
+                "denominator_role": "UNIQUE_KEY",
+                "reason": "Column appears unique and can serve as count denominator.",
+                "confidence": 0.65,
+                "source": "profile_statistics"
+              },
+              {
+                "attribute": "a4",
+                "denominator_role": "UNIQUE_KEY",
+                "reason": "Column appears unique and can serve as count denominator.",
+                "confidence": 0.65,
+                "source": "profile_statistics"
+              }
+            ],
+            "preferred_denominator": "district_id",
+            "requires_query_context": true,
+            "confidence": 0.75
+          }
+        ]
+      },
+      "semantic_role": {
+        "primary_role": "EVIDENCE",
+        "confidence": 0.65,
+        "role_arguments": {
+          "quantitative_role": "MAGNITUDE"
+        },
+        "query_constraints": {
+          "can_aggregate": true,
+          "can_compare": true,
+          "can_order_as_measure": true
+        },
+        "justification": {
+          "source": "quantitative_vst"
+        }
+      },
+      "conditional_value_distribution": {
+        "a3": {
+          "group_attribute": "a3",
+          "value_attribute": "a10",
+          "profiles": {
+            "Prague": {
+              "count": 1,
+              "typical_range": [],
+              "extreme_range": [],
+              "recommended_stat": null,
+              "confidence": 0.3,
+              "fallback": {
+                "strategy": "GLOBAL_VALUE_AXIS",
+                "axis_attribute": "a10",
+                "reason": "insufficient samples for stable conditional statistics",
+                "min_support": 10
+              }
+            },
+            "central Bohemia": {
+              "count": 12,
+              "p50": 51.45,
+              "p90": 67.0,
+              "p99": 69.18,
+              "typical_range": [
+                36.5,
+                67.0
+              ],
+              "extreme_range": [
+                67.0,
+                69.4
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "south Bohemia": {
+              "count": 8,
+              "typical_range": [],
+              "extreme_range": [],
+              "recommended_stat": null,
+              "confidence": 0.3,
+              "fallback": {
+                "strategy": "GLOBAL_VALUE_AXIS",
+                "axis_attribute": "a10",
+                "reason": "insufficient samples for stable conditional statistics",
+                "min_support": 10
+              }
+            },
+            "west Bohemia": {
+              "count": 10,
+              "p50": 60.45,
+              "p90": 86.95,
+              "p99": 98.7,
+              "typical_range": [
+                36.9,
+                86.95
+              ],
+              "extreme_range": [
+                86.95,
+                100.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "north Bohemia": {
+              "count": 10,
+              "p50": 84.95,
+              "p90": 87.92,
+              "p99": 89.7,
+              "typical_range": [
+                59.8,
+                87.92
+              ],
+              "extreme_range": [
+                87.92,
+                89.9
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "east Bohemia": {
+              "count": 11,
+              "p50": 60.8,
+              "p90": 73.5,
+              "p99": 76.02,
+              "typical_range": [
+                52.0,
+                73.5
+              ],
+              "extreme_range": [
+                73.5,
+                76.3
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "south Moravia": {
+              "count": 14,
+              "p50": 50.7,
+              "p90": 71.37,
+              "p99": 96.71,
+              "typical_range": [
+                33.9,
+                71.37
+              ],
+              "extreme_range": [
+                71.37,
+                100.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "north Moravia": {
+              "count": 11,
+              "p50": 62.6,
+              "p90": 89.9,
+              "p99": 98.99,
+              "typical_range": [
+                48.4,
+                89.9
+              ],
+              "extreme_range": [
+                89.9,
+                100.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            }
+          },
+          "recommended_stat": "p99",
+          "confidence": 0.7,
+          "rationale": "Conditional distributions inferred from row-aligned numeric behavior; fallback used for sparse groups."
+        }
+      },
+      "query_constraints": {
+        "query_constraints": {
+          "supports_aggregation": true,
+          "allowed_aggregations": [
+            "SUM",
+            "AVG",
+            "MIN",
+            "MAX"
+          ],
+          "supports_range_filtering": true,
+          "supports_distributional_reasoning": true,
+          "supports_outlier_detection": true
+        },
+        "confidence": 0.85,
+        "rationale": "Operational query constraints inferred from semantic roles and value semantics."
+      }
+    },
+    "a11": {
+      "value_semantics": {
+        "semantic_type": "INTEGER",
+        "is_identifier": false,
+        "is_categorical": false,
+        "is_free_text": false,
+        "numeric": {
+          "is_numeric": true,
+          "is_continuous": false,
+          "is_discrete": true,
+          "min": 8114.0,
+          "max": 12541.0
+        },
+        "temporal": {
+          "is_date": false,
+          "is_datetime": false,
+          "is_duration": false,
+          "granularity": null
+        },
+        "confidence": 0.9,
+        "rationale": "Inferred INTEGER from value patterns."
+      },
+      "quantitative_vst": {
+        "role": "MAGNITUDE",
+        "confidence": 0.7,
+        "rationale": "General integer magnitude.",
+        "safe_aggregation": {
+          "default": "AVG",
+          "allowed": [
+            "AVG",
+            "MIN",
+            "MAX",
+            "SUM"
+          ],
+          "forbidden": [],
+          "reason": "Magnitude values are often compared or averaged; SUM may be valid depending on context.",
+          "confidence": 0.65
+        },
+        "derived_metric_candidates": [
+          {
+            "metric_type": "NORMALIZED_RATE",
+            "intent_terms": [
+              "rate",
+              "risk",
+              "per",
+              "ratio"
+            ],
+            "formula_template": "SUM(a11) / COUNT({denominator})",
+            "numerator": "a11",
+            "denominator_candidates": [
+              {
+                "attribute": "district_id",
+                "denominator_role": "IDENTIFIER",
+                "reason": "Identifier-like attribute can serve as COUNT denominator.",
+                "confidence": 0.75,
+                "source": "name_heuristic"
+              },
+              {
+                "attribute": "a2",
+                "denominator_role": "UNIQUE_KEY",
+                "reason": "Column appears unique and can serve as count denominator.",
+                "confidence": 0.65,
+                "source": "profile_statistics"
+              },
+              {
+                "attribute": "a4",
+                "denominator_role": "UNIQUE_KEY",
+                "reason": "Column appears unique and can serve as count denominator.",
+                "confidence": 0.65,
+                "source": "profile_statistics"
+              }
+            ],
+            "preferred_denominator": "district_id",
+            "requires_query_context": true,
+            "confidence": 0.75
+          }
+        ]
+      },
+      "semantic_role": {
+        "primary_role": "EVIDENCE",
+        "confidence": 0.7,
+        "role_arguments": {
+          "quantitative_role": "MAGNITUDE"
+        },
+        "query_constraints": {
+          "can_aggregate": true,
+          "can_compare": true,
+          "can_order_as_measure": true
+        },
+        "justification": {
+          "source": "quantitative_vst"
+        }
+      },
+      "conditional_value_distribution": {
+        "a3": {
+          "group_attribute": "a3",
+          "value_attribute": "a11",
+          "profiles": {
+            "Prague": {
+              "count": 1,
+              "typical_range": [],
+              "extreme_range": [],
+              "recommended_stat": null,
+              "confidence": 0.3,
+              "fallback": {
+                "strategy": "GLOBAL_VALUE_AXIS",
+                "axis_attribute": "a11",
+                "reason": "insufficient samples for stable conditional statistics",
+                "min_support": 10
+              }
+            },
+            "central Bohemia": {
+              "count": 12,
+              "p50": 9143.5,
+              "p90": 10103.6,
+              "p99": 11150.17,
+              "typical_range": [
+                8507.0,
+                10103.6
+              ],
+              "extreme_range": [
+                10103.6,
+                11277.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "south Bohemia": {
+              "count": 8,
+              "typical_range": [],
+              "extreme_range": [],
+              "recommended_stat": null,
+              "confidence": 0.3,
+              "fallback": {
+                "strategy": "GLOBAL_VALUE_AXIS",
+                "axis_attribute": "a11",
+                "reason": "insufficient samples for stable conditional statistics",
+                "min_support": 10
+              }
+            },
+            "west Bohemia": {
+              "count": 10,
+              "p50": 8733.5,
+              "p90": 9763.7,
+              "p99": 10684.67,
+              "typical_range": [
+                8554.0,
+                9763.7
+              ],
+              "extreme_range": [
+                9763.7,
+                10787.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "north Bohemia": {
+              "count": 10,
+              "p50": 9235.0,
+              "p90": 9893.4,
+              "p99": 10390.74,
+              "typical_range": [
+                8705.0,
+                9893.4
+              ],
+              "extreme_range": [
+                9893.4,
+                10446.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "east Bohemia": {
+              "count": 11,
+              "p50": 8388.0,
+              "p90": 9425.0,
+              "p99": 9526.7,
+              "typical_range": [
+                8187.0,
+                9425.0
+              ],
+              "extreme_range": [
+                9425.0,
+                9538.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "south Moravia": {
+              "count": 14,
+              "p50": 8632.0,
+              "p90": 9381.0,
+              "p99": 9861.51,
+              "typical_range": [
+                8240.0,
+                9381.0
+              ],
+              "extreme_range": [
+                9381.0,
+                9897.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "north Moravia": {
+              "count": 11,
+              "p50": 8819.0,
+              "p90": 10177.0,
+              "p99": 10623.4,
+              "typical_range": [
+                8110.0,
+                10177.0
+              ],
+              "extreme_range": [
+                10177.0,
+                10673.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            }
+          },
+          "recommended_stat": "p99",
+          "confidence": 0.7,
+          "rationale": "Conditional distributions inferred from row-aligned numeric behavior; fallback used for sparse groups."
+        }
+      },
+      "query_constraints": {
+        "query_constraints": {
+          "supports_aggregation": true,
+          "allowed_aggregations": [
+            "SUM",
+            "AVG",
+            "MIN",
+            "MAX"
+          ],
+          "supports_range_filtering": true,
+          "supports_distributional_reasoning": true,
+          "supports_outlier_detection": true
+        },
+        "confidence": 0.85,
+        "rationale": "Operational query constraints inferred from semantic roles and value semantics."
+      }
+    },
+    "a12": {
+      "value_semantics": {
+        "semantic_type": "FLOAT",
+        "is_identifier": false,
+        "is_categorical": false,
+        "is_free_text": false,
+        "numeric": {
+          "is_numeric": true,
+          "is_continuous": true,
+          "is_discrete": false,
+          "min": 0.2,
+          "max": 4.6
+        },
+        "temporal": {
+          "is_date": false,
+          "is_datetime": false,
+          "is_duration": false,
+          "granularity": null
+        },
+        "confidence": 0.9,
+        "rationale": "Inferred FLOAT from value patterns."
+      },
+      "quantitative_vst": {
+        "role": "MAGNITUDE",
+        "confidence": 0.65,
+        "rationale": "Continuous numeric magnitude.",
+        "safe_aggregation": {
+          "default": "AVG",
+          "allowed": [
+            "AVG",
+            "MIN",
+            "MAX",
+            "SUM"
+          ],
+          "forbidden": [],
+          "reason": "Magnitude values are often compared or averaged; SUM may be valid depending on context.",
+          "confidence": 0.65
+        },
+        "derived_metric_candidates": [
+          {
+            "metric_type": "NORMALIZED_RATE",
+            "intent_terms": [
+              "rate",
+              "risk",
+              "per",
+              "ratio"
+            ],
+            "formula_template": "SUM(a12) / COUNT({denominator})",
+            "numerator": "a12",
+            "denominator_candidates": [
+              {
+                "attribute": "district_id",
+                "denominator_role": "IDENTIFIER",
+                "reason": "Identifier-like attribute can serve as COUNT denominator.",
+                "confidence": 0.75,
+                "source": "name_heuristic"
+              },
+              {
+                "attribute": "a2",
+                "denominator_role": "UNIQUE_KEY",
+                "reason": "Column appears unique and can serve as count denominator.",
+                "confidence": 0.65,
+                "source": "profile_statistics"
+              },
+              {
+                "attribute": "a4",
+                "denominator_role": "UNIQUE_KEY",
+                "reason": "Column appears unique and can serve as count denominator.",
+                "confidence": 0.65,
+                "source": "profile_statistics"
+              }
+            ],
+            "preferred_denominator": "district_id",
+            "requires_query_context": true,
+            "confidence": 0.75
+          }
+        ]
+      },
+      "semantic_role": {
+        "primary_role": "EVIDENCE",
+        "confidence": 0.65,
+        "role_arguments": {
+          "quantitative_role": "MAGNITUDE"
+        },
+        "query_constraints": {
+          "can_aggregate": true,
+          "can_compare": true,
+          "can_order_as_measure": true
+        },
+        "justification": {
+          "source": "quantitative_vst"
+        }
+      },
+      "conditional_value_distribution": {
+        "a3": {
+          "group_attribute": "a3",
+          "value_attribute": "a12",
+          "profiles": {
+            "Prague": {
+              "count": 1,
+              "typical_range": [],
+              "extreme_range": [],
+              "recommended_stat": null,
+              "confidence": 0.3,
+              "fallback": {
+                "strategy": "GLOBAL_VALUE_AXIS",
+                "axis_attribute": "a12",
+                "reason": "insufficient samples for stable conditional statistics",
+                "min_support": 10
+              }
+            },
+            "central Bohemia": {
+              "count": 12,
+              "p50": 2.45,
+              "p90": 3.8,
+              "p99": 4.51,
+              "typical_range": [
+                0.4,
+                3.8
+              ],
+              "extreme_range": [
+                3.8,
+                4.6
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "south Bohemia": {
+              "count": 8,
+              "typical_range": [],
+              "extreme_range": [],
+              "recommended_stat": null,
+              "confidence": 0.3,
+              "fallback": {
+                "strategy": "GLOBAL_VALUE_AXIS",
+                "axis_attribute": "a12",
+                "reason": "insufficient samples for stable conditional statistics",
+                "min_support": 10
+              }
+            },
+            "west Bohemia": {
+              "count": 10,
+              "p50": 2.05,
+              "p90": 3.32,
+              "p99": 3.48,
+              "typical_range": [
+                0.6,
+                3.32
+              ],
+              "extreme_range": [
+                3.32,
+                3.5
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "north Bohemia": {
+              "count": 10,
+              "p50": 5.05,
+              "p90": 7.03,
+              "p99": 7.27,
+              "typical_range": [
+                1.0,
+                7.03
+              ],
+              "extreme_range": [
+                7.03,
+                7.3
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "east Bohemia": {
+              "count": 11,
+              "p50": 2.2,
+              "p90": 2.7,
+              "p99": 4.59,
+              "typical_range": [
+                1.5,
+                2.7
+              ],
+              "extreme_range": [
+                2.7,
+                4.8
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "south Moravia": {
+              "count": 14,
+              "p50": 3.35,
+              "p90": 4.67,
+              "p99": 5.57,
+              "typical_range": [
+                1.2,
+                4.67
+              ],
+              "extreme_range": [
+                4.67,
+                5.7
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "north Moravia": {
+              "count": 11,
+              "p50": NaN,
+              "p90": NaN,
+              "p99": NaN,
+              "typical_range": [
+                NaN,
+                NaN
+              ],
+              "extreme_range": [
+                NaN,
+                NaN
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            }
+          },
+          "recommended_stat": "p99",
+          "confidence": 0.7,
+          "rationale": "Conditional distributions inferred from row-aligned numeric behavior; fallback used for sparse groups."
+        }
+      },
+      "query_constraints": {
+        "query_constraints": {
+          "supports_aggregation": true,
+          "allowed_aggregations": [
+            "SUM",
+            "AVG",
+            "MIN",
+            "MAX"
+          ],
+          "supports_range_filtering": true,
+          "supports_distributional_reasoning": true,
+          "supports_outlier_detection": true
+        },
+        "confidence": 0.85,
+        "rationale": "Operational query constraints inferred from semantic roles and value semantics."
+      }
+    },
+    "a13": {
+      "value_semantics": {
+        "semantic_type": "FLOAT",
+        "is_identifier": false,
+        "is_categorical": false,
+        "is_free_text": false,
+        "numeric": {
+          "is_numeric": true,
+          "is_continuous": true,
+          "is_discrete": false,
+          "min": 0.43,
+          "max": 5.05
+        },
+        "temporal": {
+          "is_date": false,
+          "is_datetime": false,
+          "is_duration": false,
+          "granularity": null
+        },
+        "confidence": 0.9,
+        "rationale": "Inferred FLOAT from value patterns."
+      },
+      "quantitative_vst": {
+        "role": "MAGNITUDE",
+        "confidence": 0.65,
+        "rationale": "Continuous numeric magnitude.",
+        "safe_aggregation": {
+          "default": "AVG",
+          "allowed": [
+            "AVG",
+            "MIN",
+            "MAX",
+            "SUM"
+          ],
+          "forbidden": [],
+          "reason": "Magnitude values are often compared or averaged; SUM may be valid depending on context.",
+          "confidence": 0.65
+        },
+        "derived_metric_candidates": [
+          {
+            "metric_type": "NORMALIZED_RATE",
+            "intent_terms": [
+              "rate",
+              "risk",
+              "per",
+              "ratio"
+            ],
+            "formula_template": "SUM(a13) / COUNT({denominator})",
+            "numerator": "a13",
+            "denominator_candidates": [
+              {
+                "attribute": "district_id",
+                "denominator_role": "IDENTIFIER",
+                "reason": "Identifier-like attribute can serve as COUNT denominator.",
+                "confidence": 0.75,
+                "source": "name_heuristic"
+              },
+              {
+                "attribute": "a2",
+                "denominator_role": "UNIQUE_KEY",
+                "reason": "Column appears unique and can serve as count denominator.",
+                "confidence": 0.65,
+                "source": "profile_statistics"
+              },
+              {
+                "attribute": "a4",
+                "denominator_role": "UNIQUE_KEY",
+                "reason": "Column appears unique and can serve as count denominator.",
+                "confidence": 0.65,
+                "source": "profile_statistics"
+              }
+            ],
+            "preferred_denominator": "district_id",
+            "requires_query_context": true,
+            "confidence": 0.75
+          }
+        ]
+      },
+      "semantic_role": {
+        "primary_role": "EVIDENCE",
+        "confidence": 0.65,
+        "role_arguments": {
+          "quantitative_role": "MAGNITUDE"
+        },
+        "query_constraints": {
+          "can_aggregate": true,
+          "can_compare": true,
+          "can_order_as_measure": true
+        },
+        "justification": {
+          "source": "quantitative_vst"
+        }
+      },
+      "conditional_value_distribution": {
+        "a3": {
+          "group_attribute": "a3",
+          "value_attribute": "a13",
+          "profiles": {
+            "Prague": {
+              "count": 1,
+              "typical_range": [],
+              "extreme_range": [],
+              "recommended_stat": null,
+              "confidence": 0.3,
+              "fallback": {
+                "strategy": "GLOBAL_VALUE_AXIS",
+                "axis_attribute": "a13",
+                "reason": "insufficient samples for stable conditional statistics",
+                "min_support": 10
+              }
+            },
+            "central Bohemia": {
+              "count": 12,
+              "p50": 3.06,
+              "p90": 4.42,
+              "p99": 4.98,
+              "typical_range": [
+                0.54,
+                4.42
+              ],
+              "extreme_range": [
+                4.42,
+                5.05
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "south Bohemia": {
+              "count": 8,
+              "typical_range": [],
+              "extreme_range": [],
+              "recommended_stat": null,
+              "confidence": 0.3,
+              "fallback": {
+                "strategy": "GLOBAL_VALUE_AXIS",
+                "axis_attribute": "a13",
+                "reason": "insufficient samples for stable conditional statistics",
+                "min_support": 10
+              }
+            },
+            "west Bohemia": {
+              "count": 10,
+              "p50": 2.67,
+              "p90": 3.72,
+              "p99": 4.15,
+              "typical_range": [
+                1.25,
+                3.72
+              ],
+              "extreme_range": [
+                3.72,
+                4.2
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "north Bohemia": {
+              "count": 10,
+              "p50": 6.23,
+              "p90": 8.35,
+              "p99": 9.29,
+              "typical_range": [
+                1.21,
+                8.35
+              ],
+              "extreme_range": [
+                8.35,
+                9.4
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "east Bohemia": {
+              "count": 11,
+              "p50": 2.89,
+              "p90": 3.76,
+              "p99": 5.28,
+              "typical_range": [
+                1.81,
+                3.76
+              ],
+              "extreme_range": [
+                3.76,
+                5.45
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "south Moravia": {
+              "count": 14,
+              "p50": 4.04,
+              "p90": 5.5,
+              "p99": 5.74,
+              "typical_range": [
+                1.86,
+                5.5
+              ],
+              "extreme_range": [
+                5.5,
+                5.74
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "north Moravia": {
+              "count": 11,
+              "p50": 5.57,
+              "p90": 7.01,
+              "p99": 7.68,
+              "typical_range": [
+                3.74,
+                7.01
+              ],
+              "extreme_range": [
+                7.01,
+                7.75
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            }
+          },
+          "recommended_stat": "p99",
+          "confidence": 0.7,
+          "rationale": "Conditional distributions inferred from row-aligned numeric behavior; fallback used for sparse groups."
+        }
+      },
+      "query_constraints": {
+        "query_constraints": {
+          "supports_aggregation": true,
+          "allowed_aggregations": [
+            "SUM",
+            "AVG",
+            "MIN",
+            "MAX"
+          ],
+          "supports_range_filtering": true,
+          "supports_distributional_reasoning": true,
+          "supports_outlier_detection": true
+        },
+        "confidence": 0.85,
+        "rationale": "Operational query constraints inferred from semantic roles and value semantics."
+      }
+    },
+    "a14": {
+      "value_semantics": {
+        "semantic_type": "INTEGER",
+        "is_identifier": false,
+        "is_categorical": false,
+        "is_free_text": false,
+        "numeric": {
+          "is_numeric": true,
+          "is_continuous": false,
+          "is_discrete": true,
+          "min": 107.0,
+          "max": 167.0
+        },
+        "temporal": {
+          "is_date": false,
+          "is_datetime": false,
+          "is_duration": false,
+          "granularity": null
+        },
+        "confidence": 0.9,
+        "rationale": "Inferred INTEGER from value patterns."
+      },
+      "quantitative_vst": {
+        "role": "MAGNITUDE",
+        "confidence": 0.7,
+        "rationale": "General integer magnitude.",
+        "safe_aggregation": {
+          "default": "AVG",
+          "allowed": [
+            "AVG",
+            "MIN",
+            "MAX",
+            "SUM"
+          ],
+          "forbidden": [],
+          "reason": "Magnitude values are often compared or averaged; SUM may be valid depending on context.",
+          "confidence": 0.65
+        },
+        "derived_metric_candidates": [
+          {
+            "metric_type": "NORMALIZED_RATE",
+            "intent_terms": [
+              "rate",
+              "risk",
+              "per",
+              "ratio"
+            ],
+            "formula_template": "SUM(a14) / COUNT({denominator})",
+            "numerator": "a14",
+            "denominator_candidates": [
+              {
+                "attribute": "district_id",
+                "denominator_role": "IDENTIFIER",
+                "reason": "Identifier-like attribute can serve as COUNT denominator.",
+                "confidence": 0.75,
+                "source": "name_heuristic"
+              },
+              {
+                "attribute": "a2",
+                "denominator_role": "UNIQUE_KEY",
+                "reason": "Column appears unique and can serve as count denominator.",
+                "confidence": 0.65,
+                "source": "profile_statistics"
+              },
+              {
+                "attribute": "a4",
+                "denominator_role": "UNIQUE_KEY",
+                "reason": "Column appears unique and can serve as count denominator.",
+                "confidence": 0.65,
+                "source": "profile_statistics"
+              }
+            ],
+            "preferred_denominator": "district_id",
+            "requires_query_context": true,
+            "confidence": 0.75
+          }
+        ]
+      },
+      "semantic_role": {
+        "primary_role": "EVIDENCE",
+        "confidence": 0.7,
+        "role_arguments": {
+          "quantitative_role": "MAGNITUDE"
+        },
+        "query_constraints": {
+          "can_aggregate": true,
+          "can_compare": true,
+          "can_order_as_measure": true
+        },
+        "justification": {
+          "source": "quantitative_vst"
+        }
+      },
+      "conditional_value_distribution": {
+        "a3": {
+          "group_attribute": "a3",
+          "value_attribute": "a14",
+          "profiles": {
+            "Prague": {
+              "count": 1,
+              "typical_range": [],
+              "extreme_range": [],
+              "recommended_stat": null,
+              "confidence": 0.3,
+              "fallback": {
+                "strategy": "GLOBAL_VALUE_AXIS",
+                "axis_attribute": "a14",
+                "reason": "insufficient samples for stable conditional statistics",
+                "min_support": 10
+              }
+            },
+            "central Bohemia": {
+              "count": 12,
+              "p50": 128.5,
+              "p90": 148.2,
+              "p99": 153.45,
+              "typical_range": [
+                109.0,
+                148.2
+              ],
+              "extreme_range": [
+                148.2,
+                154.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "south Bohemia": {
+              "count": 8,
+              "typical_range": [],
+              "extreme_range": [],
+              "recommended_stat": null,
+              "confidence": 0.3,
+              "fallback": {
+                "strategy": "GLOBAL_VALUE_AXIS",
+                "axis_attribute": "a14",
+                "reason": "insufficient samples for stable conditional statistics",
+                "min_support": 10
+              }
+            },
+            "west Bohemia": {
+              "count": 10,
+              "p50": 111.0,
+              "p90": 128.3,
+              "p99": 130.73,
+              "typical_range": [
+                100.0,
+                128.3
+              ],
+              "extreme_range": [
+                128.3,
+                131.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "north Bohemia": {
+              "count": 10,
+              "p50": 115.0,
+              "p90": 130.1,
+              "p99": 130.91,
+              "typical_range": [
+                90.0,
+                130.1
+              ],
+              "extreme_range": [
+                130.1,
+                131.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "east Bohemia": {
+              "count": 11,
+              "p50": 117.0,
+              "p90": 132.0,
+              "p99": 152.7,
+              "typical_range": [
+                87.0,
+                132.0
+              ],
+              "extreme_range": [
+                132.0,
+                155.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "south Moravia": {
+              "count": 14,
+              "p50": 109.5,
+              "p90": 135.8,
+              "p99": 144.35,
+              "typical_range": [
+                96.0,
+                135.8
+              ],
+              "extreme_range": [
+                135.8,
+                145.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "north Moravia": {
+              "count": 11,
+              "p50": 102.0,
+              "p90": 113.0,
+              "p99": 122.9,
+              "typical_range": [
+                81.0,
+                113.0
+              ],
+              "extreme_range": [
+                113.0,
+                124.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            }
+          },
+          "recommended_stat": "p99",
+          "confidence": 0.7,
+          "rationale": "Conditional distributions inferred from row-aligned numeric behavior; fallback used for sparse groups."
+        }
+      },
+      "query_constraints": {
+        "query_constraints": {
+          "supports_aggregation": true,
+          "allowed_aggregations": [
+            "SUM",
+            "AVG",
+            "MIN",
+            "MAX"
+          ],
+          "supports_range_filtering": true,
+          "supports_distributional_reasoning": true,
+          "supports_outlier_detection": true
+        },
+        "confidence": 0.85,
+        "rationale": "Operational query constraints inferred from semantic roles and value semantics."
+      }
+    },
+    "a15": {
+      "value_semantics": {
+        "semantic_type": "INTEGER",
+        "is_identifier": false,
+        "is_categorical": false,
+        "is_free_text": false,
+        "numeric": {
+          "is_numeric": true,
+          "is_continuous": false,
+          "is_discrete": true,
+          "min": 999.0,
+          "max": 85677.0
+        },
+        "temporal": {
+          "is_date": false,
+          "is_datetime": false,
+          "is_duration": false,
+          "granularity": null
+        },
+        "confidence": 0.9,
+        "rationale": "Inferred INTEGER from value patterns."
+      },
+      "quantitative_vst": {
+        "role": "MAGNITUDE",
+        "confidence": 0.7,
+        "rationale": "General integer magnitude.",
+        "safe_aggregation": {
+          "default": "AVG",
+          "allowed": [
+            "AVG",
+            "MIN",
+            "MAX",
+            "SUM"
+          ],
+          "forbidden": [],
+          "reason": "Magnitude values are often compared or averaged; SUM may be valid depending on context.",
+          "confidence": 0.65
+        },
+        "derived_metric_candidates": [
+          {
+            "metric_type": "NORMALIZED_RATE",
+            "intent_terms": [
+              "rate",
+              "risk",
+              "per",
+              "ratio"
+            ],
+            "formula_template": "SUM(a15) / COUNT({denominator})",
+            "numerator": "a15",
+            "denominator_candidates": [
+              {
+                "attribute": "district_id",
+                "denominator_role": "IDENTIFIER",
+                "reason": "Identifier-like attribute can serve as COUNT denominator.",
+                "confidence": 0.75,
+                "source": "name_heuristic"
+              },
+              {
+                "attribute": "a2",
+                "denominator_role": "UNIQUE_KEY",
+                "reason": "Column appears unique and can serve as count denominator.",
+                "confidence": 0.65,
+                "source": "profile_statistics"
+              },
+              {
+                "attribute": "a4",
+                "denominator_role": "UNIQUE_KEY",
+                "reason": "Column appears unique and can serve as count denominator.",
+                "confidence": 0.65,
+                "source": "profile_statistics"
+              }
+            ],
+            "preferred_denominator": "district_id",
+            "requires_query_context": true,
+            "confidence": 0.75
+          }
+        ]
+      },
+      "semantic_role": {
+        "primary_role": "EVIDENCE",
+        "confidence": 0.7,
+        "role_arguments": {
+          "quantitative_role": "MAGNITUDE"
+        },
+        "query_constraints": {
+          "can_aggregate": true,
+          "can_compare": true,
+          "can_order_as_measure": true
+        },
+        "justification": {
+          "source": "quantitative_vst"
+        }
+      },
+      "conditional_value_distribution": {
+        "a3": {
+          "group_attribute": "a3",
+          "value_attribute": "a15",
+          "profiles": {
+            "Prague": {
+              "count": 1,
+              "typical_range": [],
+              "extreme_range": [],
+              "recommended_stat": null,
+              "confidence": 0.3,
+              "fallback": {
+                "strategy": "GLOBAL_VALUE_AXIS",
+                "axis_attribute": "a15",
+                "reason": "insufficient samples for stable conditional statistics",
+                "min_support": 10
+              }
+            },
+            "central Bohemia": {
+              "count": 12,
+              "p50": 3231.0,
+              "p90": 5090.0,
+              "p99": 5236.85,
+              "typical_range": [
+                1597.0,
+                5090.0
+              ],
+              "extreme_range": [
+                5090.0,
+                5244.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "south Bohemia": {
+              "count": 8,
+              "typical_range": [],
+              "extreme_range": [],
+              "recommended_stat": null,
+              "confidence": 0.3,
+              "fallback": {
+                "strategy": "GLOBAL_VALUE_AXIS",
+                "axis_attribute": "a15",
+                "reason": "insufficient samples for stable conditional statistics",
+                "min_support": 10
+              }
+            },
+            "west Bohemia": {
+              "count": 10,
+              "p50": 1701.0,
+              "p90": 5282.3,
+              "p99": 5965.13,
+              "typical_range": [
+                818.0,
+                5282.3
+              ],
+              "extreme_range": [
+                5282.3,
+                6041.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "north Bohemia": {
+              "count": 10,
+              "p50": 4798.5,
+              "p90": 6495.4,
+              "p99": 6903.64,
+              "typical_range": [
+                2653.0,
+                6495.4
+              ],
+              "extreme_range": [
+                6495.4,
+                6949.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "east Bohemia": {
+              "count": 11,
+              "p50": 2166.0,
+              "p90": 4085.0,
+              "p99": 5879.6,
+              "typical_range": [
+                1655.0,
+                4085.0
+              ],
+              "extreme_range": [
+                4085.0,
+                6079.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "south Moravia": {
+              "count": 14,
+              "p50": 2421.0,
+              "p90": 4257.5,
+              "p99": 16870.19,
+              "typical_range": [
+                1562.0,
+                4257.5
+              ],
+              "extreme_range": [
+                4257.5,
+                18721.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "north Moravia": {
+              "count": 11,
+              "p50": NaN,
+              "p90": NaN,
+              "p99": NaN,
+              "typical_range": [
+                NaN,
+                NaN
+              ],
+              "extreme_range": [
+                NaN,
+                NaN
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            }
+          },
+          "recommended_stat": "p99",
+          "confidence": 0.7,
+          "rationale": "Conditional distributions inferred from row-aligned numeric behavior; fallback used for sparse groups."
+        }
+      },
+      "query_constraints": {
+        "query_constraints": {
+          "supports_aggregation": true,
+          "allowed_aggregations": [
+            "SUM",
+            "AVG",
+            "MIN",
+            "MAX"
+          ],
+          "supports_range_filtering": true,
+          "supports_distributional_reasoning": true,
+          "supports_outlier_detection": true
+        },
+        "confidence": 0.85,
+        "rationale": "Operational query constraints inferred from semantic roles and value semantics."
+      }
+    },
+    "a16": {
+      "value_semantics": {
+        "semantic_type": "INTEGER",
+        "is_identifier": false,
+        "is_categorical": false,
+        "is_free_text": false,
+        "numeric": {
+          "is_numeric": true,
+          "is_continuous": false,
+          "is_discrete": true,
+          "min": 1099.0,
+          "max": 99107.0
+        },
+        "temporal": {
+          "is_date": false,
+          "is_datetime": false,
+          "is_duration": false,
+          "granularity": null
+        },
+        "confidence": 0.9,
+        "rationale": "Inferred INTEGER from value patterns."
+      },
+      "quantitative_vst": {
+        "role": "MAGNITUDE",
+        "confidence": 0.7,
+        "rationale": "General integer magnitude.",
+        "safe_aggregation": {
+          "default": "AVG",
+          "allowed": [
+            "AVG",
+            "MIN",
+            "MAX",
+            "SUM"
+          ],
+          "forbidden": [],
+          "reason": "Magnitude values are often compared or averaged; SUM may be valid depending on context.",
+          "confidence": 0.65
+        },
+        "derived_metric_candidates": [
+          {
+            "metric_type": "NORMALIZED_RATE",
+            "intent_terms": [
+              "rate",
+              "risk",
+              "per",
+              "ratio"
+            ],
+            "formula_template": "SUM(a16) / COUNT({denominator})",
+            "numerator": "a16",
+            "denominator_candidates": [
+              {
+                "attribute": "district_id",
+                "denominator_role": "IDENTIFIER",
+                "reason": "Identifier-like attribute can serve as COUNT denominator.",
+                "confidence": 0.75,
+                "source": "name_heuristic"
+              },
+              {
+                "attribute": "a2",
+                "denominator_role": "UNIQUE_KEY",
+                "reason": "Column appears unique and can serve as count denominator.",
+                "confidence": 0.65,
+                "source": "profile_statistics"
+              },
+              {
+                "attribute": "a4",
+                "denominator_role": "UNIQUE_KEY",
+                "reason": "Column appears unique and can serve as count denominator.",
+                "confidence": 0.65,
+                "source": "profile_statistics"
+              }
+            ],
+            "preferred_denominator": "district_id",
+            "requires_query_context": true,
+            "confidence": 0.75
+          }
+        ]
+      },
+      "semantic_role": {
+        "primary_role": "EVIDENCE",
+        "confidence": 0.7,
+        "role_arguments": {
+          "quantitative_role": "MAGNITUDE"
+        },
+        "query_constraints": {
+          "can_aggregate": true,
+          "can_compare": true,
+          "can_order_as_measure": true
+        },
+        "justification": {
+          "source": "quantitative_vst"
+        }
+      },
+      "conditional_value_distribution": {
+        "a3": {
+          "group_attribute": "a3",
+          "value_attribute": "a16",
+          "profiles": {
+            "Prague": {
+              "count": 1,
+              "typical_range": [],
+              "extreme_range": [],
+              "recommended_stat": null,
+              "confidence": 0.3,
+              "fallback": {
+                "strategy": "GLOBAL_VALUE_AXIS",
+                "axis_attribute": "a16",
+                "reason": "insufficient samples for stable conditional statistics",
+                "min_support": 10
+              }
+            },
+            "central Bohemia": {
+              "count": 12,
+              "p50": 3324.5,
+              "p90": 4972.9,
+              "p99": 5792.45,
+              "typical_range": [
+                1875.0,
+                4972.9
+              ],
+              "extreme_range": [
+                4972.9,
+                5892.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "south Bohemia": {
+              "count": 8,
+              "typical_range": [],
+              "extreme_range": [],
+              "recommended_stat": null,
+              "confidence": 0.3,
+              "fallback": {
+                "strategy": "GLOBAL_VALUE_AXIS",
+                "axis_attribute": "a16",
+                "reason": "insufficient samples for stable conditional statistics",
+                "min_support": 10
+              }
+            },
+            "west Bohemia": {
+              "count": 10,
+              "p50": 1871.5,
+              "p90": 5371.8,
+              "p99": 6172.08,
+              "typical_range": [
+                888.0,
+                5371.8
+              ],
+              "extreme_range": [
+                5371.8,
+                6261.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "north Bohemia": {
+              "count": 10,
+              "p50": 4801.0,
+              "p90": 6206.0,
+              "p99": 6805.4,
+              "typical_range": [
+                2822.0,
+                6206.0
+              ],
+              "extreme_range": [
+                6206.0,
+                6872.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "east Bohemia": {
+              "count": 11,
+              "p50": 2325.0,
+              "p90": 3891.0,
+              "p99": 5258.1,
+              "typical_range": [
+                1668.0,
+                3891.0
+              ],
+              "extreme_range": [
+                3891.0,
+                5410.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "south Moravia": {
+              "count": 14,
+              "p50": 2594.5,
+              "p90": 4153.7,
+              "p99": 16819.97,
+              "typical_range": [
+                1460.0,
+                4153.7
+              ],
+              "extreme_range": [
+                4153.7,
+                18696.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "north Moravia": {
+              "count": 11,
+              "p50": 4505.0,
+              "p90": 10108.0,
+              "p99": 17523.1,
+              "typical_range": [
+                1358.0,
+                10108.0
+              ],
+              "extreme_range": [
+                10108.0,
+                18347.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            }
+          },
+          "recommended_stat": "p99",
+          "confidence": 0.7,
+          "rationale": "Conditional distributions inferred from row-aligned numeric behavior; fallback used for sparse groups."
+        }
+      },
+      "query_constraints": {
+        "query_constraints": {
+          "supports_aggregation": true,
+          "allowed_aggregations": [
+            "SUM",
+            "AVG",
+            "MIN",
+            "MAX"
+          ],
+          "supports_range_filtering": true,
+          "supports_distributional_reasoning": true,
+          "supports_outlier_detection": true
+        },
+        "confidence": 0.85,
+        "rationale": "Operational query constraints inferred from semantic roles and value semantics."
+      }
+    }
+  },
+  "table_semantics": {
+    "semantic_links": [
+      {
+        "source": "a2",
+        "target": "a4",
+        "relationship": "SEGMENTS",
+        "signal": "grouped_distribution",
+        "confidence": 0.75,
+        "rationale": "Grouping source values produces meaningfully different target distributions.",
+        "validation_status": "accepted",
+        "validation_evidence": {
+          "num_groups": 77,
+          "supported_groups": 77,
+          "group_counts": {
+            "Hl.m. Praha": 1,
+            "Benesov": 1,
+            "Beroun": 1,
+            "Kladno": 1,
+            "Kolin": 1,
+            "Kutna Hora": 1,
+            "Melnik": 1,
+            "Mlada Boleslav": 1,
+            "Nymburk": 1,
+            "Praha - vychod": 1,
+            "Praha - zapad": 1,
+            "Pribram": 1,
+            "Rakovnik": 1,
+            "Ceske Budejovice": 1,
+            "Cesky Krumlov": 1,
+            "Jindrichuv Hradec": 1,
+            "Pelhrimov": 1,
+            "Pisek": 1,
+            "Prachatice": 1,
+            "Strakonice": 1,
+            "Tabor": 1,
+            "Domazlice": 1,
+            "Cheb": 1,
+            "Karlovy Vary": 1,
+            "Klatovy": 1,
+            "Plzen - mesto": 1,
+            "Plzen - jih": 1,
+            "Plzen - sever": 1,
+            "Rokycany": 1,
+            "Sokolov": 1,
+            "Tachov": 1,
+            "Ceska Lipa": 1,
+            "Decin": 1,
+            "Chomutov": 1,
+            "Jablonec n. Nisou": 1,
+            "Liberec": 1,
+            "Litomerice": 1,
+            "Louny": 1,
+            "Most": 1,
+            "Teplice": 1,
+            "Usti nad Labem": 1,
+            "Havlickuv Brod": 1,
+            "Hradec Kralove": 1,
+            "Chrudim": 1,
+            "Jicin": 1,
+            "Nachod": 1,
+            "Pardubice": 1,
+            "Rychnov nad Kneznou": 1,
+            "Semily": 1,
+            "Svitavy": 1,
+            "Trutnov": 1,
+            "Usti nad Orlici": 1,
+            "Blansko": 1,
+            "Brno - mesto": 1,
+            "Brno - venkov": 1,
+            "Breclav": 1,
+            "Hodonin": 1,
+            "Jihlava": 1,
+            "Kromeriz": 1,
+            "Prostejov": 1,
+            "Trebic": 1,
+            "Uherske Hradiste": 1,
+            "Vyskov": 1,
+            "Zlin": 1,
+            "Znojmo": 1,
+            "Zdar nad Sazavou": 1,
+            "Bruntal": 1,
+            "Frydek - Mistek": 1,
+            "Jesenik": 1,
+            "Karvina": 1,
+            "Novy Jicin": 1,
+            "Olomouc": 1,
+            "Opava": 1,
+            "Ostrava - mesto": 1,
+            "Prerov": 1,
+            "Sumperk": 1,
+            "Vsetin": 1
+          }
+        },
+        "validation_reason": "Categorical source has sufficient support and segments quantitative target."
+      },
+      {
+        "source": "a2",
+        "target": "a5",
+        "relationship": "SEGMENTS",
+        "signal": "grouped_distribution",
+        "confidence": 0.75,
+        "rationale": "Grouping source values produces meaningfully different target distributions.",
+        "validation_status": "accepted",
+        "validation_evidence": {
+          "num_groups": 77,
+          "supported_groups": 77,
+          "group_counts": {
+            "Hl.m. Praha": 1,
+            "Benesov": 1,
+            "Beroun": 1,
+            "Kladno": 1,
+            "Kolin": 1,
+            "Kutna Hora": 1,
+            "Melnik": 1,
+            "Mlada Boleslav": 1,
+            "Nymburk": 1,
+            "Praha - vychod": 1,
+            "Praha - zapad": 1,
+            "Pribram": 1,
+            "Rakovnik": 1,
+            "Ceske Budejovice": 1,
+            "Cesky Krumlov": 1,
+            "Jindrichuv Hradec": 1,
+            "Pelhrimov": 1,
+            "Pisek": 1,
+            "Prachatice": 1,
+            "Strakonice": 1,
+            "Tabor": 1,
+            "Domazlice": 1,
+            "Cheb": 1,
+            "Karlovy Vary": 1,
+            "Klatovy": 1,
+            "Plzen - mesto": 1,
+            "Plzen - jih": 1,
+            "Plzen - sever": 1,
+            "Rokycany": 1,
+            "Sokolov": 1,
+            "Tachov": 1,
+            "Ceska Lipa": 1,
+            "Decin": 1,
+            "Chomutov": 1,
+            "Jablonec n. Nisou": 1,
+            "Liberec": 1,
+            "Litomerice": 1,
+            "Louny": 1,
+            "Most": 1,
+            "Teplice": 1,
+            "Usti nad Labem": 1,
+            "Havlickuv Brod": 1,
+            "Hradec Kralove": 1,
+            "Chrudim": 1,
+            "Jicin": 1,
+            "Nachod": 1,
+            "Pardubice": 1,
+            "Rychnov nad Kneznou": 1,
+            "Semily": 1,
+            "Svitavy": 1,
+            "Trutnov": 1,
+            "Usti nad Orlici": 1,
+            "Blansko": 1,
+            "Brno - mesto": 1,
+            "Brno - venkov": 1,
+            "Breclav": 1,
+            "Hodonin": 1,
+            "Jihlava": 1,
+            "Kromeriz": 1,
+            "Prostejov": 1,
+            "Trebic": 1,
+            "Uherske Hradiste": 1,
+            "Vyskov": 1,
+            "Zlin": 1,
+            "Znojmo": 1,
+            "Zdar nad Sazavou": 1,
+            "Bruntal": 1,
+            "Frydek - Mistek": 1,
+            "Jesenik": 1,
+            "Karvina": 1,
+            "Novy Jicin": 1,
+            "Olomouc": 1,
+            "Opava": 1,
+            "Ostrava - mesto": 1,
+            "Prerov": 1,
+            "Sumperk": 1,
+            "Vsetin": 1
+          }
+        },
+        "validation_reason": "Categorical source has sufficient support and segments quantitative target."
+      },
+      {
+        "source": "a2",
+        "target": "a6",
+        "relationship": "SEGMENTS",
+        "signal": "grouped_distribution",
+        "confidence": 0.75,
+        "rationale": "Grouping source values produces meaningfully different target distributions.",
+        "validation_status": "accepted",
+        "validation_evidence": {
+          "num_groups": 77,
+          "supported_groups": 77,
+          "group_counts": {
+            "Hl.m. Praha": 1,
+            "Benesov": 1,
+            "Beroun": 1,
+            "Kladno": 1,
+            "Kolin": 1,
+            "Kutna Hora": 1,
+            "Melnik": 1,
+            "Mlada Boleslav": 1,
+            "Nymburk": 1,
+            "Praha - vychod": 1,
+            "Praha - zapad": 1,
+            "Pribram": 1,
+            "Rakovnik": 1,
+            "Ceske Budejovice": 1,
+            "Cesky Krumlov": 1,
+            "Jindrichuv Hradec": 1,
+            "Pelhrimov": 1,
+            "Pisek": 1,
+            "Prachatice": 1,
+            "Strakonice": 1,
+            "Tabor": 1,
+            "Domazlice": 1,
+            "Cheb": 1,
+            "Karlovy Vary": 1,
+            "Klatovy": 1,
+            "Plzen - mesto": 1,
+            "Plzen - jih": 1,
+            "Plzen - sever": 1,
+            "Rokycany": 1,
+            "Sokolov": 1,
+            "Tachov": 1,
+            "Ceska Lipa": 1,
+            "Decin": 1,
+            "Chomutov": 1,
+            "Jablonec n. Nisou": 1,
+            "Liberec": 1,
+            "Litomerice": 1,
+            "Louny": 1,
+            "Most": 1,
+            "Teplice": 1,
+            "Usti nad Labem": 1,
+            "Havlickuv Brod": 1,
+            "Hradec Kralove": 1,
+            "Chrudim": 1,
+            "Jicin": 1,
+            "Nachod": 1,
+            "Pardubice": 1,
+            "Rychnov nad Kneznou": 1,
+            "Semily": 1,
+            "Svitavy": 1,
+            "Trutnov": 1,
+            "Usti nad Orlici": 1,
+            "Blansko": 1,
+            "Brno - mesto": 1,
+            "Brno - venkov": 1,
+            "Breclav": 1,
+            "Hodonin": 1,
+            "Jihlava": 1,
+            "Kromeriz": 1,
+            "Prostejov": 1,
+            "Trebic": 1,
+            "Uherske Hradiste": 1,
+            "Vyskov": 1,
+            "Zlin": 1,
+            "Znojmo": 1,
+            "Zdar nad Sazavou": 1,
+            "Bruntal": 1,
+            "Frydek - Mistek": 1,
+            "Jesenik": 1,
+            "Karvina": 1,
+            "Novy Jicin": 1,
+            "Olomouc": 1,
+            "Opava": 1,
+            "Ostrava - mesto": 1,
+            "Prerov": 1,
+            "Sumperk": 1,
+            "Vsetin": 1
+          }
+        },
+        "validation_reason": "Categorical source has sufficient support and segments quantitative target."
+      },
+      {
+        "source": "a2",
+        "target": "a7",
+        "relationship": "SEGMENTS",
+        "signal": "grouped_distribution",
+        "confidence": 0.75,
+        "rationale": "Grouping source values produces meaningfully different target distributions.",
+        "validation_status": "accepted",
+        "validation_evidence": {
+          "num_groups": 77,
+          "supported_groups": 77,
+          "group_counts": {
+            "Hl.m. Praha": 1,
+            "Benesov": 1,
+            "Beroun": 1,
+            "Kladno": 1,
+            "Kolin": 1,
+            "Kutna Hora": 1,
+            "Melnik": 1,
+            "Mlada Boleslav": 1,
+            "Nymburk": 1,
+            "Praha - vychod": 1,
+            "Praha - zapad": 1,
+            "Pribram": 1,
+            "Rakovnik": 1,
+            "Ceske Budejovice": 1,
+            "Cesky Krumlov": 1,
+            "Jindrichuv Hradec": 1,
+            "Pelhrimov": 1,
+            "Pisek": 1,
+            "Prachatice": 1,
+            "Strakonice": 1,
+            "Tabor": 1,
+            "Domazlice": 1,
+            "Cheb": 1,
+            "Karlovy Vary": 1,
+            "Klatovy": 1,
+            "Plzen - mesto": 1,
+            "Plzen - jih": 1,
+            "Plzen - sever": 1,
+            "Rokycany": 1,
+            "Sokolov": 1,
+            "Tachov": 1,
+            "Ceska Lipa": 1,
+            "Decin": 1,
+            "Chomutov": 1,
+            "Jablonec n. Nisou": 1,
+            "Liberec": 1,
+            "Litomerice": 1,
+            "Louny": 1,
+            "Most": 1,
+            "Teplice": 1,
+            "Usti nad Labem": 1,
+            "Havlickuv Brod": 1,
+            "Hradec Kralove": 1,
+            "Chrudim": 1,
+            "Jicin": 1,
+            "Nachod": 1,
+            "Pardubice": 1,
+            "Rychnov nad Kneznou": 1,
+            "Semily": 1,
+            "Svitavy": 1,
+            "Trutnov": 1,
+            "Usti nad Orlici": 1,
+            "Blansko": 1,
+            "Brno - mesto": 1,
+            "Brno - venkov": 1,
+            "Breclav": 1,
+            "Hodonin": 1,
+            "Jihlava": 1,
+            "Kromeriz": 1,
+            "Prostejov": 1,
+            "Trebic": 1,
+            "Uherske Hradiste": 1,
+            "Vyskov": 1,
+            "Zlin": 1,
+            "Znojmo": 1,
+            "Zdar nad Sazavou": 1,
+            "Bruntal": 1,
+            "Frydek - Mistek": 1,
+            "Jesenik": 1,
+            "Karvina": 1,
+            "Novy Jicin": 1,
+            "Olomouc": 1,
+            "Opava": 1,
+            "Ostrava - mesto": 1,
+            "Prerov": 1,
+            "Sumperk": 1,
+            "Vsetin": 1
+          }
+        },
+        "validation_reason": "Categorical source has sufficient support and segments quantitative target."
+      },
+      {
+        "source": "a2",
+        "target": "a8",
+        "relationship": "SEGMENTS",
+        "signal": "grouped_distribution",
+        "confidence": 0.75,
+        "rationale": "Grouping source values produces meaningfully different target distributions.",
+        "validation_status": "accepted",
+        "validation_evidence": {
+          "num_groups": 77,
+          "supported_groups": 77,
+          "group_counts": {
+            "Hl.m. Praha": 1,
+            "Benesov": 1,
+            "Beroun": 1,
+            "Kladno": 1,
+            "Kolin": 1,
+            "Kutna Hora": 1,
+            "Melnik": 1,
+            "Mlada Boleslav": 1,
+            "Nymburk": 1,
+            "Praha - vychod": 1,
+            "Praha - zapad": 1,
+            "Pribram": 1,
+            "Rakovnik": 1,
+            "Ceske Budejovice": 1,
+            "Cesky Krumlov": 1,
+            "Jindrichuv Hradec": 1,
+            "Pelhrimov": 1,
+            "Pisek": 1,
+            "Prachatice": 1,
+            "Strakonice": 1,
+            "Tabor": 1,
+            "Domazlice": 1,
+            "Cheb": 1,
+            "Karlovy Vary": 1,
+            "Klatovy": 1,
+            "Plzen - mesto": 1,
+            "Plzen - jih": 1,
+            "Plzen - sever": 1,
+            "Rokycany": 1,
+            "Sokolov": 1,
+            "Tachov": 1,
+            "Ceska Lipa": 1,
+            "Decin": 1,
+            "Chomutov": 1,
+            "Jablonec n. Nisou": 1,
+            "Liberec": 1,
+            "Litomerice": 1,
+            "Louny": 1,
+            "Most": 1,
+            "Teplice": 1,
+            "Usti nad Labem": 1,
+            "Havlickuv Brod": 1,
+            "Hradec Kralove": 1,
+            "Chrudim": 1,
+            "Jicin": 1,
+            "Nachod": 1,
+            "Pardubice": 1,
+            "Rychnov nad Kneznou": 1,
+            "Semily": 1,
+            "Svitavy": 1,
+            "Trutnov": 1,
+            "Usti nad Orlici": 1,
+            "Blansko": 1,
+            "Brno - mesto": 1,
+            "Brno - venkov": 1,
+            "Breclav": 1,
+            "Hodonin": 1,
+            "Jihlava": 1,
+            "Kromeriz": 1,
+            "Prostejov": 1,
+            "Trebic": 1,
+            "Uherske Hradiste": 1,
+            "Vyskov": 1,
+            "Zlin": 1,
+            "Znojmo": 1,
+            "Zdar nad Sazavou": 1,
+            "Bruntal": 1,
+            "Frydek - Mistek": 1,
+            "Jesenik": 1,
+            "Karvina": 1,
+            "Novy Jicin": 1,
+            "Olomouc": 1,
+            "Opava": 1,
+            "Ostrava - mesto": 1,
+            "Prerov": 1,
+            "Sumperk": 1,
+            "Vsetin": 1
+          }
+        },
+        "validation_reason": "Categorical source has sufficient support and segments quantitative target."
+      },
+      {
+        "source": "a2",
+        "target": "a9",
+        "relationship": "SEGMENTS",
+        "signal": "grouped_distribution",
+        "confidence": 0.75,
+        "rationale": "Grouping source values produces meaningfully different target distributions.",
+        "validation_status": "accepted",
+        "validation_evidence": {
+          "num_groups": 77,
+          "supported_groups": 77,
+          "group_counts": {
+            "Hl.m. Praha": 1,
+            "Benesov": 1,
+            "Beroun": 1,
+            "Kladno": 1,
+            "Kolin": 1,
+            "Kutna Hora": 1,
+            "Melnik": 1,
+            "Mlada Boleslav": 1,
+            "Nymburk": 1,
+            "Praha - vychod": 1,
+            "Praha - zapad": 1,
+            "Pribram": 1,
+            "Rakovnik": 1,
+            "Ceske Budejovice": 1,
+            "Cesky Krumlov": 1,
+            "Jindrichuv Hradec": 1,
+            "Pelhrimov": 1,
+            "Pisek": 1,
+            "Prachatice": 1,
+            "Strakonice": 1,
+            "Tabor": 1,
+            "Domazlice": 1,
+            "Cheb": 1,
+            "Karlovy Vary": 1,
+            "Klatovy": 1,
+            "Plzen - mesto": 1,
+            "Plzen - jih": 1,
+            "Plzen - sever": 1,
+            "Rokycany": 1,
+            "Sokolov": 1,
+            "Tachov": 1,
+            "Ceska Lipa": 1,
+            "Decin": 1,
+            "Chomutov": 1,
+            "Jablonec n. Nisou": 1,
+            "Liberec": 1,
+            "Litomerice": 1,
+            "Louny": 1,
+            "Most": 1,
+            "Teplice": 1,
+            "Usti nad Labem": 1,
+            "Havlickuv Brod": 1,
+            "Hradec Kralove": 1,
+            "Chrudim": 1,
+            "Jicin": 1,
+            "Nachod": 1,
+            "Pardubice": 1,
+            "Rychnov nad Kneznou": 1,
+            "Semily": 1,
+            "Svitavy": 1,
+            "Trutnov": 1,
+            "Usti nad Orlici": 1,
+            "Blansko": 1,
+            "Brno - mesto": 1,
+            "Brno - venkov": 1,
+            "Breclav": 1,
+            "Hodonin": 1,
+            "Jihlava": 1,
+            "Kromeriz": 1,
+            "Prostejov": 1,
+            "Trebic": 1,
+            "Uherske Hradiste": 1,
+            "Vyskov": 1,
+            "Zlin": 1,
+            "Znojmo": 1,
+            "Zdar nad Sazavou": 1,
+            "Bruntal": 1,
+            "Frydek - Mistek": 1,
+            "Jesenik": 1,
+            "Karvina": 1,
+            "Novy Jicin": 1,
+            "Olomouc": 1,
+            "Opava": 1,
+            "Ostrava - mesto": 1,
+            "Prerov": 1,
+            "Sumperk": 1,
+            "Vsetin": 1
+          }
+        },
+        "validation_reason": "Categorical source has sufficient support and segments quantitative target."
+      },
+      {
+        "source": "a2",
+        "target": "a10",
+        "relationship": "SEGMENTS",
+        "signal": "grouped_distribution",
+        "confidence": 0.75,
+        "rationale": "Grouping source values produces meaningfully different target distributions.",
+        "validation_status": "accepted",
+        "validation_evidence": {
+          "num_groups": 77,
+          "supported_groups": 77,
+          "group_counts": {
+            "Hl.m. Praha": 1,
+            "Benesov": 1,
+            "Beroun": 1,
+            "Kladno": 1,
+            "Kolin": 1,
+            "Kutna Hora": 1,
+            "Melnik": 1,
+            "Mlada Boleslav": 1,
+            "Nymburk": 1,
+            "Praha - vychod": 1,
+            "Praha - zapad": 1,
+            "Pribram": 1,
+            "Rakovnik": 1,
+            "Ceske Budejovice": 1,
+            "Cesky Krumlov": 1,
+            "Jindrichuv Hradec": 1,
+            "Pelhrimov": 1,
+            "Pisek": 1,
+            "Prachatice": 1,
+            "Strakonice": 1,
+            "Tabor": 1,
+            "Domazlice": 1,
+            "Cheb": 1,
+            "Karlovy Vary": 1,
+            "Klatovy": 1,
+            "Plzen - mesto": 1,
+            "Plzen - jih": 1,
+            "Plzen - sever": 1,
+            "Rokycany": 1,
+            "Sokolov": 1,
+            "Tachov": 1,
+            "Ceska Lipa": 1,
+            "Decin": 1,
+            "Chomutov": 1,
+            "Jablonec n. Nisou": 1,
+            "Liberec": 1,
+            "Litomerice": 1,
+            "Louny": 1,
+            "Most": 1,
+            "Teplice": 1,
+            "Usti nad Labem": 1,
+            "Havlickuv Brod": 1,
+            "Hradec Kralove": 1,
+            "Chrudim": 1,
+            "Jicin": 1,
+            "Nachod": 1,
+            "Pardubice": 1,
+            "Rychnov nad Kneznou": 1,
+            "Semily": 1,
+            "Svitavy": 1,
+            "Trutnov": 1,
+            "Usti nad Orlici": 1,
+            "Blansko": 1,
+            "Brno - mesto": 1,
+            "Brno - venkov": 1,
+            "Breclav": 1,
+            "Hodonin": 1,
+            "Jihlava": 1,
+            "Kromeriz": 1,
+            "Prostejov": 1,
+            "Trebic": 1,
+            "Uherske Hradiste": 1,
+            "Vyskov": 1,
+            "Zlin": 1,
+            "Znojmo": 1,
+            "Zdar nad Sazavou": 1,
+            "Bruntal": 1,
+            "Frydek - Mistek": 1,
+            "Jesenik": 1,
+            "Karvina": 1,
+            "Novy Jicin": 1,
+            "Olomouc": 1,
+            "Opava": 1,
+            "Ostrava - mesto": 1,
+            "Prerov": 1,
+            "Sumperk": 1,
+            "Vsetin": 1
+          }
+        },
+        "validation_reason": "Categorical source has sufficient support and segments quantitative target."
+      },
+      {
+        "source": "a2",
+        "target": "a11",
+        "relationship": "SEGMENTS",
+        "signal": "grouped_distribution",
+        "confidence": 0.75,
+        "rationale": "Grouping source values produces meaningfully different target distributions.",
+        "validation_status": "accepted",
+        "validation_evidence": {
+          "num_groups": 77,
+          "supported_groups": 77,
+          "group_counts": {
+            "Hl.m. Praha": 1,
+            "Benesov": 1,
+            "Beroun": 1,
+            "Kladno": 1,
+            "Kolin": 1,
+            "Kutna Hora": 1,
+            "Melnik": 1,
+            "Mlada Boleslav": 1,
+            "Nymburk": 1,
+            "Praha - vychod": 1,
+            "Praha - zapad": 1,
+            "Pribram": 1,
+            "Rakovnik": 1,
+            "Ceske Budejovice": 1,
+            "Cesky Krumlov": 1,
+            "Jindrichuv Hradec": 1,
+            "Pelhrimov": 1,
+            "Pisek": 1,
+            "Prachatice": 1,
+            "Strakonice": 1,
+            "Tabor": 1,
+            "Domazlice": 1,
+            "Cheb": 1,
+            "Karlovy Vary": 1,
+            "Klatovy": 1,
+            "Plzen - mesto": 1,
+            "Plzen - jih": 1,
+            "Plzen - sever": 1,
+            "Rokycany": 1,
+            "Sokolov": 1,
+            "Tachov": 1,
+            "Ceska Lipa": 1,
+            "Decin": 1,
+            "Chomutov": 1,
+            "Jablonec n. Nisou": 1,
+            "Liberec": 1,
+            "Litomerice": 1,
+            "Louny": 1,
+            "Most": 1,
+            "Teplice": 1,
+            "Usti nad Labem": 1,
+            "Havlickuv Brod": 1,
+            "Hradec Kralove": 1,
+            "Chrudim": 1,
+            "Jicin": 1,
+            "Nachod": 1,
+            "Pardubice": 1,
+            "Rychnov nad Kneznou": 1,
+            "Semily": 1,
+            "Svitavy": 1,
+            "Trutnov": 1,
+            "Usti nad Orlici": 1,
+            "Blansko": 1,
+            "Brno - mesto": 1,
+            "Brno - venkov": 1,
+            "Breclav": 1,
+            "Hodonin": 1,
+            "Jihlava": 1,
+            "Kromeriz": 1,
+            "Prostejov": 1,
+            "Trebic": 1,
+            "Uherske Hradiste": 1,
+            "Vyskov": 1,
+            "Zlin": 1,
+            "Znojmo": 1,
+            "Zdar nad Sazavou": 1,
+            "Bruntal": 1,
+            "Frydek - Mistek": 1,
+            "Jesenik": 1,
+            "Karvina": 1,
+            "Novy Jicin": 1,
+            "Olomouc": 1,
+            "Opava": 1,
+            "Ostrava - mesto": 1,
+            "Prerov": 1,
+            "Sumperk": 1,
+            "Vsetin": 1
+          }
+        },
+        "validation_reason": "Categorical source has sufficient support and segments quantitative target."
+      },
+      {
+        "source": "a2",
+        "target": "a12",
+        "relationship": "SEGMENTS",
+        "signal": "grouped_distribution",
+        "confidence": 0.75,
+        "rationale": "Grouping source values produces meaningfully different target distributions.",
+        "validation_status": "accepted",
+        "validation_evidence": {
+          "num_groups": 77,
+          "supported_groups": 77,
+          "group_counts": {
+            "Hl.m. Praha": 1,
+            "Benesov": 1,
+            "Beroun": 1,
+            "Kladno": 1,
+            "Kolin": 1,
+            "Kutna Hora": 1,
+            "Melnik": 1,
+            "Mlada Boleslav": 1,
+            "Nymburk": 1,
+            "Praha - vychod": 1,
+            "Praha - zapad": 1,
+            "Pribram": 1,
+            "Rakovnik": 1,
+            "Ceske Budejovice": 1,
+            "Cesky Krumlov": 1,
+            "Jindrichuv Hradec": 1,
+            "Pelhrimov": 1,
+            "Pisek": 1,
+            "Prachatice": 1,
+            "Strakonice": 1,
+            "Tabor": 1,
+            "Domazlice": 1,
+            "Cheb": 1,
+            "Karlovy Vary": 1,
+            "Klatovy": 1,
+            "Plzen - mesto": 1,
+            "Plzen - jih": 1,
+            "Plzen - sever": 1,
+            "Rokycany": 1,
+            "Sokolov": 1,
+            "Tachov": 1,
+            "Ceska Lipa": 1,
+            "Decin": 1,
+            "Chomutov": 1,
+            "Jablonec n. Nisou": 1,
+            "Liberec": 1,
+            "Litomerice": 1,
+            "Louny": 1,
+            "Most": 1,
+            "Teplice": 1,
+            "Usti nad Labem": 1,
+            "Havlickuv Brod": 1,
+            "Hradec Kralove": 1,
+            "Chrudim": 1,
+            "Jicin": 1,
+            "Nachod": 1,
+            "Pardubice": 1,
+            "Rychnov nad Kneznou": 1,
+            "Semily": 1,
+            "Svitavy": 1,
+            "Trutnov": 1,
+            "Usti nad Orlici": 1,
+            "Blansko": 1,
+            "Brno - mesto": 1,
+            "Brno - venkov": 1,
+            "Breclav": 1,
+            "Hodonin": 1,
+            "Jihlava": 1,
+            "Kromeriz": 1,
+            "Prostejov": 1,
+            "Trebic": 1,
+            "Uherske Hradiste": 1,
+            "Vyskov": 1,
+            "Zlin": 1,
+            "Znojmo": 1,
+            "Zdar nad Sazavou": 1,
+            "Bruntal": 1,
+            "Frydek - Mistek": 1,
+            "Jesenik": 1,
+            "Karvina": 1,
+            "Novy Jicin": 1,
+            "Olomouc": 1,
+            "Opava": 1,
+            "Ostrava - mesto": 1,
+            "Prerov": 1,
+            "Sumperk": 1,
+            "Vsetin": 1
+          }
+        },
+        "validation_reason": "Categorical source has sufficient support and segments quantitative target."
+      },
+      {
+        "source": "a2",
+        "target": "a13",
+        "relationship": "SEGMENTS",
+        "signal": "grouped_distribution",
+        "confidence": 0.75,
+        "rationale": "Grouping source values produces meaningfully different target distributions.",
+        "validation_status": "accepted",
+        "validation_evidence": {
+          "num_groups": 77,
+          "supported_groups": 77,
+          "group_counts": {
+            "Hl.m. Praha": 1,
+            "Benesov": 1,
+            "Beroun": 1,
+            "Kladno": 1,
+            "Kolin": 1,
+            "Kutna Hora": 1,
+            "Melnik": 1,
+            "Mlada Boleslav": 1,
+            "Nymburk": 1,
+            "Praha - vychod": 1,
+            "Praha - zapad": 1,
+            "Pribram": 1,
+            "Rakovnik": 1,
+            "Ceske Budejovice": 1,
+            "Cesky Krumlov": 1,
+            "Jindrichuv Hradec": 1,
+            "Pelhrimov": 1,
+            "Pisek": 1,
+            "Prachatice": 1,
+            "Strakonice": 1,
+            "Tabor": 1,
+            "Domazlice": 1,
+            "Cheb": 1,
+            "Karlovy Vary": 1,
+            "Klatovy": 1,
+            "Plzen - mesto": 1,
+            "Plzen - jih": 1,
+            "Plzen - sever": 1,
+            "Rokycany": 1,
+            "Sokolov": 1,
+            "Tachov": 1,
+            "Ceska Lipa": 1,
+            "Decin": 1,
+            "Chomutov": 1,
+            "Jablonec n. Nisou": 1,
+            "Liberec": 1,
+            "Litomerice": 1,
+            "Louny": 1,
+            "Most": 1,
+            "Teplice": 1,
+            "Usti nad Labem": 1,
+            "Havlickuv Brod": 1,
+            "Hradec Kralove": 1,
+            "Chrudim": 1,
+            "Jicin": 1,
+            "Nachod": 1,
+            "Pardubice": 1,
+            "Rychnov nad Kneznou": 1,
+            "Semily": 1,
+            "Svitavy": 1,
+            "Trutnov": 1,
+            "Usti nad Orlici": 1,
+            "Blansko": 1,
+            "Brno - mesto": 1,
+            "Brno - venkov": 1,
+            "Breclav": 1,
+            "Hodonin": 1,
+            "Jihlava": 1,
+            "Kromeriz": 1,
+            "Prostejov": 1,
+            "Trebic": 1,
+            "Uherske Hradiste": 1,
+            "Vyskov": 1,
+            "Zlin": 1,
+            "Znojmo": 1,
+            "Zdar nad Sazavou": 1,
+            "Bruntal": 1,
+            "Frydek - Mistek": 1,
+            "Jesenik": 1,
+            "Karvina": 1,
+            "Novy Jicin": 1,
+            "Olomouc": 1,
+            "Opava": 1,
+            "Ostrava - mesto": 1,
+            "Prerov": 1,
+            "Sumperk": 1,
+            "Vsetin": 1
+          }
+        },
+        "validation_reason": "Categorical source has sufficient support and segments quantitative target."
+      },
+      {
+        "source": "a2",
+        "target": "a14",
+        "relationship": "SEGMENTS",
+        "signal": "grouped_distribution",
+        "confidence": 0.75,
+        "rationale": "Grouping source values produces meaningfully different target distributions.",
+        "validation_status": "accepted",
+        "validation_evidence": {
+          "num_groups": 77,
+          "supported_groups": 77,
+          "group_counts": {
+            "Hl.m. Praha": 1,
+            "Benesov": 1,
+            "Beroun": 1,
+            "Kladno": 1,
+            "Kolin": 1,
+            "Kutna Hora": 1,
+            "Melnik": 1,
+            "Mlada Boleslav": 1,
+            "Nymburk": 1,
+            "Praha - vychod": 1,
+            "Praha - zapad": 1,
+            "Pribram": 1,
+            "Rakovnik": 1,
+            "Ceske Budejovice": 1,
+            "Cesky Krumlov": 1,
+            "Jindrichuv Hradec": 1,
+            "Pelhrimov": 1,
+            "Pisek": 1,
+            "Prachatice": 1,
+            "Strakonice": 1,
+            "Tabor": 1,
+            "Domazlice": 1,
+            "Cheb": 1,
+            "Karlovy Vary": 1,
+            "Klatovy": 1,
+            "Plzen - mesto": 1,
+            "Plzen - jih": 1,
+            "Plzen - sever": 1,
+            "Rokycany": 1,
+            "Sokolov": 1,
+            "Tachov": 1,
+            "Ceska Lipa": 1,
+            "Decin": 1,
+            "Chomutov": 1,
+            "Jablonec n. Nisou": 1,
+            "Liberec": 1,
+            "Litomerice": 1,
+            "Louny": 1,
+            "Most": 1,
+            "Teplice": 1,
+            "Usti nad Labem": 1,
+            "Havlickuv Brod": 1,
+            "Hradec Kralove": 1,
+            "Chrudim": 1,
+            "Jicin": 1,
+            "Nachod": 1,
+            "Pardubice": 1,
+            "Rychnov nad Kneznou": 1,
+            "Semily": 1,
+            "Svitavy": 1,
+            "Trutnov": 1,
+            "Usti nad Orlici": 1,
+            "Blansko": 1,
+            "Brno - mesto": 1,
+            "Brno - venkov": 1,
+            "Breclav": 1,
+            "Hodonin": 1,
+            "Jihlava": 1,
+            "Kromeriz": 1,
+            "Prostejov": 1,
+            "Trebic": 1,
+            "Uherske Hradiste": 1,
+            "Vyskov": 1,
+            "Zlin": 1,
+            "Znojmo": 1,
+            "Zdar nad Sazavou": 1,
+            "Bruntal": 1,
+            "Frydek - Mistek": 1,
+            "Jesenik": 1,
+            "Karvina": 1,
+            "Novy Jicin": 1,
+            "Olomouc": 1,
+            "Opava": 1,
+            "Ostrava - mesto": 1,
+            "Prerov": 1,
+            "Sumperk": 1,
+            "Vsetin": 1
+          }
+        },
+        "validation_reason": "Categorical source has sufficient support and segments quantitative target."
+      },
+      {
+        "source": "a2",
+        "target": "a15",
+        "relationship": "SEGMENTS",
+        "signal": "grouped_distribution",
+        "confidence": 0.75,
+        "rationale": "Grouping source values produces meaningfully different target distributions.",
+        "validation_status": "accepted",
+        "validation_evidence": {
+          "num_groups": 77,
+          "supported_groups": 77,
+          "group_counts": {
+            "Hl.m. Praha": 1,
+            "Benesov": 1,
+            "Beroun": 1,
+            "Kladno": 1,
+            "Kolin": 1,
+            "Kutna Hora": 1,
+            "Melnik": 1,
+            "Mlada Boleslav": 1,
+            "Nymburk": 1,
+            "Praha - vychod": 1,
+            "Praha - zapad": 1,
+            "Pribram": 1,
+            "Rakovnik": 1,
+            "Ceske Budejovice": 1,
+            "Cesky Krumlov": 1,
+            "Jindrichuv Hradec": 1,
+            "Pelhrimov": 1,
+            "Pisek": 1,
+            "Prachatice": 1,
+            "Strakonice": 1,
+            "Tabor": 1,
+            "Domazlice": 1,
+            "Cheb": 1,
+            "Karlovy Vary": 1,
+            "Klatovy": 1,
+            "Plzen - mesto": 1,
+            "Plzen - jih": 1,
+            "Plzen - sever": 1,
+            "Rokycany": 1,
+            "Sokolov": 1,
+            "Tachov": 1,
+            "Ceska Lipa": 1,
+            "Decin": 1,
+            "Chomutov": 1,
+            "Jablonec n. Nisou": 1,
+            "Liberec": 1,
+            "Litomerice": 1,
+            "Louny": 1,
+            "Most": 1,
+            "Teplice": 1,
+            "Usti nad Labem": 1,
+            "Havlickuv Brod": 1,
+            "Hradec Kralove": 1,
+            "Chrudim": 1,
+            "Jicin": 1,
+            "Nachod": 1,
+            "Pardubice": 1,
+            "Rychnov nad Kneznou": 1,
+            "Semily": 1,
+            "Svitavy": 1,
+            "Trutnov": 1,
+            "Usti nad Orlici": 1,
+            "Blansko": 1,
+            "Brno - mesto": 1,
+            "Brno - venkov": 1,
+            "Breclav": 1,
+            "Hodonin": 1,
+            "Jihlava": 1,
+            "Kromeriz": 1,
+            "Prostejov": 1,
+            "Trebic": 1,
+            "Uherske Hradiste": 1,
+            "Vyskov": 1,
+            "Zlin": 1,
+            "Znojmo": 1,
+            "Zdar nad Sazavou": 1,
+            "Bruntal": 1,
+            "Frydek - Mistek": 1,
+            "Jesenik": 1,
+            "Karvina": 1,
+            "Novy Jicin": 1,
+            "Olomouc": 1,
+            "Opava": 1,
+            "Ostrava - mesto": 1,
+            "Prerov": 1,
+            "Sumperk": 1,
+            "Vsetin": 1
+          }
+        },
+        "validation_reason": "Categorical source has sufficient support and segments quantitative target."
+      },
+      {
+        "source": "a2",
+        "target": "a16",
+        "relationship": "SEGMENTS",
+        "signal": "grouped_distribution",
+        "confidence": 0.75,
+        "rationale": "Grouping source values produces meaningfully different target distributions.",
+        "validation_status": "accepted",
+        "validation_evidence": {
+          "num_groups": 77,
+          "supported_groups": 77,
+          "group_counts": {
+            "Hl.m. Praha": 1,
+            "Benesov": 1,
+            "Beroun": 1,
+            "Kladno": 1,
+            "Kolin": 1,
+            "Kutna Hora": 1,
+            "Melnik": 1,
+            "Mlada Boleslav": 1,
+            "Nymburk": 1,
+            "Praha - vychod": 1,
+            "Praha - zapad": 1,
+            "Pribram": 1,
+            "Rakovnik": 1,
+            "Ceske Budejovice": 1,
+            "Cesky Krumlov": 1,
+            "Jindrichuv Hradec": 1,
+            "Pelhrimov": 1,
+            "Pisek": 1,
+            "Prachatice": 1,
+            "Strakonice": 1,
+            "Tabor": 1,
+            "Domazlice": 1,
+            "Cheb": 1,
+            "Karlovy Vary": 1,
+            "Klatovy": 1,
+            "Plzen - mesto": 1,
+            "Plzen - jih": 1,
+            "Plzen - sever": 1,
+            "Rokycany": 1,
+            "Sokolov": 1,
+            "Tachov": 1,
+            "Ceska Lipa": 1,
+            "Decin": 1,
+            "Chomutov": 1,
+            "Jablonec n. Nisou": 1,
+            "Liberec": 1,
+            "Litomerice": 1,
+            "Louny": 1,
+            "Most": 1,
+            "Teplice": 1,
+            "Usti nad Labem": 1,
+            "Havlickuv Brod": 1,
+            "Hradec Kralove": 1,
+            "Chrudim": 1,
+            "Jicin": 1,
+            "Nachod": 1,
+            "Pardubice": 1,
+            "Rychnov nad Kneznou": 1,
+            "Semily": 1,
+            "Svitavy": 1,
+            "Trutnov": 1,
+            "Usti nad Orlici": 1,
+            "Blansko": 1,
+            "Brno - mesto": 1,
+            "Brno - venkov": 1,
+            "Breclav": 1,
+            "Hodonin": 1,
+            "Jihlava": 1,
+            "Kromeriz": 1,
+            "Prostejov": 1,
+            "Trebic": 1,
+            "Uherske Hradiste": 1,
+            "Vyskov": 1,
+            "Zlin": 1,
+            "Znojmo": 1,
+            "Zdar nad Sazavou": 1,
+            "Bruntal": 1,
+            "Frydek - Mistek": 1,
+            "Jesenik": 1,
+            "Karvina": 1,
+            "Novy Jicin": 1,
+            "Olomouc": 1,
+            "Opava": 1,
+            "Ostrava - mesto": 1,
+            "Prerov": 1,
+            "Sumperk": 1,
+            "Vsetin": 1
+          }
+        },
+        "validation_reason": "Categorical source has sufficient support and segments quantitative target."
+      },
+      {
+        "source": "a3",
+        "target": "a4",
+        "relationship": "SEGMENTS",
+        "signal": "grouped_distribution",
+        "confidence": 0.75,
+        "rationale": "Grouping source values produces meaningfully different target distributions.",
+        "validation_status": "accepted",
+        "validation_evidence": {
+          "num_groups": 8,
+          "supported_groups": 8,
+          "group_counts": {
+            "Prague": 1,
+            "central Bohemia": 12,
+            "south Bohemia": 8,
+            "west Bohemia": 10,
+            "north Bohemia": 10,
+            "east Bohemia": 11,
+            "south Moravia": 14,
+            "north Moravia": 11
+          }
+        },
+        "validation_reason": "Categorical source has sufficient support and segments quantitative target."
+      },
+      {
+        "source": "a3",
+        "target": "a5",
+        "relationship": "SEGMENTS",
+        "signal": "grouped_distribution",
+        "confidence": 0.75,
+        "rationale": "Grouping source values produces meaningfully different target distributions.",
+        "validation_status": "accepted",
+        "validation_evidence": {
+          "num_groups": 8,
+          "supported_groups": 8,
+          "group_counts": {
+            "Prague": 1,
+            "central Bohemia": 12,
+            "south Bohemia": 8,
+            "west Bohemia": 10,
+            "north Bohemia": 10,
+            "east Bohemia": 11,
+            "south Moravia": 14,
+            "north Moravia": 11
+          }
+        },
+        "validation_reason": "Categorical source has sufficient support and segments quantitative target."
+      },
+      {
+        "source": "a3",
+        "target": "a6",
+        "relationship": "SEGMENTS",
+        "signal": "grouped_distribution",
+        "confidence": 0.75,
+        "rationale": "Grouping source values produces meaningfully different target distributions.",
+        "validation_status": "accepted",
+        "validation_evidence": {
+          "num_groups": 8,
+          "supported_groups": 8,
+          "group_counts": {
+            "Prague": 1,
+            "central Bohemia": 12,
+            "south Bohemia": 8,
+            "west Bohemia": 10,
+            "north Bohemia": 10,
+            "east Bohemia": 11,
+            "south Moravia": 14,
+            "north Moravia": 11
+          }
+        },
+        "validation_reason": "Categorical source has sufficient support and segments quantitative target."
+      },
+      {
+        "source": "a3",
+        "target": "a7",
+        "relationship": "SEGMENTS",
+        "signal": "grouped_distribution",
+        "confidence": 0.75,
+        "rationale": "Grouping source values produces meaningfully different target distributions.",
+        "validation_status": "accepted",
+        "validation_evidence": {
+          "num_groups": 8,
+          "supported_groups": 8,
+          "group_counts": {
+            "Prague": 1,
+            "central Bohemia": 12,
+            "south Bohemia": 8,
+            "west Bohemia": 10,
+            "north Bohemia": 10,
+            "east Bohemia": 11,
+            "south Moravia": 14,
+            "north Moravia": 11
+          }
+        },
+        "validation_reason": "Categorical source has sufficient support and segments quantitative target."
+      },
+      {
+        "source": "a3",
+        "target": "a8",
+        "relationship": "SEGMENTS",
+        "signal": "grouped_distribution",
+        "confidence": 0.75,
+        "rationale": "Grouping source values produces meaningfully different target distributions.",
+        "validation_status": "accepted",
+        "validation_evidence": {
+          "num_groups": 8,
+          "supported_groups": 8,
+          "group_counts": {
+            "Prague": 1,
+            "central Bohemia": 12,
+            "south Bohemia": 8,
+            "west Bohemia": 10,
+            "north Bohemia": 10,
+            "east Bohemia": 11,
+            "south Moravia": 14,
+            "north Moravia": 11
+          }
+        },
+        "validation_reason": "Categorical source has sufficient support and segments quantitative target."
+      },
+      {
+        "source": "a3",
+        "target": "a9",
+        "relationship": "SEGMENTS",
+        "signal": "grouped_distribution",
+        "confidence": 0.75,
+        "rationale": "Grouping source values produces meaningfully different target distributions.",
+        "validation_status": "accepted",
+        "validation_evidence": {
+          "num_groups": 8,
+          "supported_groups": 8,
+          "group_counts": {
+            "Prague": 1,
+            "central Bohemia": 12,
+            "south Bohemia": 8,
+            "west Bohemia": 10,
+            "north Bohemia": 10,
+            "east Bohemia": 11,
+            "south Moravia": 14,
+            "north Moravia": 11
+          }
+        },
+        "validation_reason": "Categorical source has sufficient support and segments quantitative target."
+      },
+      {
+        "source": "a3",
+        "target": "a10",
+        "relationship": "SEGMENTS",
+        "signal": "grouped_distribution",
+        "confidence": 0.75,
+        "rationale": "Grouping source values produces meaningfully different target distributions.",
+        "validation_status": "accepted",
+        "validation_evidence": {
+          "num_groups": 8,
+          "supported_groups": 8,
+          "group_counts": {
+            "Prague": 1,
+            "central Bohemia": 12,
+            "south Bohemia": 8,
+            "west Bohemia": 10,
+            "north Bohemia": 10,
+            "east Bohemia": 11,
+            "south Moravia": 14,
+            "north Moravia": 11
+          }
+        },
+        "validation_reason": "Categorical source has sufficient support and segments quantitative target."
+      },
+      {
+        "source": "a3",
+        "target": "a11",
+        "relationship": "SEGMENTS",
+        "signal": "grouped_distribution",
+        "confidence": 0.75,
+        "rationale": "Grouping source values produces meaningfully different target distributions.",
+        "validation_status": "accepted",
+        "validation_evidence": {
+          "num_groups": 8,
+          "supported_groups": 8,
+          "group_counts": {
+            "Prague": 1,
+            "central Bohemia": 12,
+            "south Bohemia": 8,
+            "west Bohemia": 10,
+            "north Bohemia": 10,
+            "east Bohemia": 11,
+            "south Moravia": 14,
+            "north Moravia": 11
+          }
+        },
+        "validation_reason": "Categorical source has sufficient support and segments quantitative target."
+      },
+      {
+        "source": "a3",
+        "target": "a12",
+        "relationship": "SEGMENTS",
+        "signal": "grouped_distribution",
+        "confidence": 0.75,
+        "rationale": "Grouping source values produces meaningfully different target distributions.",
+        "validation_status": "accepted",
+        "validation_evidence": {
+          "num_groups": 8,
+          "supported_groups": 8,
+          "group_counts": {
+            "Prague": 1,
+            "central Bohemia": 12,
+            "south Bohemia": 8,
+            "west Bohemia": 10,
+            "north Bohemia": 10,
+            "east Bohemia": 11,
+            "south Moravia": 14,
+            "north Moravia": 11
+          }
+        },
+        "validation_reason": "Categorical source has sufficient support and segments quantitative target."
+      },
+      {
+        "source": "a3",
+        "target": "a13",
+        "relationship": "SEGMENTS",
+        "signal": "grouped_distribution",
+        "confidence": 0.75,
+        "rationale": "Grouping source values produces meaningfully different target distributions.",
+        "validation_status": "accepted",
+        "validation_evidence": {
+          "num_groups": 8,
+          "supported_groups": 8,
+          "group_counts": {
+            "Prague": 1,
+            "central Bohemia": 12,
+            "south Bohemia": 8,
+            "west Bohemia": 10,
+            "north Bohemia": 10,
+            "east Bohemia": 11,
+            "south Moravia": 14,
+            "north Moravia": 11
+          }
+        },
+        "validation_reason": "Categorical source has sufficient support and segments quantitative target."
+      },
+      {
+        "source": "a3",
+        "target": "a14",
+        "relationship": "SEGMENTS",
+        "signal": "grouped_distribution",
+        "confidence": 0.75,
+        "rationale": "Grouping source values produces meaningfully different target distributions.",
+        "validation_status": "accepted",
+        "validation_evidence": {
+          "num_groups": 8,
+          "supported_groups": 8,
+          "group_counts": {
+            "Prague": 1,
+            "central Bohemia": 12,
+            "south Bohemia": 8,
+            "west Bohemia": 10,
+            "north Bohemia": 10,
+            "east Bohemia": 11,
+            "south Moravia": 14,
+            "north Moravia": 11
+          }
+        },
+        "validation_reason": "Categorical source has sufficient support and segments quantitative target."
+      },
+      {
+        "source": "a3",
+        "target": "a15",
+        "relationship": "SEGMENTS",
+        "signal": "grouped_distribution",
+        "confidence": 0.75,
+        "rationale": "Grouping source values produces meaningfully different target distributions.",
+        "validation_status": "accepted",
+        "validation_evidence": {
+          "num_groups": 8,
+          "supported_groups": 8,
+          "group_counts": {
+            "Prague": 1,
+            "central Bohemia": 12,
+            "south Bohemia": 8,
+            "west Bohemia": 10,
+            "north Bohemia": 10,
+            "east Bohemia": 11,
+            "south Moravia": 14,
+            "north Moravia": 11
+          }
+        },
+        "validation_reason": "Categorical source has sufficient support and segments quantitative target."
+      },
+      {
+        "source": "a3",
+        "target": "a16",
+        "relationship": "SEGMENTS",
+        "signal": "grouped_distribution",
+        "confidence": 0.75,
+        "rationale": "Grouping source values produces meaningfully different target distributions.",
+        "validation_status": "accepted",
+        "validation_evidence": {
+          "num_groups": 8,
+          "supported_groups": 8,
+          "group_counts": {
+            "Prague": 1,
+            "central Bohemia": 12,
+            "south Bohemia": 8,
+            "west Bohemia": 10,
+            "north Bohemia": 10,
+            "east Bohemia": 11,
+            "south Moravia": 14,
+            "north Moravia": 11
+          }
+        },
+        "validation_reason": "Categorical source has sufficient support and segments quantitative target."
+      }
+    ]
+  }
+}

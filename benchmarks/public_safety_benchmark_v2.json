@@ -1,0 +1,1167 @@
+[
+  {
+    "id": "public_safety_001",
+    "intent": "Extremely severe crashes",
+    "dataset": "NYC_collisions",
+    "category": "comparative_grounding",
+    "vst_family": "distributional",
+    "failure_type": "Arbitrary fixed threshold used for defining extreme severity",
+    "expected_behavior": "Identify crashes whose severity lies in the upper tail of the crash-severity distribution, using measures such as number of persons injured, number of persons killed, or combined severity indicators, rather than using a fixed constant like number_of_persons_injured > 10.",
+    "semantic_requirements": [
+      "distributional reasoning",
+      "upper-tail detection",
+      "severity interpretation",
+      "comparative grounding"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "public_safety_002",
+    "intent": "Collisions with unusually high fatalities",
+    "dataset": "NYC_collisions",
+    "category": "comparative_grounding",
+    "vst_family": "distributional",
+    "failure_type": "Arbitrary fixed thresholds used for defining unusually high fatalities and mixed severity signals",
+    "expected_behavior": "Identify collisions whose fatality counts lie in the upper tail of the fatality distribution (e.g., extreme outliers), rather than using fixed constants like number_of_persons_killed >= 5 or mixing injury thresholds with fatality-based intent.",
+    "semantic_requirements": [
+      "distributional reasoning",
+      "upper-tail detection for fatalities",
+      "severity interpretation",
+      "metric alignment (fatalities vs injuries)",
+      "comparative grounding"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "public_safety_003",
+    "intent": "Intersections with highest fatality rate",
+    "dataset": "NYC_collisions",
+    "category": "quantitative_misinterpretation",
+    "vst_family": "quantitative",
+    "failure_type": "Rate-based intent reduced to total count without normalization",
+    "expected_behavior": "Compute fatality rate per intersection as total fatalities divided by number of collisions (or appropriate exposure), and rank intersections by this rate rather than by total fatalities.",
+    "semantic_requirements": [
+      "derived metric computation (rate)",
+      "normalization by event count",
+      "aggregation (sum and count)",
+      "correct metric selection for ranking"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "public_safety_004",
+    "intent": "Areas where crash severity is worsening",
+    "dataset": "NYC_collisions",
+    "category": "process_misinterpretation",
+    "vst_family": "process",
+    "failure_type": "Temporal worsening reduced to aggregate severity ranking",
+    "expected_behavior": "Identify areas where crash severity increases over time, such as rising injury/fatality severity across time windows, rather than ranking areas by total historical severity.",
+    "semantic_requirements": [
+      "temporal trend reasoning",
+      "severity measure construction",
+      "area-level aggregation",
+      "process-level comparison over time"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "public_safety_005",
+    "intent": "Collisions requiring investigation",
+    "dataset": "NYC_collisions",
+    "category": "policy_grounding",
+    "vst_family": "policy",
+    "failure_type": "Investigation criteria inferred without explicit policy definition",
+    "expected_behavior": "Identify collisions that meet formally defined investigation criteria (e.g., fatalities, hit-and-run, specific contributing factors, or regulatory thresholds), rather than applying arbitrary or implicit rules.",
+    "semantic_requirements": [
+      "policy-grounded classification",
+      "severity and incident criteria mapping",
+      "regulatory threshold interpretation",
+      "explicit rule enforcement"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "public_safety_006",
+    "intent": "Find collisions involving commercial vehicles",
+    "dataset": "NYC_collisions",
+    "category": "none",
+    "vst_family": "relational",
+    "failure_type": "none",
+    "expected_behavior": "Filter collisions involving commercial vehicles by matching vehicle type fields (e.g., vehicle_type_code_*), selecting rows where any vehicle corresponds to a commercial category.",
+    "semantic_requirements": [
+      "categorical filtering",
+      "vehicle type interpretation",
+      "multi-field condition handling",
+      "entity attribute matching"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "public_safety_007",
+    "intent": "Vehicle types most frequently involved in crashes",
+    "dataset": "NYC_collisions",
+    "category": "none",
+    "vst_family": "relational",
+    "failure_type": "none",
+    "expected_behavior": "Aggregate collisions by vehicle type (e.g., vehicle_type_code_1 through vehicle_type_code_5), count occurrences, and rank vehicle types by frequency to identify those most commonly involved in crashes.",
+    "semantic_requirements": [
+      "categorical aggregation",
+      "frequency counting",
+      "handling multiple vehicle type fields",
+      "ranking by count"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "public_safety_008",
+    "intent": "Areas where pedestrian injury risk is highest",
+    "dataset": "NYC_collisions",
+    "category": "quantitative_misinterpretation",
+    "vst_family": "quantitative",
+    "failure_type": "Risk-based intent reduced to count without normalization",
+    "expected_behavior": "Compute pedestrian injury risk per area as a normalized measure (e.g., number of pedestrian injuries divided by number of collisions or probability of injury), and rank areas by this rate rather than raw counts.",
+    "semantic_requirements": [
+      "derived metric computation (risk/rate)",
+      "normalization by exposure (collision count)",
+      "aggregation (sum and count)",
+      "correct metric selection for ranking"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "public_safety_009",
+    "intent": "Collisions violating traffic law",
+    "dataset": "NYC_collisions",
+    "category": "policy_grounding",
+    "vst_family": "policy",
+    "failure_type": "Traffic law violation inferred without explicit policy or legal mapping",
+    "expected_behavior": "Identify collisions that meet defined traffic law violation criteria based on mapped contributing factors, violations, or legal classifications, rather than applying implicit or arbitrary interpretations.",
+    "semantic_requirements": [
+      "policy-grounded classification",
+      "mapping contributing factors to violations",
+      "legal/regulatory interpretation",
+      "explicit rule enforcement"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "public_safety_010",
+    "intent": "Increasing collision trend over time",
+    "dataset": "NYC_collisions",
+    "category": "process_misinterpretation",
+    "vst_family": "process",
+    "failure_type": "Temporal trend intent reduced to raw time-series listing without detecting increase",
+    "expected_behavior": "Identify whether collision counts are increasing over time (e.g., rising trend across time windows such as months or years), rather than simply returning counts per date without analyzing the trend direction.",
+    "semantic_requirements": [
+      "temporal trend detection",
+      "time-series aggregation",
+      "directional change analysis (increase/decrease)",
+      "process-level reasoning over time"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "public_safety_011",
+    "intent": "Vehicles involved in extreme-impact collisions",
+    "dataset": "NYC_collisions",
+    "category": "comparative_grounding",
+    "vst_family": "distributional",
+    "failure_type": "Arbitrary fixed thresholds used for defining extreme-impact collisions",
+    "expected_behavior": "Identify collisions whose impact (e.g., fatalities, injuries, or combined severity) lies in the upper tail of the severity distribution, and then extract associated vehicle types, rather than using fixed constants like number_of_persons_killed >= 5 or number_of_persons_injured >= 40.",
+    "semantic_requirements": [
+      "distributional reasoning",
+      "upper-tail detection",
+      "severity interpretation",
+      "vehicle type extraction from events",
+      "comparative grounding"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "public_safety_012",
+    "intent": "Collisions exceeding reporting threshold",
+    "dataset": "NYC_collisions",
+    "category": "policy_grounding",
+    "vst_family": "policy",
+    "failure_type": "Reporting threshold inferred without explicit policy definition",
+    "expected_behavior": "Identify collisions that meet officially defined reporting thresholds (e.g., regulatory limits based on injuries, fatalities, property damage, or other criteria), rather than using arbitrary or assumed constants.",
+    "semantic_requirements": [
+      "policy-grounded thresholding",
+      "regulatory criteria interpretation",
+      "severity and incident mapping",
+      "explicit rule enforcement"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "public_safety_013",
+    "intent": "Commercial vehicle crashes with multiple injuries",
+    "dataset": "NYC_collisions",
+    "category": "none",
+    "vst_family": "relational",
+    "failure_type": "none",
+    "expected_behavior": "Filter collisions involving commercial vehicles (using vehicle_type_code_* fields) and retain those with multiple injuries (e.g., number_of_persons_injured > 1).",
+    "semantic_requirements": [
+      "categorical filtering (vehicle type)",
+      "numeric threshold filtering (injuries)",
+      "multi-field condition handling",
+      "event-level filtering"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "public_safety_014",
+    "intent": "Find boroughs where total injuries exceed total fatalities",
+    "dataset": "NYC_collisions",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "Aggregate collisions by borough, compute total injuries and total fatalities per borough, and return boroughs where total injuries exceed total fatalities.",
+    "semantic_requirements": [
+      "group aggregation by borough",
+      "summation of injuries and fatalities",
+      "cross-metric comparison",
+      "correct aggregation scope"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "public_safety_015",
+    "intent": "Hit-and-run collisions involving commercial vehicles",
+    "dataset": "NYC_collisions",
+    "category": "policy_grounding",
+    "vst_family": "policy",
+    "failure_type": "Incorrect mapping of hit-and-run concept to unrelated contributing factor",
+    "expected_behavior": "Identify collisions involving commercial vehicles that satisfy the correct definition of hit-and-run based on appropriate contributing factor values or policy-defined indicators, rather than using unrelated labels such as 'Driverless/Runaway Vehicle'.",
+    "semantic_requirements": [
+      "policy-grounded concept mapping",
+      "vehicle type filtering",
+      "correct contributing factor interpretation",
+      "multi-field condition handling"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "public_safety_016",
+    "intent": "Vehicle types with increasing crash involvement",
+    "dataset": "NYC_collisions",
+    "category": "process_misinterpretation",
+    "vst_family": "process",
+    "failure_type": "Temporal increase intent reduced to static frequency aggregation",
+    "expected_behavior": "Identify vehicle types whose crash involvement increases over time (e.g., rising counts across time windows such as months or years), rather than simply counting total crashes per vehicle type and sorting.",
+    "semantic_requirements": [
+      "temporal trend reasoning",
+      "time-series aggregation",
+      "grouping by vehicle type",
+      "trend detection (increase over time)"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "public_safety_017",
+    "intent": "Moving violation collision",
+    "dataset": "NYC_collisions",
+    "category": "policy_grounding",
+    "vst_family": "policy",
+    "failure_type": "Moving violation concept inferred without explicit policy or legal mapping",
+    "expected_behavior": "Identify collisions that involve legally defined moving violations by mapping contributing factors or violation codes to official moving violation categories, rather than using arbitrary or implicit interpretations.",
+    "semantic_requirements": [
+      "policy-grounded classification",
+      "mapping contributing factors to violation categories",
+      "legal/regulatory interpretation",
+      "explicit rule enforcement"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "public_safety_018",
+    "intent": "Collisions with unusually high injuries",
+    "dataset": "NYC_collisions",
+    "category": "comparative_grounding",
+    "vst_family": "distributional",
+    "failure_type": "Arbitrary fixed threshold used instead of distribution-based definition of unusually high injuries",
+    "expected_behavior": "Identify collisions whose number of persons injured lies in the upper tail of the injury distribution (e.g., top quantile or statistical outliers), rather than using a fixed constant threshold.",
+    "semantic_requirements": [
+      "distributional reasoning",
+      "upper-tail detection for injuries",
+      "severity interpretation",
+      "comparative grounding"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "public_safety_019",
+    "intent": "Crashes with unusually high combined severity",
+    "dataset": "NYC_collisions",
+    "category": "comparative_grounding",
+    "vst_family": "distributional",
+    "failure_type": "Arbitrary fixed threshold used for defining unusually high combined severity",
+    "expected_behavior": "Compute a combined severity measure using injuries and fatalities, and identify crashes in the upper tail of this severity distribution (e.g., top quantile or outliers), rather than using a fixed constant threshold like > 10.",
+    "semantic_requirements": [
+      "severity metric construction",
+      "distributional reasoning",
+      "upper-tail detection",
+      "comparative grounding"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "public_safety_020",
+    "intent": "Boroughs with the highest injury severity per crash",
+    "dataset": "NYC_collisions",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "Aggregate collisions by borough, compute average injury severity per crash (e.g., total injuries per collision), and rank boroughs accordingly.",
+    "semantic_requirements": [
+      "severity metric construction",
+      "normalization via averaging",
+      "group aggregation by borough",
+      "ranking by derived measure"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "public_safety_021",
+    "intent": "Legally intoxicated collisions",
+    "dataset": "NYC_collisions",
+    "category": "policy_grounding",
+    "vst_family": "policy",
+    "failure_type": "Legal intoxication inferred without explicit policy or threshold definition",
+    "expected_behavior": "Identify collisions involving legally intoxicated drivers based on policy-defined criteria (e.g., blood alcohol content thresholds or mapped contributing factors indicating alcohol involvement), rather than using implicit or arbitrary interpretations.",
+    "semantic_requirements": [
+      "policy-grounded classification",
+      "mapping contributing factors to intoxication indicators",
+      "legal threshold interpretation",
+      "explicit rule enforcement"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "public_safety_022",
+    "intent": "Find locations with sustained high injury collisions over time",
+    "dataset": "NYC_collisions",
+    "category": "process_misinterpretation",
+    "vst_family": "process",
+    "failure_type": "Sustained high injury behavior reduced to simple count threshold without temporal persistence or trend analysis",
+    "expected_behavior": "Identify locations where injury-related collisions remain consistently high over time (e.g., persistently high counts across multiple time windows or sustained upward trends), rather than filtering locations with more than a fixed number of injury collisions.",
+    "semantic_requirements": [
+      "temporal persistence detection",
+      "time-series aggregation",
+      "injury severity filtering",
+      "process-level reasoning over time",
+      "trend or consistency analysis"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "public_safety_023",
+    "intent": "Find the top contributing factor causing fatalities",
+    "dataset": "NYC_collisions",
+    "category": "none",
+    "vst_family": "relational",
+    "failure_type": "none",
+    "expected_behavior": "Aggregate collisions by contributing factor (e.g., contributing_factor_vehicle_* fields), sum the number of fatalities associated with each factor, and rank factors to identify the one contributing to the highest number of fatalities.",
+    "semantic_requirements": [
+      "mapping contributing factor fields",
+      "aggregation of fatalities",
+      "grouping by contributing factor",
+      "ranking by aggregated measure"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "public_safety_024",
+    "intent": "Moving violation collisions with injuries",
+    "dataset": "NYC_collisions",
+    "category": "policy_grounding",
+    "vst_family": "policy",
+    "failure_type": "Moving violation concept inferred without explicit legal mapping or policy definition",
+    "expected_behavior": "Identify collisions involving injuries that satisfy the legally defined criteria for moving violations, using appropriate mappings from contributing factors or violation codes, rather than relying on implicit or arbitrary interpretations.",
+    "semantic_requirements": [
+      "policy-grounded classification",
+      "mapping contributing factors to moving violation categories",
+      "injury-based filtering",
+      "legal/regulatory interpretation",
+      "multi-condition filtering"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "public_safety_025",
+    "intent": "Find intersections with the highest collision counts",
+    "dataset": "NYC_collisions",
+    "category": "none",
+    "vst_family": "relational",
+    "failure_type": "none",
+    "expected_behavior": "Group collisions by intersection (e.g., on_street_name and cross_street_name), count the number of collisions per intersection, and return the intersections with the highest counts.",
+    "semantic_requirements": [
+      "grouping by intersection",
+      "event aggregation (count)",
+      "ranking by count",
+      "top-k retrieval"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "public_safety_026",
+    "intent": "Find boroughs with the highest fatality counts",
+    "dataset": "NYC_collisions",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "Group collisions by borough, sum the number of fatalities per borough, and return the boroughs with the highest total fatality counts.",
+    "semantic_requirements": [
+      "group aggregation by borough",
+      "summation of fatalities",
+      "ranking by aggregated measure",
+      "top-k retrieval"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "public_safety_027",
+    "intent": "Find boroughs with high pedestrian injury rates",
+    "dataset": "NYC_collisions",
+    "category": "quantitative_misinterpretation",
+    "vst_family": "quantitative",
+    "failure_type": "Rate-based intent reduced to total count without normalization",
+    "expected_behavior": "Compute pedestrian injury rate per borough as the number of pedestrian injuries divided by the number of collisions, and identify boroughs with high rates rather than using total injury counts.",
+    "semantic_requirements": [
+      "derived metric computation (rate)",
+      "normalization by collision count",
+      "aggregation (sum and count)",
+      "correct metric selection for ranking"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "public_safety_028",
+    "intent": "Find reportable collisions",
+    "dataset": "NYC_collisions",
+    "category": "policy_grounding",
+    "vst_family": "policy",
+    "failure_type": "Reportability inferred without explicit policy definition",
+    "expected_behavior": "Identify collisions that meet formally defined reporting criteria based on regulatory thresholds (e.g., injuries, fatalities, property damage, or other legally specified conditions), rather than applying implicit or arbitrary rules.",
+    "semantic_requirements": [
+      "policy-grounded classification",
+      "regulatory threshold interpretation",
+      "severity and incident criteria mapping",
+      "explicit rule enforcement"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "public_safety_029",
+    "intent": "Locations with persistent crash patterns",
+    "dataset": "NYC_collisions",
+    "category": "process_misinterpretation",
+    "vst_family": "process",
+    "failure_type": "Persistent crash pattern reduced to simple repeated-count threshold",
+    "expected_behavior": "Identify locations where crashes persist over time, such as recurring crashes across multiple time windows or sustained patterns, rather than selecting locations with more than one crash overall.",
+    "semantic_requirements": [
+      "temporal persistence detection",
+      "time-window aggregation",
+      "recurring event pattern detection",
+      "process-level reasoning over time"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "public_safety_030",
+    "intent": "Collisions classified as major incidents",
+    "dataset": "NYC_collisions",
+    "category": "policy_grounding",
+    "vst_family": "policy",
+    "failure_type": "Major incident classification inferred without explicit policy or criteria definition",
+    "expected_behavior": "Identify collisions that meet formally defined criteria for major incidents based on policy or regulatory definitions (e.g., thresholds for injuries, fatalities, multi-vehicle involvement, or other official criteria), rather than relying on implicit or arbitrary interpretations.",
+    "semantic_requirements": [
+      "policy-grounded classification",
+      "regulatory criteria interpretation",
+      "severity and incident mapping",
+      "explicit rule enforcement"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "public_safety_031",
+    "intent": "Intersections with sustained high injury rates",
+    "dataset": "NYC_collisions",
+    "category": "process_misinterpretation",
+    "vst_family": "process",
+    "failure_type": "Sustained high injury rate reduced to aggregate injury threshold without temporal persistence or rate normalization",
+    "expected_behavior": "Identify intersections where injury rates remain consistently high over time (e.g., high injuries per collision across multiple time windows), rather than using a total injury count threshold.",
+    "semantic_requirements": [
+      "temporal persistence detection",
+      "rate-based reasoning (injuries per collision)",
+      "time-series aggregation",
+      "process-level analysis over time"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "public_safety_032",
+    "intent": "Find areas where commercial vehicles consistently account for the majority of severe collisions",
+    "dataset": "NYC_collisions",
+    "category": "process_misinterpretation",
+    "vst_family": "process",
+    "failure_type": "Consistent majority pattern reduced to simple filtering and counting without temporal persistence or proportion reasoning",
+    "expected_behavior": "Identify areas where commercial vehicles account for the majority of severe collisions across multiple time windows, rather than only filtering commercial-vehicle collisions or counting them overall.",
+    "semantic_requirements": [
+      "temporal consistency detection",
+      "proportion/majority reasoning",
+      "severity filtering",
+      "commercial vehicle classification",
+      "area-level process reasoning over time"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "public_safety_033",
+    "intent": "Find severe crashes",
+    "dataset": "NYC_collisions",
+    "category": "comparative_grounding",
+    "vst_family": "distributional",
+    "failure_type": "Arbitrary fixed threshold used for defining severity",
+    "expected_behavior": "Identify crashes whose severity (e.g., based on injuries, fatalities, or combined severity measures) lies in the upper portion of the severity distribution, rather than using a fixed constant threshold.",
+    "semantic_requirements": [
+      "distributional reasoning",
+      "upper-tail detection",
+      "severity interpretation",
+      "comparative grounding"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "public_safety_034",
+    "intent": "Find hit and run collisions",
+    "dataset": "NYC_collisions",
+    "category": "policy_grounding",
+    "vst_family": "policy",
+    "failure_type": "Hit-and-run concept inferred without explicit policy or legal mapping",
+    "expected_behavior": "Identify collisions that meet the correct definition of hit-and-run based on appropriate contributing factor values or policy-defined indicators, rather than relying on implicit or incorrect mappings.",
+    "semantic_requirements": [
+      "policy-grounded classification",
+      "mapping contributing factors to hit-and-run indicators",
+      "legal/regulatory interpretation",
+      "explicit rule enforcement"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "public_safety_035",
+    "intent": "Find the most dangerous vehicle type",
+    "dataset": "NYC_collisions",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "Aggregate severity (e.g., injuries and fatalities) per vehicle type and rank vehicle types to identify those associated with the highest overall crash impact.",
+    "semantic_requirements": [
+      "severity metric construction",
+      "aggregation of injuries and fatalities",
+      "grouping by vehicle type",
+      "ranking by derived measure"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "public_safety_036",
+    "intent": "Find intersections with the worst safety record",
+    "dataset": "NYC_collisions",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "Aggregate severity (e.g., injuries and fatalities) per intersection and rank intersections to identify those with the highest overall crash impact.",
+    "semantic_requirements": [
+      "severity metric construction",
+      "aggregation of injuries and fatalities",
+      "grouping by intersection",
+      "ranking by derived measure"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "public_safety_037",
+    "intent": "Areas with worsening pedestrian injury trends",
+    "dataset": "NYC_collisions",
+    "category": "process_misinterpretation",
+    "vst_family": "process",
+    "failure_type": "Pedestrian injury worsening reduced to static injury totals without temporal trend analysis",
+    "expected_behavior": "Identify areas where pedestrian injuries increase over successive time windows, rather than ranking areas by aggregate injury counts.",
+    "semantic_requirements": [
+      "temporal trend reasoning",
+      "time-window aggregation",
+      "pedestrian injury analysis",
+      "process-level interpretation"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "public_safety_038",
+    "intent": "Vehicle types with recurring severe crash involvement",
+    "dataset": "NYC_collisions",
+    "category": "process_misinterpretation",
+    "vst_family": "process",
+    "failure_type": "Recurring severe involvement reduced to aggregate crash totals without temporal recurrence analysis",
+    "expected_behavior": "Identify vehicle types repeatedly involved in severe crashes across time periods, rather than ranking vehicle types using only total severe crash counts.",
+    "semantic_requirements": [
+      "temporal recurrence reasoning",
+      "severity aggregation",
+      "time-window analysis",
+      "process-level interpretation"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "public_safety_039",
+    "intent": "Boroughs with the highest average crash severity",
+    "dataset": "NYC_collisions",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "Compute average crash severity per borough using injuries and fatalities, and rank boroughs by highest average severity.",
+    "semantic_requirements": [
+      "severity metric computation",
+      "borough-level aggregation",
+      "average computation",
+      "ranking by quantitative measure"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "public_safety_040",
+    "intent": "Areas with the most dangerous crash patterns",
+    "dataset": "NYC_collisions",
+    "category": "role_confusion",
+    "vst_family": "relational",
+    "failure_type": "Danger interpreted using raw collision counts instead of severity-related measures",
+    "expected_behavior": "Interpret danger using meaningful measures such as fatalities, injuries, or severity-weighted crash metrics, rather than ranking areas solely by collision frequency.",
+    "semantic_requirements": [
+      "measure selection for danger",
+      "severity interpretation",
+      "invalid proxy prevention",
+      "aggregation reasoning"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "public_safety_041",
+    "intent": "Zip codes with the highest fatality rates",
+    "dataset": "NYC_collisions",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "Compute fatality rates per zip code and rank zip codes by highest fatality rate.",
+    "semantic_requirements": [
+      "fatality aggregation",
+      "rate computation",
+      "grouping by zip code",
+      "ranking by quantitative measure"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "public_safety_042",
+    "intent": "Locations with unusually severe pedestrian crashes",
+    "dataset": "NYC_collisions",
+    "category": "comparative_grounding",
+    "vst_family": "distributional",
+    "failure_type": "Fixed severity threshold used for unusually severe pedestrian crashes",
+    "expected_behavior": "Identify pedestrian crashes whose severity lies in the upper tail of the pedestrian crash severity distribution and return the associated locations.",
+    "semantic_requirements": [
+      "distributional reasoning",
+      "upper-tail detection",
+      "pedestrian injury severity interpretation",
+      "comparative grounding",
+      "location-level aggregation"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "public_safety_043",
+    "intent": "Boroughs with the largest number of cyclist injuries",
+    "dataset": "NYC_collisions",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "Aggregate cyclist injuries per borough and rank boroughs by highest injury totals.",
+    "semantic_requirements": [
+      "cyclist injury aggregation",
+      "borough-level grouping",
+      "ranking by quantitative measure",
+      "top-k retrieval"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "public_safety_044",
+    "intent": "Vehicle types with the highest average injury count per crash",
+    "dataset": "NYC_collisions",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "Compute average injuries per crash for each vehicle type and rank vehicle types by highest averages.",
+    "semantic_requirements": [
+      "injury aggregation",
+      "average computation",
+      "vehicle-type grouping",
+      "ranking by quantitative measure"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "public_safety_045",
+    "intent": "Intersections with unusually high nighttime crash activity",
+    "dataset": "NYC_collisions",
+    "category": "none",
+    "vst_family": "distributional",
+    "failure_type": "none",
+    "expected_behavior": "Identify intersections whose nighttime crash counts lie in the upper tail of the nighttime crash distribution.",
+    "semantic_requirements": [
+      "time-based event filtering",
+      "distributional reasoning",
+      "upper-tail detection",
+      "intersection-level aggregation"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "public_safety_046",
+    "intent": "Time slots with unusually high crash frequency",
+    "dataset": "NYC_collisions",
+    "category": "comparative_grounding",
+    "vst_family": "distributional",
+    "failure_type": "Fixed crash count threshold used to define high-frequency time slots instead of distribution-based detection",
+    "expected_behavior": "Aggregate crash counts by crash_time hour-of-day, then identify hours in the upper tail of the hour-level crash-count distribution, rather than flagging any hour with more than N crashes.",
+    "semantic_requirements": [
+      "temporal aggregation by hour",
+      "distributional reasoning",
+      "upper-tail detection"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "public_safety_047",
+    "intent": "Vehicle types involved in unusually severe crashes",
+    "dataset": "NYC_collisions",
+    "category": "comparative_grounding",
+    "vst_family": "distributional",
+    "failure_type": "Fixed injury count threshold applied to define severe crashes involving a vehicle type",
+    "expected_behavior": "Compute average severity (persons injured + killed) per crash by vehicle type, then identify vehicle types where this severity measure is in the upper tail of the cross-vehicle-type distribution, not those exceeding a fixed injury threshold.",
+    "semantic_requirements": [
+      "derived severity metric",
+      "vehicle-type-level aggregation",
+      "distributional reasoning"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "public_safety_048",
+    "intent": "ZIP codes with outlier crash densities",
+    "dataset": "NYC_collisions",
+    "category": "comparative_grounding",
+    "vst_family": "distributional",
+    "failure_type": "Arbitrary fixed crash count used to define high-density ZIP codes",
+    "expected_behavior": "Count crashes per zip_code and identify ZIP codes in the upper tail of the crash-count distribution across all ZIP codes, not ZIP codes exceeding a hardcoded threshold.",
+    "semantic_requirements": [
+      "geographic aggregation",
+      "distributional reasoning",
+      "upper-tail detection"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "public_safety_049",
+    "intent": "Hours of day with unusually high pedestrian fatality risk",
+    "dataset": "NYC_collisions",
+    "category": "comparative_grounding",
+    "vst_family": "distributional",
+    "failure_type": "Fixed fatality threshold or fixed hour window used instead of distribution-based detection",
+    "expected_behavior": "Compute pedestrian fatality rate per hour (pedestrian killed / crashes in that hour) and identify hours in the upper tail of this rate distribution, not hours with fatalities exceeding a fixed count or falling in a manually specified time window.",
+    "semantic_requirements": [
+      "rate computation per hour",
+      "distributional reasoning on derived metric",
+      "upper-tail detection"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "public_safety_050",
+    "intent": "Streets with persistently recurring severe crashes across years",
+    "dataset": "NYC_collisions",
+    "category": "process_misinterpretation",
+    "vst_family": "process",
+    "failure_type": "Total crash count or severity count aggregated without checking for cross-year recurrence",
+    "expected_behavior": "Identify streets (on_street_name) that appear in the upper severity tier in multiple distinct years \u2014 demonstrating structural danger, not just a one-time spike \u2014 rather than streets with the highest all-time aggregate crash count.",
+    "semantic_requirements": [
+      "temporal partitioning by year",
+      "cross-year recurrence detection",
+      "severity-based filtering within each year"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "public_safety_051",
+    "intent": "Boroughs with accelerating cyclist injury rates",
+    "dataset": "NYC_collisions",
+    "category": "process_misinterpretation",
+    "vst_family": "process",
+    "failure_type": "Total cyclist injury count compared across two time points instead of computing a year-over-year growth rate",
+    "expected_behavior": "Compute cyclist injury rate (cyclists injured per crash) per borough per year, then identify boroughs where this rate is consistently increasing across multiple consecutive years, not boroughs with the highest total cyclist injury count.",
+    "semantic_requirements": [
+      "rate computation per year",
+      "temporal trend detection",
+      "sustained acceleration pattern"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "public_safety_052",
+    "intent": "Contributing factors with increasing crash prevalence over time",
+    "dataset": "NYC_collisions",
+    "category": "process_misinterpretation",
+    "vst_family": "process",
+    "failure_type": "Aggregate contributing factor frequency used without computing its share of crashes over time",
+    "expected_behavior": "Compute the share of crashes attributed to each contributing factor per year, and identify factors where this share consistently increases across multiple years, not factors with the highest total occurrence count.",
+    "semantic_requirements": [
+      "share computation per year",
+      "temporal trend detection",
+      "sustained growth in prevalence"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "public_safety_053",
+    "intent": "Vehicle types with highest injury rate per crash involvement",
+    "dataset": "NYC_collisions",
+    "category": "quantitative_misinterpretation",
+    "vst_family": "quantitative",
+    "failure_type": "Total injury count used instead of injuries per crash involvement for the vehicle type",
+    "expected_behavior": "Compute average total persons injured per crash for crashes involving each vehicle type, then rank vehicle types by this per-crash rate, not by the raw total injury count across all crashes involving that type.",
+    "semantic_requirements": [
+      "rate computation (injuries per crash)",
+      "vehicle-type-level normalization",
+      "correct metric selection for ranking"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "public_safety_054",
+    "intent": "Contributing factors with highest lethality ratio",
+    "dataset": "NYC_collisions",
+    "category": "quantitative_misinterpretation",
+    "vst_family": "quantitative",
+    "failure_type": "Total fatality count used instead of fatalities-to-total-casualties ratio",
+    "expected_behavior": "Compute the lethality ratio as number_of_persons_killed / (number_of_persons_killed + number_of_persons_injured) per contributing factor, then rank by this ratio. Factors in fewer but more lethal crashes would otherwise be obscured by high-frequency low-lethality ones.",
+    "semantic_requirements": [
+      "ratio computation (fatalities / total casualties)",
+      "contributing-factor-level aggregation",
+      "correct lethality metric"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "public_safety_055",
+    "intent": "Time slots with highest pedestrian-to-motorist injury ratio",
+    "dataset": "NYC_collisions",
+    "category": "quantitative_misinterpretation",
+    "vst_family": "quantitative",
+    "failure_type": "Raw pedestrian injury count used instead of the pedestrian-to-motorist injury ratio",
+    "expected_behavior": "Compute the ratio of total pedestrian injuries to total motorist injuries per hour of day, and rank hours by this ratio to identify when pedestrians bear a disproportionate share of injury risk relative to motorists.",
+    "semantic_requirements": [
+      "ratio computation across two injury dimensions",
+      "temporal aggregation by hour",
+      "proportional metric selection"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "public_safety_056",
+    "intent": "Distracted driving crashes",
+    "dataset": "NYC_collisions",
+    "category": "policy_grounding",
+    "vst_family": "policy",
+    "failure_type": "Distracted driving inferred from loose keyword matching on contributing factor without legal definition",
+    "expected_behavior": "There is no authoritative column for distracted driving classification. Inferring it via contributing_factor LIKE '%distract%' or '%phone%' applies a loose approximation without a formal legal mapping to the actual contributing factor values in the schema.",
+    "semantic_requirements": [
+      "policy definition gap recognition",
+      "avoidance of loose LIKE matching",
+      "contributing factor value awareness"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "public_safety_057",
+    "intent": "Preventable crashes",
+    "dataset": "NYC_collisions",
+    "category": "policy_grounding",
+    "vst_family": "policy",
+    "failure_type": "Preventability inferred from contributing factors using heuristic keyword matching without a formal preventability framework",
+    "expected_behavior": "Preventability is a legal and policy concept not defined in the schema. Any SQL inferring preventability from contributing_factor string patterns (e.g., LIKE '%failure%', LIKE '%inattention%') applies an undefined classification not grounded in the data model.",
+    "semantic_requirements": [
+      "policy definition gap recognition",
+      "legal concept grounding",
+      "avoidance of keyword-based policy inference"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "public_safety_058",
+    "intent": "Crashes involving impaired driving",
+    "dataset": "NYC_collisions",
+    "category": "policy_grounding",
+    "vst_family": "policy",
+    "failure_type": "Impaired driving inferred from keyword matching on contributing factor without legal BAC or intoxication definition",
+    "expected_behavior": "Impaired driving is a legal concept requiring a blood-alcohol threshold or official classification. Inferring it via contributing_factor ILIKE '%alcohol%' OR '%drugs%' uses an informal approximation; the schema contains no authoritative impairment indicator.",
+    "semantic_requirements": [
+      "policy definition gap recognition",
+      "legal threshold requirement",
+      "avoidance of informal factor inference"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "public_safety_059",
+    "intent": "Minor accidents",
+    "dataset": "NYC_collisions",
+    "category": "policy_grounding",
+    "vst_family": "policy",
+    "failure_type": "Minor accident threshold inferred from arbitrary injury count cutoff without legal or policy definition",
+    "expected_behavior": "The schema has no column for accident classification. Defining a minor accident as number_of_persons_injured = 0 AND number_of_persons_killed = 0 is one interpretation but ignores property damage, which is a key legal criterion. Without a policy definition, this inference is ungrounded.",
+    "semantic_requirements": [
+      "policy definition gap recognition",
+      "legal severity classification",
+      "avoidance of arbitrary injury-count-based definitions"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "public_safety_060",
+    "intent": "Boroughs with worst pedestrian safety record",
+    "dataset": "NYC_collisions",
+    "category": "role_confusion",
+    "vst_family": "relational",
+    "failure_type": "Total pedestrian injury count used instead of pedestrian injury rate per crash or per population",
+    "expected_behavior": "Pedestrian safety should be measured by pedestrian injuries per crash (or per unit of exposure), not total pedestrian injury count. Boroughs with more crashes would otherwise rank worst purely because of volume, masking genuine rate differences.",
+    "semantic_requirements": [
+      "proxy selection",
+      "rate-based safety metric",
+      "normalization by exposure"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "public_safety_061",
+    "intent": "Streets with most dangerous conditions",
+    "dataset": "NYC_collisions",
+    "category": "role_confusion",
+    "vst_family": "relational",
+    "failure_type": "Collision count used as proxy for danger rather than severity-weighted rate per street",
+    "expected_behavior": "Street danger should reflect injury or fatality rate per crash on that street, not raw collision count. A busy intersection with many low-severity crashes is less dangerous than one with fewer but consistently severe crashes.",
+    "semantic_requirements": [
+      "proxy selection",
+      "severity rate computation",
+      "normalization by crash count"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "public_safety_062",
+    "intent": "Vehicle types most responsible for cyclist injuries",
+    "dataset": "NYC_collisions",
+    "category": "role_confusion",
+    "vst_family": "relational",
+    "failure_type": "Vehicle type ranked by total crash involvement count rather than cyclist injury rate per crash involvement",
+    "expected_behavior": "Responsibility for cyclist injuries should be measured by the average number of cyclists injured per crash where the vehicle type appears, not the total number of crashes or total cyclist injuries \u2014 common vehicle types would otherwise dominate by volume.",
+    "semantic_requirements": [
+      "proxy selection",
+      "rate-based responsibility metric",
+      "per-crash normalization"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "public_safety_063",
+    "intent": "Total crashes per borough",
+    "dataset": "NYC_collisions",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "COUNT(*) GROUP BY borough, ordered by count descending. Straightforward aggregation with no semantic ambiguity.",
+    "semantic_requirements": [
+      "basic aggregation"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "public_safety_064",
+    "intent": "Most common contributing factors in fatal crashes",
+    "dataset": "NYC_collisions",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "Filter to crashes where number_of_persons_killed > 0, then count occurrences of contributing_factor_vehicle_1, order by count descending. Clear filter condition and aggregation with no distributional ambiguity.",
+    "semantic_requirements": [
+      "filter on fatality count",
+      "frequency aggregation"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "public_safety_065",
+    "intent": "Crashes occurring between 7am and 9am",
+    "dataset": "NYC_collisions",
+    "category": "none",
+    "vst_family": "process",
+    "failure_type": "none",
+    "expected_behavior": "Filter crashes where EXTRACT(HOUR FROM crash_time) BETWEEN 7 AND 9. The time window is explicitly stated \u2014 no policy inference or distributional reasoning required.",
+    "semantic_requirements": [
+      "explicit time filter"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "public_safety_066",
+    "intent": "Average number of persons injured per crash by vehicle type",
+    "dataset": "NYC_collisions",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "Compute AVG(number_of_persons_injured) per vehicle_type_code_1, ordered by average descending. Rate is explicitly requested and denominator is implied by GROUP BY \u2014 no distributional ambiguity.",
+    "semantic_requirements": [
+      "average computation by group"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "public_safety_067",
+    "intent": "Total number of crashes per year",
+    "dataset": "NYC_collisions",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "SELECT EXTRACT(YEAR FROM crash_date) AS year, COUNT(*) FROM crashes GROUP BY year ORDER BY year. Simple temporal aggregation \u2014 no trend detection or distributional reasoning required.",
+    "semantic_requirements": [
+      "temporal aggregation by year"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "public_safety_068",
+    "intent": "Crashes that resulted in at least one fatality",
+    "dataset": "NYC_collisions",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "SELECT * FROM crashes WHERE number_of_persons_killed >= 1. Threshold is explicitly stated \u2014 no distributional reasoning needed.",
+    "semantic_requirements": [
+      "basic filter with explicit threshold"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "public_safety_069",
+    "intent": "Total pedestrian injuries and fatalities by borough",
+    "dataset": "NYC_collisions",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "SELECT borough, SUM(number_of_pedestrians_injured), SUM(number_of_pedestrians_killed) FROM crashes GROUP BY borough. Direct multi-column aggregation.",
+    "semantic_requirements": [
+      "group-level aggregation"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "public_safety_070",
+    "intent": "Most common vehicle types involved in crashes",
+    "dataset": "NYC_collisions",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "COUNT occurrences of vehicle_type_code_1 GROUP BY vehicle_type_code_1 ORDER BY count DESC. Straightforward frequency ranking with no rate or distributional inference.",
+    "semantic_requirements": [
+      "frequency aggregation"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "public_safety_071",
+    "intent": "Crashes involving more than 3 persons injured",
+    "dataset": "NYC_collisions",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "SELECT * FROM crashes WHERE number_of_persons_injured > 3. Threshold explicitly stated in intent.",
+    "semantic_requirements": [
+      "basic filter with explicit threshold"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "public_safety_072",
+    "intent": "Number of crashes per day of the week",
+    "dataset": "NYC_collisions",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "SELECT EXTRACT(DOW FROM crash_date) AS day_of_week, COUNT(*) FROM crashes GROUP BY day_of_week ORDER BY day_of_week. Direct temporal grouping \u2014 no distributional inference.",
+    "semantic_requirements": [
+      "temporal aggregation by day-of-week"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "public_safety_073",
+    "intent": "Crashes at a specific intersection of Broadway and 42nd Street",
+    "dataset": "NYC_collisions",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "Filter WHERE on_street_name ILIKE '%BROADWAY%' AND cross_street_name ILIKE '%42%'. Intersection is explicitly named \u2014 no policy inference.",
+    "semantic_requirements": [
+      "explicit location filter"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "public_safety_074",
+    "intent": "Average number of persons injured per crash by borough",
+    "dataset": "NYC_collisions",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "SELECT borough, AVG(number_of_persons_injured) FROM crashes GROUP BY borough. Direct per-group average \u2014 rate is implicit in AVG and no normalization inference needed.",
+    "semantic_requirements": [
+      "group-level average"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "public_safety_075",
+    "intent": "Crashes where cyclists were involved",
+    "dataset": "NYC_collisions",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "SELECT * FROM crashes WHERE number_of_cyclist_injured > 0 OR number_of_cyclist_killed > 0. Direct filter on explicit cyclist columns.",
+    "semantic_requirements": [
+      "basic filter"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "public_safety_076",
+    "intent": "Top 10 most frequent contributing factors across all crashes",
+    "dataset": "NYC_collisions",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "COUNT occurrences of contributing_factor_vehicle_1, ORDER BY count DESC, LIMIT 10. Straightforward frequency ranking \u2014 no rate, threshold, or policy inference needed.",
+    "semantic_requirements": [
+      "frequency aggregation",
+      "top-N ranking"
+    ],
+    "difficulty": "easy"
+  }
+]

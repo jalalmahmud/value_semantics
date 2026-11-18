@@ -1,0 +1,11 @@
+{
+  "database": "public_safety",
+  "schema": "public",
+  "tables": [
+    {
+      "table": "crashes",
+      "path": "demos/public_safety_vsl/crashes_vsl.json"
+    }
+  ],
+  "database_vsl": "demos/public_safety_vsl/database_vsl.json"
+}

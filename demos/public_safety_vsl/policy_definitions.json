@@ -1,0 +1,353 @@
+{
+  "domain": "public_safety",
+  "policies": [
+    {
+      "concept": "hit_and_run",
+      "description": "Hit-and-run collision: driver departed the scene without providing information",
+      "keywords": [
+        "hit-and-run",
+        "hit and run"
+      ],
+      "is_gap": false,
+      "sql_condition": "contributing_factor_vehicle_1 = 'Hit & Run - Leaving Scene Without Information' OR contributing_factor_vehicle_2 = 'Hit & Run - Leaving Scene Without Information'",
+      "column_mappings": {
+        "contributing_factor_vehicle_1": [
+          "Hit & Run - Leaving Scene Without Information"
+        ],
+        "contributing_factor_vehicle_2": [
+          "Hit & Run - Leaving Scene Without Information"
+        ]
+      },
+      "source": "NY Vehicle and Traffic Law § 600 — duty to stop at accident scene"
+    },
+    {
+      "concept": "moving_violation",
+      "description": "Collision involving a moving violation: speed, lane usage, yielding, or signal/sign violation",
+      "keywords": [
+        "moving violation",
+        "moving violation collision"
+      ],
+      "is_gap": false,
+      "sql_condition": "contributing_factor_vehicle_1 IN ('Unsafe Speed', 'Traffic Control Disregarded', 'Failure to Yield Right-of-Way', 'Passing or Lane Usage Improper', 'Unsafe Lane Changing', 'Turning Improperly', 'Following Too Closely', 'Passing Too Closely')",
+      "column_mappings": {
+        "contributing_factor_vehicle_1": [
+          "Unsafe Speed",
+          "Traffic Control Disregarded",
+          "Failure to Yield Right-of-Way",
+          "Passing or Lane Usage Improper",
+          "Unsafe Lane Changing",
+          "Turning Improperly",
+          "Following Too Closely",
+          "Passing Too Closely"
+        ]
+      },
+      "source": "NY Vehicle and Traffic Law — moving violation classifications"
+    },
+    {
+      "concept": "major_incident",
+      "description": "Major incident: fatality OR 5+ persons injured OR DUI involvement",
+      "keywords": [
+        "major incident",
+        "classified as major incident"
+      ],
+      "is_gap": false,
+      "sql_condition": "number_of_persons_killed > 0 OR number_of_persons_injured >= 5 OR contributing_factor_vehicle_1 IN ('Alcohol Involvement', 'Drugs/Medication')",
+      "source": "NY MVC major incident classification criteria"
+    },
+    {
+      "concept": "handheld_device_violation",
+      "description": "Collision involving handheld cell phone use — prohibited under NY VTL § 1225-c",
+      "keywords": [
+        "cell phone",
+        "handheld device",
+        "phone use",
+        "handheld phone violation"
+      ],
+      "is_gap": false,
+      "sql_condition": "contributing_factor_vehicle_1 = 'Cell Phone (hand-Held)' OR contributing_factor_vehicle_2 = 'Cell Phone (hand-Held)'",
+      "column_mappings": {
+        "contributing_factor_vehicle_1": [
+          "Cell Phone (hand-Held)"
+        ],
+        "contributing_factor_vehicle_2": [
+          "Cell Phone (hand-Held)"
+        ]
+      },
+      "source": "NY Vehicle and Traffic Law § 1225-c — prohibition on handheld mobile telephone use while driving"
+    },
+    {
+      "concept": "texting_while_driving",
+      "description": "Collision involving texting or portable electronic device use — prohibited under NY VTL § 1225-d",
+      "keywords": [
+        "texting while driving",
+        "texting",
+        "electronic device",
+        "distracted by phone"
+      ],
+      "is_gap": false,
+      "sql_condition": "contributing_factor_vehicle_1 IN ('Cell Phone (hand-Held)', 'Cell Phone (hands-free)') OR contributing_factor_vehicle_2 IN ('Cell Phone (hand-Held)', 'Cell Phone (hands-free)')",
+      "column_mappings": {
+        "contributing_factor_vehicle_1": [
+          "Cell Phone (hand-Held)",
+          "Cell Phone (hands-free)"
+        ],
+        "contributing_factor_vehicle_2": [
+          "Cell Phone (hand-Held)",
+          "Cell Phone (hands-free)"
+        ]
+      },
+      "source": "NY Vehicle and Traffic Law § 1225-d — prohibition on use of portable electronic devices while driving"
+    },
+    {
+      "concept": "distracted_driving",
+      "description": "Distracted driving — legal classification not directly captured in schema",
+      "keywords": [
+        "distracted driving"
+      ],
+      "is_gap": true,
+      "gap_message": "Distracted driving is a legal classification not directly captured in the schema. The closest proxy is contributing_factor_vehicle_1 = 'Driver Inattention/Distraction', but this does not distinguish phone use, eating, or other legally distinct distractions. Use the proxy and explicitly flag it as an approximation.",
+      "gap_alternatives": [
+        "contributing_factor_vehicle_1 = 'Driver Inattention/Distraction'"
+      ]
+    },
+    {
+      "concept": "preventable_crash",
+      "description": "Preventability — a legal and policy concept not defined in the schema",
+      "keywords": [
+        "preventable crash",
+        "preventable"
+      ],
+      "is_gap": true,
+      "gap_message": "Preventability is a legal and insurance concept not inferrable from contributing_factor string patterns. Do not use LIKE '%failure%' or '%inattention%'. Acknowledge that this concept requires a formal policy definition absent from this schema.",
+      "gap_alternatives": []
+    },
+    {
+      "concept": "impaired_driving",
+      "description": "Impaired driving — requires BAC threshold or official classification not present in schema",
+      "keywords": [
+        "impaired driving",
+        "impaired"
+      ],
+      "is_gap": true,
+      "gap_message": "Impaired driving requires a BAC threshold (>= 0.08%) or an official impairment classification. The schema has no authoritative impairment indicator. Use contributing_factor_vehicle_1 IN ('Alcohol Involvement', 'Drugs/Medication') as the best available proxy and explicitly flag it as approximate.",
+      "gap_alternatives": [
+        "contributing_factor_vehicle_1 IN ('Alcohol Involvement', 'Drugs/Medication')"
+      ]
+    },
+    {
+      "concept": "minor_accident",
+      "description": "Minor accident — no authoritative severity classification column in schema",
+      "keywords": [
+        "minor accident",
+        "minor accidents"
+      ],
+      "is_gap": true,
+      "gap_message": "The schema has no accident severity classification column. Defining 'minor' as number_of_persons_injured = 0 AND number_of_persons_killed = 0 is one interpretation but excludes property damage, which is a key legal criterion. Use the proxy and explicitly flag the approximation.",
+      "gap_alternatives": [
+        "number_of_persons_injured = 0 AND number_of_persons_killed = 0"
+      ]
+    },
+    {
+      "concept": "fatal_collision",
+      "description": "Fatal traffic collision: one or more persons killed — triggers mandatory NYPD investigation and DA notification",
+      "keywords": [
+        "fatal collision",
+        "fatal crash",
+        "fatal traffic",
+        "persons killed",
+        "fatality crash",
+        "deadly crash"
+      ],
+      "is_gap": false,
+      "sql_condition": "number_of_persons_killed >= 1",
+      "threshold": 1,
+      "column_mappings": {
+        "number_of_persons_killed": ">= 1"
+      },
+      "source": "NYPD Operations Order — any collision resulting in death requires mandatory detective investigation and District Attorney notification"
+    },
+    {
+      "concept": "pedestrian_cyclist_fatality",
+      "description": "Collision resulting in pedestrian or cyclist death — Vision Zero mandatory borough-level safety review",
+      "keywords": [
+        "pedestrian fatality",
+        "cyclist fatality",
+        "pedestrian killed",
+        "cyclist killed",
+        "Vision Zero fatality",
+        "pedestrian or cyclist killed",
+        "pedestrian death",
+        "cyclist death",
+        "pedestrian or cyclist fatalities",
+        "pedestrian or cyclist was killed",
+        "Vision Zero reportable"
+      ],
+      "is_gap": false,
+      "sql_condition": "number_of_pedestrians_killed > 0 OR number_of_cyclist_killed > 0",
+      "column_mappings": {
+        "number_of_pedestrians_killed": "> 0",
+        "number_of_cyclist_killed": "> 0"
+      },
+      "source": "NYC Vision Zero Act — all pedestrian and cyclist fatalities require dedicated investigation and borough safety review"
+    },
+    {
+      "concept": "cyclist_injury",
+      "description": "Collision involving cyclist injury or fatality — reportable under NYC Vision Zero cyclist safety program",
+      "keywords": [
+        "cyclist injury",
+        "cyclist injured",
+        "bicycle injury",
+        "cyclist crash",
+        "cyclist involved",
+        "bicycle crash",
+        "cyclist injuries",
+        "cyclist incidents",
+        "bicycle crashes",
+        "cyclist deaths"
+      ],
+      "is_gap": false,
+      "sql_condition": "number_of_cyclist_injured > 0 OR number_of_cyclist_killed > 0",
+      "column_mappings": {
+        "number_of_cyclist_injured": "> 0",
+        "number_of_cyclist_killed": "> 0"
+      },
+      "source": "NYC Vision Zero Cyclist Safety program — all cyclist injuries and fatalities logged for borough-level safety trend analysis"
+    },
+    {
+      "concept": "dangerous_intersection",
+      "description": "Dangerous intersection — no official safety classification in schema; crash frequency used as proxy",
+      "keywords": [
+        "dangerous intersection",
+        "high-risk intersection",
+        "most dangerous intersection",
+        "dangerous location",
+        "dangerous road",
+        "most crashes",
+        "high-risk road",
+        "locations have had the most",
+        "crash frequency"
+      ],
+      "is_gap": true,
+      "gap_message": "A dangerous intersection has no official classification in this schema. The best available proxy is crash frequency at the same on_street_name / cross_street_name pair, but this does not account for traffic volume, time of day, or severity weighting — all of which are used in formal safety designations. Use crash count via GROUP BY on_street_name, cross_street_name and explicitly flag that this is a frequency-based approximation, not an official safety designation.",
+      "gap_alternatives": [
+        "GROUP BY on_street_name, cross_street_name ORDER BY COUNT(*) DESC to surface high-frequency crash locations"
+      ]
+    },
+    {
+      "concept": "aggressive_driving",
+      "description": "Aggressive driving — behavioral and legal classification not directly captured by contributing_factor codes",
+      "keywords": [
+        "aggressive driving",
+        "road rage",
+        "aggressive driver",
+        "aggressive behavior",
+        "road aggression",
+        "crashes caused by aggressive"
+      ],
+      "is_gap": true,
+      "gap_message": "Aggressive driving is a behavioral and legal classification requiring officer observation or formal citation — it is not inferable from contributing_factor strings alone. 'Unsafe Speed', 'Following Too Closely', and 'Passing Too Closely' are partial proxies but do not distinguish aggression from ordinary negligence. Use these as a proxy set and explicitly flag that aggressive driving cannot be deterministically identified from this schema.",
+      "gap_alternatives": [
+        "contributing_factor_vehicle_1 IN ('Unsafe Speed', 'Following Too Closely', 'Passing Too Closely', 'Traffic Control Disregarded')"
+      ]
+    },
+    {
+      "concept": "pedestrian_injury",
+      "description": "Collision resulting in one or more pedestrian injuries — triggers Vision Zero pedestrian safety review and enhanced data collection under NYC Local Law 13.",
+      "keywords": [
+        "pedestrian injured",
+        "pedestrian injury",
+        "pedestrians hurt",
+        "pedestrians involved",
+        "pedestrian hurt",
+        "pedestrian collision",
+        "pedestrians were injured"
+      ],
+      "is_gap": false,
+      "sql_condition": "number_of_pedestrians_injured > 0",
+      "column_mappings": {
+        "number_of_pedestrians_injured": "> 0"
+      },
+      "source": "NYC Vision Zero Act; NYC Local Law 13 — all pedestrian injury crashes logged for street safety intervention analysis"
+    },
+    {
+      "concept": "motorist_fatality",
+      "description": "Collision resulting in the death of a vehicle motorist (driver or passenger) — triggers NYPD Collision Investigation Squad (CIS) mandatory response.",
+      "keywords": [
+        "motorist killed",
+        "driver fatality",
+        "motorist fatality",
+        "driver killed",
+        "vehicle occupant killed",
+        "driver death",
+        "passenger fatality"
+      ],
+      "is_gap": false,
+      "sql_condition": "number_of_motorist_killed >= 1",
+      "threshold": 1,
+      "column_mappings": {
+        "number_of_motorist_killed": ">= 1"
+      },
+      "source": "NYPD Operations Order — motorist fatalities require CIS response and Brooklyn DA or applicable borough DA notification; distinct from pedestrian/cyclist fatality tracking"
+    },
+    {
+      "concept": "drug_impaired_driving",
+      "description": "Collision where drug or medication impairment is identified as a contributing factor — triggers mandatory toxicology and enhanced investigation under NY VTL § 1192(4).",
+      "keywords": [
+        "drug impaired",
+        "drug driving",
+        "medication impaired",
+        "drugged driving",
+        "substance impaired",
+        "drug related crash",
+        "drugs or medication"
+      ],
+      "is_gap": false,
+      "sql_condition": "contributing_factor_vehicle_1 = 'Drugs/Medication' OR contributing_factor_vehicle_2 = 'Drugs/Medication'",
+      "column_mappings": {
+        "contributing_factor_vehicle_1": [
+          "Drugs/Medication"
+        ],
+        "contributing_factor_vehicle_2": [
+          "Drugs/Medication"
+        ]
+      },
+      "source": "NY Vehicle and Traffic Law § 1192(4) — driving while impaired by drugs; mandatory toxicology and investigation required"
+    },
+    {
+      "concept": "road_rage_incident",
+      "description": "Road rage — intentional aggressive act by a driver toward another road user; behavioral classification not captured by contributing_factor codes.",
+      "keywords": [
+        "road rage",
+        "road rage incident",
+        "intentional aggression",
+        "deliberate collision",
+        "aggressive driver attack",
+        "road rage crash"
+      ],
+      "is_gap": true,
+      "gap_message": "Road rage is a deliberate aggressive act, legally distinct from reckless or negligent driving. It requires witness statements, victim reports, or officer observation to establish intent — none of which are recorded in this crash schema. The contributing_factor column does not include a 'Road Rage' value and aggressive contributing factors ('Unsafe Speed', 'Following Too Closely') describe negligence, not intentional aggression. Road rage cannot be identified from this schema; do not apply any proxy without disclosing that the results will include negligent crashes not involving road rage.",
+      "gap_alternatives": [
+        "contributing_factor_vehicle_1 IN ('Unsafe Speed', 'Following Too Closely', 'Passing Too Closely') as a very crude and over-inclusive proxy"
+      ]
+    },
+    {
+      "concept": "weather_related_crash",
+      "description": "Crash where adverse weather conditions (ice, rain, fog, snow) were a contributing factor — no weather column in this schema; requires external data join.",
+      "keywords": [
+        "weather related",
+        "weather crash",
+        "icy road crash",
+        "rain related crash",
+        "snow crash",
+        "fog crash",
+        "adverse weather collision",
+        "slippery road crash"
+      ],
+      "is_gap": true,
+      "gap_message": "Weather-related crashes cannot be identified from this schema. The NYPD crash dataset does not include a weather condition column or road surface condition field. Contributing factors are driver-behavior-based and do not encode environmental conditions. Determining weather contribution requires joining crash time and location with an external weather dataset (e.g., NOAA hourly observations by zip code). Disclose this schema limitation and do not attempt to infer weather from crash_time alone.",
+      "gap_alternatives": [
+        "No schema-based proxy available; requires JOIN with external weather observation data (NOAA ISD or similar) on crash_date + zip_code"
+      ]
+    }
+  ]
+}

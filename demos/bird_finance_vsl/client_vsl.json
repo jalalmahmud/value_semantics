@@ -1,0 +1,403 @@
+{
+  "table": "client",
+  "columns": {
+    "client_id": {
+      "declared_type": "int64",
+      "sample_values": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "stats": {
+        "row_count": 1000,
+        "distinct_count": 1000,
+        "null_count": 0,
+        "null_fraction": 0.0
+      }
+    },
+    "gender": {
+      "declared_type": "str",
+      "sample_values": [
+        "F",
+        "M",
+        "F",
+        "M",
+        "F"
+      ],
+      "stats": {
+        "row_count": 1000,
+        "distinct_count": 2,
+        "null_count": 0,
+        "null_fraction": 0.0
+      }
+    },
+    "birth_date": {
+      "declared_type": "object",
+      "sample_values": [
+        "1970-12-13",
+        "1945-02-04",
+        "1940-10-09",
+        "1956-12-01",
+        "1960-07-03"
+      ],
+      "stats": {
+        "row_count": 1000,
+        "distinct_count": 981,
+        "null_count": 0,
+        "null_fraction": 0.0
+      }
+    },
+    "district_id": {
+      "declared_type": "int64",
+      "sample_values": [
+        18,
+        1,
+        1,
+        5,
+        5
+      ],
+      "stats": {
+        "row_count": 1000,
+        "distinct_count": 77,
+        "null_count": 0,
+        "null_fraction": 0.0
+      }
+    }
+  },
+  "semantics": {
+    "client_id": {
+      "value_semantics": {
+        "semantic_type": "ID_NUMERIC",
+        "is_identifier": true,
+        "is_categorical": false,
+        "is_free_text": false,
+        "numeric": {
+          "is_numeric": false,
+          "is_continuous": false,
+          "is_discrete": false,
+          "min": null,
+          "max": null
+        },
+        "temporal": {
+          "is_date": false,
+          "is_datetime": false,
+          "is_duration": false,
+          "granularity": null
+        },
+        "confidence": 0.95,
+        "rationale": "Column name and numeric values indicate identifier semantics."
+      },
+      "semantic_role": {
+        "primary_role": "IDENTIFIER",
+        "confidence": 0.95,
+        "role_arguments": {},
+        "query_constraints": {
+          "can_select": true,
+          "can_join": true,
+          "can_group_by": false,
+          "can_filter_equality": true,
+          "can_order_as_measure": false,
+          "can_aggregate": false
+        },
+        "justification": {
+          "rule": "identifier_flag"
+        }
+      },
+      "process_vst_role": {
+        "role": "EVENT_KEY",
+        "confidence": 0.9,
+        "rationale": "Unique identifier for event rows."
+      },
+      "query_constraints": {
+        "query_constraints": {
+          "should_not_sum": true,
+          "should_not_average": true,
+          "should_not_compare_magnitude": true,
+          "allowed_operations": [
+            "SELECT",
+            "JOIN",
+            "GROUP_BY",
+            "COUNT_DISTINCT",
+            "EQUALITY_FILTER"
+          ],
+          "disallowed_operations": [
+            "SUM",
+            "AVG",
+            "MIN",
+            "MAX",
+            "GREATER_THAN",
+            "LESS_THAN"
+          ],
+          "reason": "Identifiers support equality/join semantics only."
+        },
+        "confidence": 0.85,
+        "rationale": "Operational query constraints inferred from semantic roles and value semantics."
+      }
+    },
+    "gender": {
+      "value_semantics": {
+        "semantic_type": "ENUM_CATEGORY",
+        "is_identifier": false,
+        "is_categorical": true,
+        "is_free_text": false,
+        "numeric": {
+          "is_numeric": false,
+          "is_continuous": false,
+          "is_discrete": false,
+          "min": null,
+          "max": null
+        },
+        "temporal": {
+          "is_date": false,
+          "is_datetime": false,
+          "is_duration": false,
+          "granularity": null
+        },
+        "confidence": 0.85,
+        "rationale": "Low-cardinality string values indicate categorical semantics."
+      },
+      "semantic_role": {
+        "primary_role": "DESCRIPTIVE",
+        "confidence": 0.55,
+        "role_arguments": {},
+        "query_constraints": {
+          "can_group_by": true,
+          "can_filter_equality": true,
+          "can_compare_magnitude": false
+        },
+        "justification": {
+          "type_prior": "ENUM_CATEGORY"
+        }
+      },
+      "query_constraints": {
+        "query_constraints": {
+          "supports_grouping": true,
+          "supports_equality_filtering": true,
+          "supports_segmentation": true,
+          "should_not_average": true,
+          "should_not_sum": true
+        },
+        "confidence": 0.85,
+        "rationale": "Operational query constraints inferred from semantic roles and value semantics."
+      }
+    },
+    "birth_date": {
+      "value_semantics": {
+        "semantic_type": "DATE",
+        "is_identifier": false,
+        "is_categorical": false,
+        "is_free_text": false,
+        "numeric": {
+          "is_numeric": false,
+          "is_continuous": false,
+          "is_discrete": false,
+          "min": null,
+          "max": null
+        },
+        "temporal": {
+          "is_date": true,
+          "granularity": "day"
+        },
+        "confidence": 0.95,
+        "rationale": "Values are date objects."
+      },
+      "semantic_role": {
+        "primary_role": "EVENT_TIME",
+        "confidence": 0.7,
+        "role_arguments": {},
+        "query_constraints": {
+          "can_filter_range": true,
+          "can_bucket_time": true,
+          "can_order": true
+        },
+        "justification": {
+          "type_prior": "DATE"
+        }
+      },
+      "process_vst_role": {
+        "role": "EVENT_TIME",
+        "confidence": 0.9,
+        "rationale": "Timestamp/date ordering events in the process."
+      },
+      "query_constraints": {
+        "query_constraints": {
+          "supports_temporal_filtering": true,
+          "supports_time_bucketing": true,
+          "supports_trend_analysis": true,
+          "supports_windowing": true
+        },
+        "confidence": 0.85,
+        "rationale": "Operational query constraints inferred from semantic roles and value semantics."
+      }
+    },
+    "district_id": {
+      "value_semantics": {
+        "semantic_type": "ID_NUMERIC",
+        "is_identifier": true,
+        "is_categorical": false,
+        "is_free_text": false,
+        "numeric": {
+          "is_numeric": false,
+          "is_continuous": false,
+          "is_discrete": false,
+          "min": null,
+          "max": null
+        },
+        "temporal": {
+          "is_date": false,
+          "is_datetime": false,
+          "is_duration": false,
+          "granularity": null
+        },
+        "confidence": 0.95,
+        "rationale": "Column name and numeric values indicate identifier semantics."
+      },
+      "semantic_role": {
+        "primary_role": "IDENTIFIER",
+        "confidence": 0.95,
+        "role_arguments": {},
+        "query_constraints": {
+          "can_select": true,
+          "can_join": true,
+          "can_group_by": false,
+          "can_filter_equality": true,
+          "can_order_as_measure": false,
+          "can_aggregate": false
+        },
+        "justification": {
+          "rule": "identifier_flag"
+        }
+      },
+      "process_vst_role": {
+        "role": "PROCESS_KEY",
+        "confidence": 0.9,
+        "rationale": "Repeated entity identifier across event rows."
+      },
+      "query_constraints": {
+        "query_constraints": {
+          "should_not_sum": true,
+          "should_not_average": true,
+          "should_not_compare_magnitude": true,
+          "allowed_operations": [
+            "SELECT",
+            "JOIN",
+            "GROUP_BY",
+            "COUNT_DISTINCT",
+            "EQUALITY_FILTER"
+          ],
+          "disallowed_operations": [
+            "SUM",
+            "AVG",
+            "MIN",
+            "MAX",
+            "GREATER_THAN",
+            "LESS_THAN"
+          ],
+          "reason": "Identifiers support equality/join semantics only."
+        },
+        "confidence": 0.85,
+        "rationale": "Operational query constraints inferred from semantic roles and value semantics."
+      }
+    }
+  },
+  "table_semantics": {
+    "process_semantics": {
+      "row_semantics": "EVENT",
+      "event_time": "birth_date",
+      "event_key": "client_id",
+      "process_keys": [
+        "district_id"
+      ],
+      "event_measures": [],
+      "constraints": {
+        "requires_temporal_reasoning": true,
+        "requires_time_bucketing": true,
+        "row_local_substitution_invalid": true
+      },
+      "confidence": 0.8,
+      "rationale": "Detected event-time attribute with event key, repeated process keys, and quantitative event measures."
+    },
+    "process_patterns": {
+      "event_time": "birth_date",
+      "patterns": {
+        "district_id": {
+          "process_key": "district_id",
+          "event_time": "birth_date",
+          "sequence_count": 77,
+          "interval_count": 923,
+          "expected_interval_days": 1503.7,
+          "interval_std_days": 1824.37,
+          "cadence": "irregular",
+          "irregularity": 1.213,
+          "irregularity_threshold_days": 3648.73,
+          "confidence": 0.7,
+          "rationale": "Detected temporal cadence from repeated process-key events."
+        }
+      },
+      "confidence": 0.7,
+      "rationale": "Temporal event patterns inferred from process-key event sequences."
+    },
+    "process_operator_semantics": {
+      "process_operators": [
+        {
+          "operator": "AGGREGATE_OVER_TIME",
+          "requires_time_bucketing": true,
+          "time_attribute": "birth_date",
+          "time_grain_candidates": [
+            "day",
+            "week",
+            "month"
+          ],
+          "default_time_grain": "month",
+          "confidence": 0.75
+        },
+        {
+          "operator": "WINDOW_PERSISTENCE",
+          "intent_terms": [
+            "sustained",
+            "persistent",
+            "consistently",
+            "recurring"
+          ],
+          "requires_time_bucketing": true,
+          "requires_window_analysis": true,
+          "process_keys": [
+            "district_id"
+          ],
+          "time_attribute": "birth_date",
+          "min_periods": 3,
+          "confidence": 0.65
+        },
+        {
+          "operator": "CHANGE_DETECTION",
+          "intent_terms": [
+            "changed",
+            "became",
+            "transition",
+            "moved from",
+            "shifted"
+          ],
+          "state_attribute": "gender",
+          "process_keys": [
+            "district_id"
+          ],
+          "event_time": "birth_date",
+          "requires_sequence": true,
+          "confidence": 0.65
+        }
+      ],
+      "query_constraints": {
+        "requires_temporal_reasoning": true,
+        "requires_time_bucketing": true,
+        "requires_grouped_trend": false,
+        "requires_normalization": false,
+        "requires_window_analysis": true,
+        "requires_sequence": true
+      },
+      "confidence": 0.75,
+      "rationale": "Operational process semantics inferred from event time, process keys, event measures, and process patterns."
+    }
+  }
+}

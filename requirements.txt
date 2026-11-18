@@ -1,0 +1,15 @@
+# Dependencies for rerunning SQL generation (PM / PE / baseline / D1 / D2).
+# Generation loads the shipped JSON registries and calls the model API — no database required.
+openai>=1.0
+sqlglot>=20
+# pandas/numpy are pinned: these exact versions reproduce the shipped public-safety registry
+# byte-for-byte via demos/build_ps_registry_v2engine.py. Other versions can differ in float/percentile
+# formatting (the registry content is equivalent, but the file may not be byte-identical).
+pandas==2.2.3
+numpy==1.26.4
+pydantic>=2.0
+python-dotenv>=1.0
+
+# Only needed for DB-backed VST inference from raw data or SQL execution
+# (NOT required to rerun generation from the shipped registries):
+psycopg2-binary>=2.9

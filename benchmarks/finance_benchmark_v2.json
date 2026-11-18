@@ -1,0 +1,1360 @@
+[
+  {
+    "id": "finance_001",
+    "intent": "Loans with unusually high principal amount given their loan status",
+    "dataset": "BIRD_finance",
+    "category": "comparative_grounding",
+    "vst_family": "distributional",
+    "failure_type": "Uses average instead of a tail cutoff",
+    "expected_behavior": "Compare within the relevant group and use a relative/tail cutoff, not a global or fixed threshold.",
+    "semantic_requirements": [
+      "within-group comparison",
+      "upper-tail check",
+      "distribution check"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "finance_002",
+    "intent": "Find unusually large withdrawals",
+    "dataset": "BIRD_finance",
+    "category": "comparative_grounding",
+    "vst_family": "distributional",
+    "failure_type": "Uses a fixed cutoff for a relative term",
+    "expected_behavior": "Use a distribution-based threshold for the comparative term instead of a hard-coded cutoff.",
+    "semantic_requirements": [
+      "upper-tail check",
+      "distribution check"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "finance_003",
+    "intent": "Accounts with sustained negative balance",
+    "dataset": "BIRD_finance",
+    "category": "process_misinterpretation",
+    "vst_family": "process",
+    "failure_type": "Checks one row instead of a sustained state",
+    "expected_behavior": "Require the condition to hold over a continuous or repeated period.",
+    "semantic_requirements": [
+      "sustained-state check",
+      "event sequence/order"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "finance_004",
+    "intent": "Find large loans",
+    "dataset": "BIRD_finance",
+    "category": "comparative_grounding",
+    "vst_family": "distributional",
+    "failure_type": "Uses a fixed cutoff for a relative term",
+    "expected_behavior": "Use a distribution-based threshold for the comparative term instead of a hard-coded cutoff.",
+    "semantic_requirements": [
+      "upper-tail check",
+      "distribution check"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "finance_005",
+    "intent": "Accounts with unusually frequent withdrawals",
+    "dataset": "BIRD_finance",
+    "category": "comparative_grounding",
+    "vst_family": "distributional",
+    "failure_type": "Mean frequency used rather than tail-based threshold",
+    "expected_behavior": "Use a distribution-based threshold for the comparative term instead of a hard-coded cutoff.",
+    "semantic_requirements": [
+      "upper-tail check",
+      "distribution check"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "finance_006",
+    "intent": "Clients with highest account",
+    "dataset": "BIRD_finance",
+    "category": "role_confusion",
+    "vst_family": "relational",
+    "failure_type": "Ranks by an identifier",
+    "expected_behavior": "Do not rank by IDs; ask for clarification or count related accounts if that is intended.",
+    "semantic_requirements": [
+      "identifier is not a measure",
+      "avoid invalid ranking"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "finance_007",
+    "intent": "Which accounts have the highest number of transactions?",
+    "dataset": "BIRD_finance",
+    "category": "none",
+    "vst_family": "relational",
+    "failure_type": "none",
+    "expected_behavior": "Count the number of transactions per account and return the account(s) with the highest transaction count.",
+    "semantic_requirements": [
+      "group and aggregate",
+      "ranking"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "finance_008",
+    "intent": "Loans with payment irregularity",
+    "dataset": "BIRD_finance",
+    "category": "process_misinterpretation",
+    "vst_family": "process",
+    "failure_type": "Payment irregularity treated as loan status predicate",
+    "expected_behavior": "Use the account/loan event history, not a single static condition.",
+    "semantic_requirements": [
+      "event sequence/order"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "finance_009",
+    "intent": "Loans with high amount but low repayment",
+    "dataset": "BIRD_finance",
+    "category": "comparative_grounding",
+    "vst_family": "distributional",
+    "failure_type": "Uses fixed cutoffs rather than relative distributional comparison",
+    "expected_behavior": "Use relative high/low cutoffs for both amount and repayment.",
+    "semantic_requirements": [
+      "lower-tail check",
+      "upper-tail check",
+      "multi-metric comparison"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "finance_010",
+    "intent": "Loans with largest remaining balance",
+    "dataset": "BIRD_finance",
+    "category": "quantitative_misinterpretation",
+    "vst_family": "quantitative",
+    "failure_type": "Ranks by original amount, not remaining balance",
+    "expected_behavior": "Rank by estimated unpaid balance, not by original loan amount.",
+    "semantic_requirements": [
+      "right formula",
+      "right metric"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "finance_011",
+    "intent": "Most important accounts",
+    "dataset": "BIRD_finance",
+    "category": "role_confusion",
+    "vst_family": "relational",
+    "failure_type": "Uses account date as a proxy for importance",
+    "expected_behavior": "Use a meaningful signal for the concept, or ask for clarification if the concept is ambiguous.",
+    "semantic_requirements": [
+      "avoid weak proxy",
+      "choose meaningful signal",
+      "clarify ambiguous intent"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "finance_012",
+    "intent": "Accounts with increasing withdrawal frequency over time",
+    "dataset": "BIRD_finance",
+    "category": "process_misinterpretation",
+    "vst_family": "process",
+    "failure_type": "Increasing temporal trend treated as total withdrawal count",
+    "expected_behavior": "Check how the behavior changes over time, not just the overall count or value.",
+    "semantic_requirements": [
+      "trend over time",
+      "event history"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "finance_013",
+    "intent": "Which loans are the most expensive?",
+    "dataset": "BIRD_finance",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "Rank loans by their principal amount and return those with the highest values.",
+    "semantic_requirements": [
+      "ranking"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "finance_014",
+    "intent": "Loans with extreme duration compared to principal",
+    "dataset": "BIRD_finance",
+    "category": "comparative_grounding",
+    "vst_family": "distributional",
+    "failure_type": "Arbitrary ratio thresholds used rather than distribution-based comparison",
+    "expected_behavior": "Use a distribution-based threshold for the comparative term instead of a hard-coded cutoff.",
+    "semantic_requirements": [
+      "upper-tail check",
+      "distribution check"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "finance_015",
+    "intent": "Loans with high repayment ratio",
+    "dataset": "BIRD_finance",
+    "category": "quantitative_misinterpretation",
+    "vst_family": "quantitative",
+    "failure_type": "Uses status instead of a repayment ratio",
+    "expected_behavior": "Build the intended ratio/percentage with the right numerator and denominator.",
+    "semantic_requirements": [
+      "right denominator/normalization",
+      "right formula",
+      "right metric"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "finance_016",
+    "intent": "Accounts with frequent negative-balance events",
+    "dataset": "BIRD_finance",
+    "category": "process_misinterpretation",
+    "vst_family": "process",
+    "failure_type": "Negative-balance behavior treated as simple event count without process-level interpretation",
+    "expected_behavior": "Use the account/loan event history, not a single static condition.",
+    "semantic_requirements": [
+      "event history"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "finance_017",
+    "intent": "Clients with repeated transactions",
+    "dataset": "BIRD_finance",
+    "category": "none",
+    "vst_family": "relational",
+    "failure_type": "none",
+    "expected_behavior": "Join clients to their associated accounts and transactions, count transactions per client, and return clients with more than one transaction.",
+    "semantic_requirements": [
+      "join path",
+      "group and aggregate"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "finance_018",
+    "intent": "Reportable large cash withdrawals",
+    "dataset": "BIRD_finance",
+    "category": "policy_grounding",
+    "vst_family": "policy",
+    "failure_type": "Reportability inferred from arbitrary fixed threshold without explicit policy grounding",
+    "expected_behavior": "Apply an explicit policy/rule definition instead of guessing from a loose heuristic.",
+    "semantic_requirements": [
+      "explicit rule/definition",
+      "policy threshold",
+      "mapped category"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "finance_019",
+    "intent": "Find districts with accounts that have high average balances.",
+    "dataset": "BIRD_finance",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "Join districts to accounts and transactions, compute average account balance by district, and return districts whose average balance is high relative to the overall balance distribution or global average.",
+    "semantic_requirements": [
+      "join path",
+      "group and aggregate",
+      "correct metric"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "finance_020",
+    "intent": "Find accounts where loan amount exceeds 50% of total deposits.",
+    "dataset": "BIRD_finance",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "Compute total deposits per account, compare each account's loan amount against 50% of its total deposits, and return accounts where the loan amount exceeds that ratio.",
+    "semant    ic_requirements": [
+      "join path",
+      "group and aggregate",
+      "correct metric"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "finance_021",
+    "intent": "Loans that look risky despite having a good status.",
+    "dataset": "BIRD_finance",
+    "category": "comparative_grounding",
+    "vst_family": "distributional",
+    "failure_type": "Risk inferred using arbitrary amount threshold without distributional or contextual grounding",
+    "expected_behavior": "Compare within the relevant group and use a relative/tail cutoff, not a global or fixed threshold.",
+    "semantic_requirements": [
+      "within-group comparison",
+      "multi-metric comparison",
+      "distribution check"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "finance_022",
+    "intent": "Loans with the most active repayment behavior",
+    "dataset": "BIRD_finance",
+    "category": "role_confusion",
+    "vst_family": "relational",
+    "failure_type": "Repayment activity treated as categorical loan status",
+    "expected_behavior": "Use a meaningful signal for the concept, or ask for clarification if the concept is ambiguous.",
+    "semantic_requirements": [
+      "avoid weak proxy",
+      "choose meaningful signal",
+      "clarify ambiguous intent"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "finance_023",
+    "intent": "Find unusually small loans",
+    "dataset": "BIRD_finance",
+    "category": "comparative_grounding",
+    "vst_family": "distributional",
+    "failure_type": "Uses a fixed cutoff rather than lower-tail distributional comparison",
+    "expected_behavior": "Use a distribution-based threshold for the comparative term instead of a hard-coded cutoff.",
+    "semantic_requirements": [
+      "lower-tail check",
+      "upper-tail check",
+      "distribution check"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "finance_024",
+    "intent": "Which accounts recovered from a negative balance?",
+    "dataset": "BIRD_finance",
+    "category": "process_misinterpretation",
+    "vst_family": "process",
+    "failure_type": "Finds both states but ignores order",
+    "expected_behavior": "Use the transaction order to detect the state change pattern.",
+    "semantic_requirements": [
+      "event sequence/order"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "finance_025",
+    "intent": "Accounts with highest money handled",
+    "dataset": "BIRD_finance",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "Aggregate transaction amounts per account and rank accounts by the highest total money handled.",
+    "semantic_requirements": [
+      "group and aggregate",
+      "ranking"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "finance_026",
+    "intent": "Clients with high balance but low transaction volume",
+    "dataset": "BIRD_finance",
+    "category": "comparative_grounding",
+    "vst_family": "distributional",
+    "failure_type": "Uses fixed cutoffs for defining high balance and low transaction volume",
+    "expected_behavior": "Use a distribution-based threshold for the comparative term instead of a hard-coded cutoff.",
+    "semantic_requirements": [
+      "lower-tail check",
+      "upper-tail check",
+      "multi-metric comparison"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "finance_027",
+    "intent": "Find accounts with high net inflow",
+    "dataset": "BIRD_finance",
+    "category": "comparative_grounding",
+    "vst_family": "distributional",
+    "failure_type": "Net inflow treated as filtering large incoming transactions with fixed threshold",
+    "expected_behavior": "Use a distribution-based threshold for the comparative term instead of a hard-coded cutoff.",
+    "semantic_requirements": [
+      "upper-tail check",
+      "multi-metric comparison",
+      "distribution check"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "finance_028",
+    "intent": "Top clients by account_id",
+    "dataset": "BIRD_finance",
+    "category": "role_confusion",
+    "vst_family": "relational",
+    "failure_type": "Ranks by an identifier",
+    "expected_behavior": "Do not rank by IDs; ask for clarification or count related accounts if that is intended.",
+    "semantic_requirements": [
+      "identifier is not a measure",
+      "avoid invalid ranking"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "finance_029",
+    "intent": "Find accounts with more than 150 transactions",
+    "dataset": "BIRD_finance",
+    "category": "none",
+    "vst_family": "relational",
+    "failure_type": "none",
+    "expected_behavior": "Count transactions per account and return those accounts whose transaction count exceeds 150.",
+    "semantic_requirements": [
+      "group and aggregate"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "finance_030",
+    "intent": "Find unusually large loans",
+    "dataset": "BIRD_finance",
+    "category": "comparative_grounding",
+    "vst_family": "distributional",
+    "failure_type": "Uses a fixed cutoff for a relative term",
+    "expected_behavior": "Use a distribution-based threshold for unusually large loans instead of a hard-coded cutoff.",
+    "semantic_requirements": [
+      "upper-tail check",
+      "distribution check"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "finance_031",
+    "intent": "Find loans much larger than typical for their status",
+    "dataset": "BIRD_finance",
+    "category": "comparative_grounding",
+    "vst_family": "distributional",
+    "failure_type": "Group-conditioned distributional comparison attempted but not correctly scoped to each loan status",
+    "expected_behavior": "Compare within the relevant group and use a relative/tail cutoff, not a global or fixed threshold.",
+    "semantic_requirements": [
+      "within-group comparison",
+      "upper-tail check",
+      "distribution check"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "finance_032",
+    "intent": "Accounts with highest transaction volume",
+    "dataset": "BIRD_finance",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "Group transactions by account, compute total transaction volume as the sum of transaction amounts, and return the account(s) with the highest total volume.",
+    "semantic_requirements": [
+      "group and aggregate",
+      "ranking"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "finance_033",
+    "intent": "Frequent small incoming transactions",
+    "dataset": "BIRD_finance",
+    "category": "comparative_grounding",
+    "vst_family": "distributional",
+    "failure_type": "Arbitrary thresholds used for both 'small' amount and 'frequent' count",
+    "expected_behavior": "Use a distribution-based threshold for the comparative term instead of a hard-coded cutoff.",
+    "semantic_requirements": [
+      "lower-tail check",
+      "multi-metric comparison",
+      "distribution check"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "finance_034",
+    "intent": "Compare loan amounts and durations for different loan status",
+    "dataset": "BIRD_finance",
+    "category": "quantitative_misinterpretation",
+    "vst_family": "quantitative",
+    "failure_type": "Cross-group comparison returned row-level values rather than aggregated measures",
+    "expected_behavior": "Build the intended ratio/percentage with the right numerator and denominator.",
+    "semantic_requirements": [
+      "right denominator/normalization",
+      "right aggregation level",
+      "right metric"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "finance_035",
+    "intent": "Accounts frequently negative",
+    "dataset": "BIRD_finance",
+    "category": "process_misinterpretation",
+    "vst_family": "process",
+    "failure_type": "Frequency of negative balance treated as row-level predicate",
+    "expected_behavior": "Use the account/loan event history, not a single static condition.",
+    "semantic_requirements": [
+      "event history"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "finance_036",
+    "intent": "Which accounts have the largest loan?",
+    "dataset": "BIRD_finance",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "Rank loans by loan amount and return the account(s) associated with the largest loan.",
+    "semantic_requirements": [
+      "group and aggregate",
+      "ranking"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "finance_037",
+    "intent": "Clients with the highest account activity",
+    "dataset": "BIRD_finance",
+    "category": "none",
+    "vst_family": "relational",
+    "failure_type": "none",
+    "expected_behavior": "Join clients to their accounts and transactions, count the number of transactions per client, and return clients with the highest activity levels.",
+    "semantic_requirements": [
+      "join path",
+      "group and aggregate",
+      "ranking"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "finance_038",
+    "intent": "Find total amount paid back for each loan",
+    "dataset": "BIRD_finance",
+    "category": "quantitative_misinterpretation",
+    "vst_family": "quantitative",
+    "failure_type": "Incorrect formula leading to double counting of principal in repayment calculation",
+    "expected_behavior": "Use the metric implied by the question, not a convenient proxy.",
+    "semantic_requirements": [
+      "right formula",
+      "right metric"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "finance_039",
+    "intent": "Loans with highest total value",
+    "dataset": "BIRD_finance",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "Aggregate loan amounts by account and return the account(s) with the highest total loan value.",
+    "semantic_requirements": [
+      "group and aggregate",
+      "ranking"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "finance_040",
+    "intent": "Clients with highest overall financial activity",
+    "dataset": "BIRD_finance",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "Aggregate transaction amounts across all accounts per client and rank clients by total transaction volume to identify those with the highest overall financial activity.",
+    "semantic_requirements": [
+      "join path",
+      "group and aggregate",
+      "ranking"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "finance_041",
+    "intent": "Find accounts showing sustained financial distress",
+    "dataset": "BIRD_finance",
+    "category": "process_misinterpretation",
+    "vst_family": "process",
+    "failure_type": "Sustained distress treated as single loan status without temporal persistence",
+    "expected_behavior": "Require the condition to hold over a continuous or repeated period.",
+    "semantic_requirements": [
+      "sustained-state check",
+      "event sequence/order"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "finance_042",
+    "intent": "Large loans per status",
+    "dataset": "BIRD_finance",
+    "category": "comparative_grounding",
+    "vst_family": "distributional",
+    "failure_type": "Uses a fixed cutoff for defining 'large' loans",
+    "expected_behavior": "Compare within the relevant group and use a relative/tail cutoff, not a global or fixed threshold.",
+    "semantic_requirements": [
+      "within-group comparison",
+      "upper-tail check",
+      "distribution check"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "finance_043",
+    "intent": "Which accounts stayed in negative balance for at least 30 days?",
+    "dataset": "BIRD_finance",
+    "category": "process_misinterpretation",
+    "vst_family": "process",
+    "failure_type": "Duration approximated via distinct date count without ensuring temporal continuity",
+    "expected_behavior": "Require the condition to hold over a continuous or repeated period.",
+    "semantic_requirements": [
+      "sustained-state check",
+      "event sequence/order"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "finance_044",
+    "intent": "Customers with suspicious activity patterns",
+    "dataset": "BIRD_finance",
+    "category": "process_misinterpretation",
+    "vst_family": "process",
+    "failure_type": "Complex suspicious behavior treated as single event filter without pattern or temporal analysis",
+    "expected_behavior": "Use the account/loan event history, not a single static condition.",
+    "semantic_requirements": [
+      "event sequence/order",
+      "event history"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "finance_045",
+    "intent": "Loans with highest transactions",
+    "dataset": "BIRD_finance",
+    "category": "none",
+    "vst_family": "relational",
+    "failure_type": "none",
+    "expected_behavior": "Join loans to their associated accounts and transactions, count the number of transactions per loan, and return the loan(s) with the highest transaction count.",
+    "semantic_requirements": [
+      "join path",
+      "group and aggregate",
+      "ranking"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "finance_046",
+    "intent": "Heavy users",
+    "dataset": "BIRD_finance",
+    "category": "role_confusion",
+    "vst_family": "relational",
+    "failure_type": "Uses a category as an activity proxy",
+    "expected_behavior": "Use a meaningful signal for the concept, or ask for clarification if the concept is ambiguous.",
+    "semantic_requirements": [
+      "avoid weak proxy",
+      "choose meaningful signal",
+      "clarify ambiguous intent"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "finance_047",
+    "intent": "Clients with high repayment activity but low account balance",
+    "dataset": "BIRD_finance",
+    "category": "comparative_grounding",
+    "vst_family": "distributional",
+    "failure_type": "Uses fixed cutoffs for defining high repayment and low balance",
+    "expected_behavior": "Use a distribution-based threshold for the comparative term instead of a hard-coded cutoff.",
+    "semantic_requirements": [
+      "lower-tail check",
+      "upper-tail check",
+      "multi-metric comparison"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "finance_048",
+    "intent": "Dormant accounts",
+    "dataset": "BIRD_finance",
+    "category": "policy_grounding",
+    "vst_family": "policy",
+    "failure_type": "Treats dormancy as no transactions ever",
+    "expected_behavior": "Apply an explicit policy/rule definition instead of guessing from a loose heuristic.",
+    "semantic_requirements": [
+      "explicit rule/definition",
+      "time window"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "finance_049",
+    "intent": "Accounts with unusually large withdrawals after receiving a loan",
+    "dataset": "BIRD_finance",
+    "category": "none",
+    "vst_family": "process",
+    "failure_type": "none",
+    "expected_behavior": "Identify accounts with withdrawal transactions that occur after a loan is issued, where the withdrawal amounts are unusually large relative to the withdrawal amount distribution.",
+    "semantic_requirements": [
+      "join path",
+      "group and aggregate"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "finance_050",
+    "intent": "Accounts with large balance and frequent withdrawals",
+    "dataset": "BIRD_finance",
+    "category": "comparative_grounding",
+    "vst_family": "distributional",
+    "failure_type": "Arbitrary threshold used for balance and missing aggregation for withdrawal frequency",
+    "expected_behavior": "Use a distribution-based threshold for the comparative term instead of a hard-coded cutoff.",
+    "semantic_requirements": [
+      "upper-tail check",
+      "multi-metric comparison",
+      "distribution check"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "finance_051",
+    "intent": "Clients with repeated small incoming transactions across multiple accounts",
+    "dataset": "BIRD_finance",
+    "category": "comparative_grounding",
+    "vst_family": "distributional",
+    "failure_type": "Uses a fixed cutoff for defining small incoming transactions",
+    "expected_behavior": "Use a distribution-based threshold for the comparative term instead of a hard-coded cutoff.",
+    "semantic_requirements": [
+      "lower-tail check",
+      "multi-metric comparison",
+      "distribution check"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "finance_052",
+    "intent": "Accounts with the highest average deposit amount",
+    "dataset": "BIRD_finance",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "Compute the average deposit transaction amount per account and rank accounts by highest average deposit size.",
+    "semantic_requirements": [
+      "group and aggregate",
+      "ranking",
+      "correct metric"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "finance_053",
+    "intent": "Loans with rapidly worsening repayment behavior",
+    "dataset": "BIRD_finance",
+    "category": "process_misinterpretation",
+    "vst_family": "process",
+    "failure_type": "Repayment deterioration treated as static loan status",
+    "expected_behavior": "Check how the behavior changes over time, not just the overall count or value.",
+    "semantic_requirements": [
+      "trend over time",
+      "event sequence/order"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "finance_054",
+    "intent": "Accounts with the largest deposit-to-withdrawal ratio",
+    "dataset": "BIRD_finance",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "Compute the ratio of total deposits to total withdrawals per account and rank accounts by the highest ratio.",
+    "semantic_requirements": [
+      "group and aggregate",
+      "ranking",
+      "correct metric"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "finance_055",
+    "intent": "Accounts with increasingly volatile balances",
+    "dataset": "BIRD_finance",
+    "category": "process_misinterpretation",
+    "vst_family": "process",
+    "failure_type": "Volatility interpreted using single balance snapshots rather than temporal variation",
+    "expected_behavior": "Check how the behavior changes over time, not just the overall count or value.",
+    "semantic_requirements": [
+      "trend over time"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "finance_056",
+    "intent": "Accounts with the highest average withdrawal size",
+    "dataset": "BIRD_finance",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "Compute the average withdrawal amount per account and rank accounts by highest average withdrawal size.",
+    "semantic_requirements": [
+      "group and aggregate",
+      "ranking",
+      "correct metric"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "finance_057",
+    "intent": "Accounts with recurring balance oscillation",
+    "dataset": "BIRD_finance",
+    "category": "process_misinterpretation",
+    "vst_family": "process",
+    "failure_type": "Oscillating balance behavior treated as existence of positive and negative balances",
+    "expected_behavior": "Use the transaction order to detect the state change pattern.",
+    "semantic_requirements": [
+      "event sequence/order",
+      "event history"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "finance_058",
+    "intent": "Clients with the highest loan repayment efficiency",
+    "dataset": "BIRD_finance",
+    "category": "quantitative_misinterpretation",
+    "vst_family": "quantitative",
+    "failure_type": "Repayment efficiency approximated using raw payment totals rather than normalized repayment ratios",
+    "expected_behavior": "Build the intended ratio/percentage with the right numerator and denominator.",
+    "semantic_requirements": [
+      "right denominator/normalization",
+      "right formula",
+      "right metric"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "finance_059",
+    "intent": "Reportable suspicious transfers",
+    "dataset": "BIRD_finance",
+    "category": "policy_grounding",
+    "vst_family": "policy",
+    "failure_type": "Suspicious transfer reporting missing explicit compliance policy",
+    "expected_behavior": "Apply an explicit policy/rule definition instead of guessing from a loose heuristic.",
+    "semantic_requirements": [
+      "explicit rule/definition",
+      "policy threshold",
+      "mapped category"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "finance_060",
+    "intent": "Loans with the highest repayment completion percentage",
+    "dataset": "BIRD_finance",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "Compute repayment completion percentage as the ratio of repaid amount to total loan amount and rank loans by the highest completion percentage.",
+    "semantic_requirements": [
+      "group and aggregate",
+      "ranking",
+      "correct metric"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "finance_061",
+    "intent": "Clients with unusually concentrated incoming cash flow",
+    "dataset": "BIRD_finance",
+    "category": "quantitative_misinterpretation",
+    "vst_family": "quantitative",
+    "failure_type": "Cash-flow concentration treated as total incoming amount without concentration analysis",
+    "expected_behavior": "Build the intended ratio/percentage with the right numerator and denominator.",
+    "semantic_requirements": [
+      "right denominator/normalization",
+      "right formula",
+      "right aggregation level"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "finance_062",
+    "intent": "Which accounts show worsening balance patterns",
+    "dataset": "BIRD_finance",
+    "category": "process_misinterpretation",
+    "vst_family": "process",
+    "failure_type": "Balance deterioration treated as low or negative balance snapshots without temporal trend analysis",
+    "expected_behavior": "Check how the behavior changes over time, not just the overall count or value.",
+    "semantic_requirements": [
+      "trend over time",
+      "event history"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "finance_063",
+    "intent": "Clients with loans across multiple accounts",
+    "dataset": "BIRD_finance",
+    "category": "none",
+    "vst_family": "relational",
+    "failure_type": "none",
+    "expected_behavior": "Identify clients associated with loans spanning multiple accounts by joining clients, account ownership, and loan records.",
+    "semantic_requirements": [
+      "join path",
+      "group and aggregate"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "finance_064",
+    "intent": "Loans with the lowest repayment completion percentage",
+    "dataset": "BIRD_finance",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "Compute repayment completion percentage as the ratio of repaid amount to total loan amount and identify loans with the lowest completion percentages.",
+    "semantic_requirements": [
+      "group and aggregate",
+      "ranking",
+      "correct metric"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "finance_065",
+    "intent": "Accounts with increasingly delayed repayment activity",
+    "dataset": "BIRD_finance",
+    "category": "process_misinterpretation",
+    "vst_family": "process",
+    "failure_type": "Repayment delay inferred from isolated late events without temporal progression analysis",
+    "expected_behavior": "Check how the behavior changes over time, not just the overall count or value.",
+    "semantic_requirements": [
+      "trend over time",
+      "event sequence/order"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "finance_066",
+    "intent": "Accounts with recurring overdraft cycles",
+    "dataset": "BIRD_finance",
+    "category": "process_misinterpretation",
+    "vst_family": "process",
+    "failure_type": "Overdraft behavior treated as existence of negative balances without cyclic pattern detection",
+    "expected_behavior": "Use the transaction order to detect the state change pattern.",
+    "semantic_requirements": [
+      "event sequence/order",
+      "event history"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "finance_067",
+    "intent": "Clients whose transaction activity is accelerating",
+    "dataset": "BIRD_finance",
+    "category": "process_misinterpretation",
+    "vst_family": "process",
+    "failure_type": "Acceleration inferred from total transaction count without temporal rate comparison",
+    "expected_behavior": "Check how the behavior changes over time, not just the overall count or value.",
+    "semantic_requirements": [
+      "trend over time"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "finance_068",
+    "intent": "Clients with the highest average loan amount",
+    "dataset": "BIRD_finance",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "Aggregate loan amounts per client, compute the average loan amount, and rank clients by the highest averages.",
+    "semantic_requirements": [
+      "group and aggregate",
+      "ranking",
+      "correct metric"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "finance_069",
+    "intent": "Most valuable clients",
+    "dataset": "BIRD_finance",
+    "category": "none",
+    "vst_family": "relational",
+    "failure_type": "Client value inferred using arbitrary identifiers or categorical attributes rather than meaningful financial measures",
+    "expected_behavior": "Interpret client value using meaningful signals such as total transaction volume, loan portfolio value, repayment reliability, or account balances, rather than ranking by identifiers or unrelated attributes.",
+    "semantic_requirements": [
+      "direct mapping"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "finance_070",
+    "intent": "Accounts with the highest average balance per transaction",
+    "dataset": "BIRD_finance",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "Compute the average balance per account using transaction-level balance values (e.g., AVG(balance) grouped by account) and rank accounts by the highest average balance.",
+    "semantic_requirements": [
+      "group and aggregate",
+      "ranking",
+      "correct metric"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "finance_071",
+    "intent": "Clients with unusually high debt-to-income ratios",
+    "dataset": "bird_finance",
+    "category": "comparative_grounding",
+    "vst_family": "distributional",
+    "failure_type": "Fixed debt-to-income ratio threshold applied instead of distribution-based upper-tail detection",
+    "expected_behavior": "Compute each client's total outstanding loan amount divided by total credited transactions (as income proxy), then identify clients where this ratio is in the upper tail of the cross-client distribution \u2014 not clients exceeding a hardcoded threshold like 0.5 or 2.",
+    "semantic_requirements": [
+      "derived metric computation (ratio across tables)",
+      "within-population distributional reasoning",
+      "upper-tail detection"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "finance_072",
+    "intent": "Accounts with unusually high overdraft frequency",
+    "dataset": "bird_finance",
+    "category": "comparative_grounding",
+    "vst_family": "distributional",
+    "failure_type": "Fixed overdraft count threshold used instead of tail-based frequency detection",
+    "expected_behavior": "Count overdraft events (balance < 0) per account, then identify accounts in the upper tail of the overdraft-frequency distribution across all accounts, rather than accounts with more than N overdrafts.",
+    "semantic_requirements": [
+      "event-based counting",
+      "distributional reasoning",
+      "upper-tail detection"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "finance_073",
+    "intent": "Districts with outlier default rates",
+    "dataset": "bird_finance",
+    "category": "comparative_grounding",
+    "vst_family": "distributional",
+    "failure_type": "Fixed default rate threshold applied to classify districts instead of distribution-based identification",
+    "expected_behavior": "Compute default rate per district (loans with status indicating default / total loans), identify districts in the upper tail of the cross-district default-rate distribution, not districts exceeding an arbitrary cutoff like 0.2 or 20%.",
+    "semantic_requirements": [
+      "rate computation (defaults / total loans)",
+      "district-level aggregation",
+      "distributional reasoning"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "finance_074",
+    "intent": "Accounts whose monthly transaction volume dropped sharply",
+    "dataset": "bird_finance",
+    "category": "process_misinterpretation",
+    "vst_family": "process",
+    "failure_type": "Decline detected by comparing two static time points instead of identifying a sustained multi-month drop",
+    "expected_behavior": "Compute monthly transaction counts per account, then identify accounts showing a consistent declining trend across at least three consecutive months, not accounts where any recent month is lower than any earlier month.",
+    "semantic_requirements": [
+      "temporal partitioning by month",
+      "consecutive period comparison",
+      "sustained decline detection"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "finance_075",
+    "intent": "Clients whose credit card usage is accelerating",
+    "dataset": "bird_finance",
+    "category": "process_misinterpretation",
+    "vst_family": "process",
+    "failure_type": "Total card transaction count used instead of detecting a period-over-period growth rate",
+    "expected_behavior": "Compute card transaction count per client per month, then identify clients where the month-over-month growth rate in transaction volume is consistently positive and increasing, not clients with the highest total card transaction count.",
+    "semantic_requirements": [
+      "temporal partitioning",
+      "growth rate computation",
+      "acceleration detection over multiple periods"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "finance_076",
+    "intent": "Loans whose repayment pace is slowing",
+    "dataset": "bird_finance",
+    "category": "process_misinterpretation",
+    "vst_family": "process",
+    "failure_type": "Total payments or status used as proxy for repayment pace trend",
+    "expected_behavior": "Compute repayment amount per loan per month from transactions, then identify loans where the monthly repayment amount shows a consistent decline over time \u2014 a slowing pace \u2014 rather than loans with low total payments or a non-current status.",
+    "semantic_requirements": [
+      "temporal aggregation by month",
+      "trend detection",
+      "pace computation vs. total-amount comparison"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "finance_077",
+    "intent": "Suspicious cash withdrawal patterns",
+    "dataset": "bird_finance",
+    "category": "policy_grounding",
+    "vst_family": "policy",
+    "failure_type": "Suspicious pattern inferred from arbitrary amount or frequency thresholds without a compliance policy definition",
+    "expected_behavior": "Suspicion is a compliance concept requiring explicit policy definition (e.g., structuring thresholds, velocity rules). Any SQL using amount > 9000 or more than N withdrawals per day is applying heuristics, not an authoritative compliance rule grounded in the schema.",
+    "semantic_requirements": [
+      "policy definition gap recognition",
+      "compliance concept grounding",
+      "avoidance of arbitrary threshold inference"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "finance_078",
+    "intent": "Accounts at risk of default",
+    "dataset": "bird_finance",
+    "category": "policy_grounding",
+    "vst_family": "policy",
+    "failure_type": "Default risk inferred from static balance thresholds or recent overdraft count without a risk scoring policy",
+    "expected_behavior": "Default risk is a modeled concept requiring a defined risk policy (e.g., loan-to-value ratio, payment-to-income thresholds). Without such a policy in the schema, using WHERE balance < 0 OR overdrafts > N applies an ungrounded heuristic.",
+    "semantic_requirements": [
+      "policy definition gap recognition",
+      "risk model grounding",
+      "multi-factor default signal"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "finance_079",
+    "intent": "VIP clients",
+    "dataset": "bird_finance",
+    "category": "policy_grounding",
+    "vst_family": "policy",
+    "failure_type": "VIP status inferred from high balance or loan count without a formal VIP definition",
+    "expected_behavior": "VIP classification requires a schema-defined policy. Using total balance > X or loans > N applies arbitrary cutoffs \u2014 a proper definition would combine multiple signals (assets, tenure, product usage) with defined thresholds.",
+    "semantic_requirements": [
+      "policy definition gap recognition",
+      "multi-signal classification",
+      "avoidance of single-metric VIP inference"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "finance_080",
+    "intent": "Clients with healthy financial profiles",
+    "dataset": "bird_finance",
+    "category": "policy_grounding",
+    "vst_family": "policy",
+    "failure_type": "Financial health inferred from positive balance or no overdrafts without a multi-dimensional health framework",
+    "expected_behavior": "Financial health is a composite concept requiring explicit criteria (positive balance, low debt-to-income, regular deposits, on-time repayments). Without a policy definition, filtering on balance > 0 alone is an incomplete approximation.",
+    "semantic_requirements": [
+      "policy definition gap recognition",
+      "composite concept definition",
+      "avoidance of single-signal health inference"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "finance_081",
+    "intent": "Clients with highest financial dependency on loans",
+    "dataset": "bird_finance",
+    "category": "role_confusion",
+    "vst_family": "relational",
+    "failure_type": "Loan count used as proxy for dependency instead of loan-to-total-assets ratio",
+    "expected_behavior": "Financial dependency should be measured by total outstanding loan amount relative to total account balance (a loan-to-assets ratio), not the raw number of loans. A client with one large loan may be more dependent than one with many small ones.",
+    "semantic_requirements": [
+      "proxy selection",
+      "ratio computation across tables",
+      "dependency metric grounding"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "finance_082",
+    "intent": "Most profitable districts for the bank",
+    "dataset": "bird_finance",
+    "category": "role_confusion",
+    "vst_family": "relational",
+    "failure_type": "Profitability proxied by total loan volume or account count instead of interest income minus credit risk signals",
+    "expected_behavior": "Bank profitability per district should reflect revenue signals (loan amounts \u00d7 duration as an interest income proxy) minus risk signals (default rates), not total transaction volume or client count, which conflates activity with value.",
+    "semantic_requirements": [
+      "proxy selection",
+      "multi-signal profitability computation",
+      "risk adjustment"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "finance_083",
+    "intent": "Accounts with the most active savings behavior",
+    "dataset": "bird_finance",
+    "category": "role_confusion",
+    "vst_family": "relational",
+    "failure_type": "Savings activity proxied by total credit transaction amount rather than net positive balance growth over time",
+    "expected_behavior": "Savings behavior should reflect the net growth of account balance over time (consistent positive balance increments), not the total amount of credit transactions, which includes salary inflows and does not account for withdrawals.",
+    "semantic_requirements": [
+      "proxy selection",
+      "net change computation",
+      "temporal balance trend"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "finance_084",
+    "intent": "List all loan statuses and their counts",
+    "dataset": "bird_finance",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "SELECT status, COUNT(*) FROM loan GROUP BY status. No semantic ambiguity \u2014 explicit categorical aggregation.",
+    "semantic_requirements": [
+      "basic aggregation"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "finance_085",
+    "intent": "Clients who have both a loan and a credit card",
+    "dataset": "bird_finance",
+    "category": "none",
+    "vst_family": "relational",
+    "failure_type": "none",
+    "expected_behavior": "Join client \u2192 disp \u2192 account \u2192 loan and client \u2192 disp \u2192 card to find clients appearing in both. Standard multi-table join with no distributional or policy ambiguity.",
+    "semantic_requirements": [
+      "multi-table join",
+      "intersection of two product sets"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "finance_086",
+    "intent": "Total number of transactions per account",
+    "dataset": "bird_finance",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "COUNT(*) GROUP BY account_id from the trans table, ordered by count descending.",
+    "semantic_requirements": [
+      "basic aggregation"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "finance_087",
+    "intent": "Clients born before 1960",
+    "dataset": "bird_finance",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "Filter client table WHERE birth_date < '1960-01-01'. Explicit date boundary \u2014 no distributional reasoning needed.",
+    "semantic_requirements": [
+      "basic filter"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "finance_088",
+    "intent": "Number of credit cards issued per card type",
+    "dataset": "bird_finance",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "SELECT type, COUNT(*) FROM card GROUP BY type. Direct aggregation on an explicit categorical column.",
+    "semantic_requirements": [
+      "basic aggregation"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "finance_089",
+    "intent": "Average loan amount per loan status",
+    "dataset": "bird_finance",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "SELECT status, AVG(amount) FROM loan GROUP BY status. No threshold or distributional reasoning \u2014 explicit group-level average.",
+    "semantic_requirements": [
+      "group-level average"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "finance_090",
+    "intent": "Districts with more than 100 clients",
+    "dataset": "bird_finance",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "JOIN client to district, GROUP BY district, HAVING COUNT(*) > 100. The threshold 100 is explicitly stated in the intent \u2014 not a distributional inference.",
+    "semantic_requirements": [
+      "join",
+      "group filter with explicit threshold"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "finance_091",
+    "intent": "Loans with duration of exactly 60 months",
+    "dataset": "bird_finance",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "SELECT * FROM loan WHERE duration = 60. Exact equality filter on an explicit value \u2014 no semantic ambiguity.",
+    "semantic_requirements": [
+      "basic filter"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "finance_092",
+    "intent": "Accounts with the frequency set to monthly statement issuance",
+    "dataset": "bird_finance",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "Filter account WHERE frequency = 'POPLATEK MESICNE' (or the equivalent monthly value). Direct categorical filter.",
+    "semantic_requirements": [
+      "categorical filter"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "finance_093",
+    "intent": "Total credit and debit transaction amounts per account",
+    "dataset": "bird_finance",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "SELECT account_id, SUM(CASE WHEN type='credit' THEN amount END), SUM(CASE WHEN type='debit' THEN amount END) FROM trans GROUP BY account_id. Explicit conditional aggregation \u2014 no distributional inference.",
+    "semantic_requirements": [
+      "conditional aggregation"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "finance_094",
+    "intent": "Clients who have a disposition of type owner",
+    "dataset": "bird_finance",
+    "category": "none",
+    "vst_family": "relational",
+    "failure_type": "none",
+    "expected_behavior": "JOIN client to disp WHERE type = 'OWNER'. Standard join with an explicit categorical filter.",
+    "semantic_requirements": [
+      "join",
+      "categorical filter"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "finance_095",
+    "intent": "Number of orders per account",
+    "dataset": "bird_finance",
+    "category": "none",
+    "vst_family": "quantitative",
+    "failure_type": "none",
+    "expected_behavior": "SELECT account_id, COUNT(*) FROM orders GROUP BY account_id. Simple aggregation with no semantic complexity.",
+    "semantic_requirements": [
+      "basic aggregation"
+    ],
+    "difficulty": "easy"
+  }
+]

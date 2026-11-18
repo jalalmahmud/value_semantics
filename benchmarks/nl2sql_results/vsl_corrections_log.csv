@@ -1,0 +1,6 @@
+case_id,condition,original,corrected,reason
+finance_071,PE,correct,partial,"district salary used as client income; single loan, not total debt"
+public_safety_022,PE,correct,partial,'high' is an ungrounded fixed >10 cutoff (not distributional/relative)
+public_safety_048,PE,correct,partial,count != density; no denominator / area field
+public_safety_048,PM,correct,partial,count != density; no denominator / area field
+public_safety_051,PE,correct,partial,"predicate is monotonic increase, not acceleration; counts not rates"

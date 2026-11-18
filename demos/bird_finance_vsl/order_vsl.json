@@ -1,0 +1,732 @@
+{
+  "table": "order",
+  "columns": {
+    "order_id": {
+      "declared_type": "int64",
+      "sample_values": [
+        29401,
+        29402,
+        29403,
+        29404,
+        29405
+      ],
+      "stats": {
+        "row_count": 1000,
+        "distinct_count": 1000,
+        "null_count": 0,
+        "null_fraction": 0.0
+      }
+    },
+    "account_id": {
+      "declared_type": "int64",
+      "sample_values": [
+        1,
+        2,
+        2,
+        3,
+        3
+      ],
+      "stats": {
+        "row_count": 1000,
+        "distinct_count": 601,
+        "null_count": 0,
+        "null_fraction": 0.0
+      }
+    },
+    "bank_to": {
+      "declared_type": "str",
+      "sample_values": [
+        "YZ",
+        "ST",
+        "QR",
+        "WX",
+        "CD"
+      ],
+      "stats": {
+        "row_count": 1000,
+        "distinct_count": 13,
+        "null_count": 0,
+        "null_fraction": 0.0
+      }
+    },
+    "account_to": {
+      "declared_type": "int64",
+      "sample_values": [
+        87144583,
+        89597016,
+        13943797,
+        83084338,
+        24485939
+      ],
+      "stats": {
+        "row_count": 1000,
+        "distinct_count": 1000,
+        "null_count": 0,
+        "null_fraction": 0.0
+      }
+    },
+    "amount": {
+      "declared_type": "float64",
+      "sample_values": [
+        2452.0,
+        3372.7,
+        7266.0,
+        1135.0,
+        327.0
+      ],
+      "stats": {
+        "row_count": 1000,
+        "distinct_count": 916,
+        "null_count": 0,
+        "null_fraction": 0.0
+      }
+    },
+    "k_symbol": {
+      "declared_type": "str",
+      "sample_values": [
+        "SIPO",
+        "UVER",
+        "SIPO",
+        "SIPO",
+        ""
+      ],
+      "stats": {
+        "row_count": 1000,
+        "distinct_count": 5,
+        "null_count": 0,
+        "null_fraction": 0.0
+      }
+    }
+  },
+  "semantics": {
+    "order_id": {
+      "value_semantics": {
+        "semantic_type": "ID_NUMERIC",
+        "is_identifier": true,
+        "is_categorical": false,
+        "is_free_text": false,
+        "numeric": {
+          "is_numeric": false,
+          "is_continuous": false,
+          "is_discrete": false,
+          "min": null,
+          "max": null
+        },
+        "temporal": {
+          "is_date": false,
+          "is_datetime": false,
+          "is_duration": false,
+          "granularity": null
+        },
+        "confidence": 0.95,
+        "rationale": "Column name and numeric values indicate identifier semantics."
+      },
+      "semantic_role": {
+        "primary_role": "IDENTIFIER",
+        "confidence": 0.95,
+        "role_arguments": {},
+        "query_constraints": {
+          "can_select": true,
+          "can_join": true,
+          "can_group_by": false,
+          "can_filter_equality": true,
+          "can_order_as_measure": false,
+          "can_aggregate": false
+        },
+        "justification": {
+          "rule": "identifier_flag"
+        }
+      },
+      "query_constraints": {
+        "query_constraints": {
+          "should_not_sum": true,
+          "should_not_average": true,
+          "should_not_compare_magnitude": true,
+          "allowed_operations": [
+            "SELECT",
+            "JOIN",
+            "GROUP_BY",
+            "COUNT_DISTINCT",
+            "EQUALITY_FILTER"
+          ],
+          "disallowed_operations": [
+            "SUM",
+            "AVG",
+            "MIN",
+            "MAX",
+            "GREATER_THAN",
+            "LESS_THAN"
+          ],
+          "reason": "Identifiers support equality/join semantics only."
+        },
+        "confidence": 0.85,
+        "rationale": "Operational query constraints inferred from semantic roles and value semantics."
+      }
+    },
+    "account_id": {
+      "value_semantics": {
+        "semantic_type": "ID_NUMERIC",
+        "is_identifier": true,
+        "is_categorical": false,
+        "is_free_text": false,
+        "numeric": {
+          "is_numeric": false,
+          "is_continuous": false,
+          "is_discrete": false,
+          "min": null,
+          "max": null
+        },
+        "temporal": {
+          "is_date": false,
+          "is_datetime": false,
+          "is_duration": false,
+          "granularity": null
+        },
+        "confidence": 0.95,
+        "rationale": "Column name and numeric values indicate identifier semantics."
+      },
+      "semantic_role": {
+        "primary_role": "IDENTIFIER",
+        "confidence": 0.95,
+        "role_arguments": {},
+        "query_constraints": {
+          "can_select": true,
+          "can_join": true,
+          "can_group_by": false,
+          "can_filter_equality": true,
+          "can_order_as_measure": false,
+          "can_aggregate": false
+        },
+        "justification": {
+          "rule": "identifier_flag"
+        }
+      },
+      "query_constraints": {
+        "query_constraints": {
+          "should_not_sum": true,
+          "should_not_average": true,
+          "should_not_compare_magnitude": true,
+          "allowed_operations": [
+            "SELECT",
+            "JOIN",
+            "GROUP_BY",
+            "COUNT_DISTINCT",
+            "EQUALITY_FILTER"
+          ],
+          "disallowed_operations": [
+            "SUM",
+            "AVG",
+            "MIN",
+            "MAX",
+            "GREATER_THAN",
+            "LESS_THAN"
+          ],
+          "reason": "Identifiers support equality/join semantics only."
+        },
+        "confidence": 0.85,
+        "rationale": "Operational query constraints inferred from semantic roles and value semantics."
+      }
+    },
+    "bank_to": {
+      "value_semantics": {
+        "semantic_type": "ENUM_CATEGORY",
+        "is_identifier": false,
+        "is_categorical": true,
+        "is_free_text": false,
+        "numeric": {
+          "is_numeric": false,
+          "is_continuous": false,
+          "is_discrete": false,
+          "min": null,
+          "max": null
+        },
+        "temporal": {
+          "is_date": false,
+          "is_datetime": false,
+          "is_duration": false,
+          "granularity": null
+        },
+        "confidence": 0.85,
+        "rationale": "Low-cardinality string values indicate categorical semantics."
+      },
+      "semantic_role": {
+        "primary_role": "SEGMENTATION_DRIVER",
+        "confidence": 0.75,
+        "role_arguments": {
+          "segments": [
+            "account_to",
+            "amount"
+          ]
+        },
+        "query_constraints": {
+          "can_group_by": true,
+          "can_filter_equality": true,
+          "can_compare_magnitude": false
+        },
+        "justification": {
+          "source": "validated_semantic_links",
+          "previous_role": "DESCRIPTIVE",
+          "link_count": 2
+        }
+      },
+      "query_constraints": {
+        "query_constraints": {
+          "supports_grouping": true,
+          "supports_equality_filtering": true,
+          "supports_segmentation": true,
+          "should_not_average": true,
+          "should_not_sum": true,
+          "supports_conditional_distribution": true,
+          "supports_group_conditioning": true,
+          "supports_cohort_analysis": true
+        },
+        "confidence": 0.85,
+        "rationale": "Operational query constraints inferred from semantic roles and value semantics."
+      }
+    },
+    "account_to": {
+      "value_semantics": {
+        "semantic_type": "INTEGER",
+        "is_identifier": false,
+        "is_categorical": false,
+        "is_free_text": false,
+        "numeric": {
+          "is_numeric": true,
+          "is_continuous": false,
+          "is_discrete": true,
+          "min": 5848086.0,
+          "max": 93210345.0
+        },
+        "temporal": {
+          "is_date": false,
+          "is_datetime": false,
+          "is_duration": false,
+          "granularity": null
+        },
+        "confidence": 0.9,
+        "rationale": "Inferred INTEGER from value patterns."
+      },
+      "quantitative_vst": {
+        "role": "MAGNITUDE",
+        "confidence": 0.7,
+        "rationale": "General integer magnitude.",
+        "safe_aggregation": {
+          "default": "AVG",
+          "allowed": [
+            "AVG",
+            "MIN",
+            "MAX",
+            "SUM"
+          ],
+          "forbidden": [],
+          "reason": "Magnitude values are often compared or averaged; SUM may be valid depending on context.",
+          "confidence": 0.65
+        },
+        "derived_metric_candidates": [
+          {
+            "metric_type": "NORMALIZED_RATE",
+            "intent_terms": [
+              "rate",
+              "risk",
+              "per",
+              "ratio"
+            ],
+            "formula_template": "SUM(account_to) / COUNT({denominator})",
+            "numerator": "account_to",
+            "denominator_candidates": [
+              {
+                "attribute": "order_id",
+                "denominator_role": "IDENTIFIER",
+                "reason": "Identifier-like attribute can serve as COUNT denominator.",
+                "confidence": 0.75,
+                "source": "name_heuristic"
+              },
+              {
+                "attribute": "account_id",
+                "denominator_role": "IDENTIFIER",
+                "reason": "Identifier-like attribute can serve as COUNT denominator.",
+                "confidence": 0.75,
+                "source": "name_heuristic"
+              }
+            ],
+            "preferred_denominator": "order_id",
+            "requires_query_context": true,
+            "confidence": 0.75
+          }
+        ]
+      },
+      "semantic_role": {
+        "primary_role": "EVIDENCE",
+        "confidence": 0.7,
+        "role_arguments": {
+          "quantitative_role": "MAGNITUDE"
+        },
+        "query_constraints": {
+          "can_aggregate": true,
+          "can_compare": true,
+          "can_order_as_measure": true
+        },
+        "justification": {
+          "source": "quantitative_vst"
+        }
+      },
+      "query_constraints": {
+        "query_constraints": {
+          "supports_aggregation": true,
+          "allowed_aggregations": [
+            "SUM",
+            "AVG",
+            "MIN",
+            "MAX"
+          ],
+          "supports_range_filtering": true,
+          "supports_distributional_reasoning": true,
+          "supports_outlier_detection": true
+        },
+        "confidence": 0.85,
+        "rationale": "Operational query constraints inferred from semantic roles and value semantics."
+      }
+    },
+    "amount": {
+      "value_semantics": {
+        "semantic_type": "FLOAT",
+        "is_identifier": false,
+        "is_categorical": false,
+        "is_free_text": false,
+        "numeric": {
+          "is_numeric": true,
+          "is_continuous": true,
+          "is_discrete": false,
+          "min": 297.0,
+          "max": 7266.0
+        },
+        "temporal": {
+          "is_date": false,
+          "is_datetime": false,
+          "is_duration": false,
+          "granularity": null
+        },
+        "confidence": 0.9,
+        "rationale": "Inferred FLOAT from value patterns."
+      },
+      "quantitative_vst": {
+        "role": "MEASUREMENT",
+        "subtype": "flow_amount",
+        "confidence": 0.85,
+        "rationale": "Column name suggests an additive monetary or transactional amount.",
+        "safe_aggregation": {
+          "default": "SUM",
+          "allowed": [
+            "SUM",
+            "AVG",
+            "MIN",
+            "MAX"
+          ],
+          "forbidden": [],
+          "reason": "Measurement values can often be summed or averaged unless constrained by context.",
+          "confidence": 0.7
+        },
+        "derived_metric_candidates": [
+          {
+            "metric_type": "NORMALIZED_RATE",
+            "intent_terms": [
+              "rate",
+              "risk",
+              "per",
+              "ratio"
+            ],
+            "formula_template": "SUM(amount) / COUNT({denominator})",
+            "numerator": "amount",
+            "denominator_candidates": [
+              {
+                "attribute": "order_id",
+                "denominator_role": "IDENTIFIER",
+                "reason": "Identifier-like attribute can serve as COUNT denominator.",
+                "confidence": 0.75,
+                "source": "name_heuristic"
+              },
+              {
+                "attribute": "account_id",
+                "denominator_role": "IDENTIFIER",
+                "reason": "Identifier-like attribute can serve as COUNT denominator.",
+                "confidence": 0.75,
+                "source": "name_heuristic"
+              },
+              {
+                "attribute": "account_to",
+                "denominator_role": "UNIQUE_KEY",
+                "reason": "Column appears unique and can serve as count denominator.",
+                "confidence": 0.65,
+                "source": "profile_statistics"
+              }
+            ],
+            "preferred_denominator": "order_id",
+            "requires_query_context": true,
+            "confidence": 0.75
+          }
+        ]
+      },
+      "semantic_role": {
+        "primary_role": "EVIDENCE",
+        "confidence": 0.85,
+        "role_arguments": {
+          "quantitative_role": "MEASUREMENT"
+        },
+        "query_constraints": {
+          "can_aggregate": true,
+          "can_compare": true,
+          "can_order_as_measure": true
+        },
+        "justification": {
+          "source": "quantitative_vst"
+        }
+      },
+      "conditional_value_distribution": {
+        "k_symbol": {
+          "group_attribute": "k_symbol",
+          "value_attribute": "amount",
+          "profiles": {
+            "SIPO": {
+              "count": 598,
+              "p50": 3035.5,
+              "p90": 7395.1,
+              "p99": 12470.84,
+              "typical_range": [
+                18.0,
+                7395.1
+              ],
+              "extreme_range": [
+                7395.1,
+                14367.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "UVER": {
+              "count": 41,
+              "p50": 4382.7,
+              "p90": 7801.2,
+              "p99": 8960.8,
+              "typical_range": [
+                422.0,
+                7801.2
+              ],
+              "extreme_range": [
+                7801.2,
+                9112.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "": {
+              "count": 214,
+              "p50": 1187.0,
+              "p90": 4650.0,
+              "p99": 7631.38,
+              "typical_range": [
+                2.0,
+                4650.0
+              ],
+              "extreme_range": [
+                4650.0,
+                12925.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "POJISTNE": {
+              "count": 85,
+              "p50": 416.0,
+              "p90": 3390.6,
+              "p99": 6149.0,
+              "typical_range": [
+                2.0,
+                3390.6
+              ],
+              "extreme_range": [
+                3390.6,
+                6716.0
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            },
+            "LEASING": {
+              "count": 62,
+              "p50": 1920.45,
+              "p90": 4363.53,
+              "p99": 4858.02,
+              "typical_range": [
+                554.0,
+                4363.53
+              ],
+              "extreme_range": [
+                4363.53,
+                4975.2
+              ],
+              "recommended_stat": "p99",
+              "confidence": 0.75
+            }
+          },
+          "recommended_stat": "p99",
+          "confidence": 0.7,
+          "rationale": "Conditional distributions inferred from row-aligned numeric behavior; fallback used for sparse groups."
+        }
+      },
+      "query_constraints": {
+        "query_constraints": {
+          "supports_aggregation": true,
+          "allowed_aggregations": [
+            "SUM",
+            "AVG",
+            "MIN",
+            "MAX"
+          ],
+          "supports_range_filtering": true,
+          "supports_distributional_reasoning": true,
+          "supports_outlier_detection": true
+        },
+        "confidence": 0.85,
+        "rationale": "Operational query constraints inferred from semantic roles and value semantics."
+      }
+    },
+    "k_symbol": {
+      "value_semantics": {
+        "semantic_type": "ENUM_CATEGORY",
+        "is_identifier": false,
+        "is_categorical": true,
+        "is_free_text": false,
+        "numeric": {
+          "is_numeric": false,
+          "is_continuous": false,
+          "is_discrete": false,
+          "min": null,
+          "max": null
+        },
+        "temporal": {
+          "is_date": false,
+          "is_datetime": false,
+          "is_duration": false,
+          "granularity": null
+        },
+        "confidence": 0.85,
+        "rationale": "Low-cardinality string values indicate categorical semantics."
+      },
+      "semantic_role": {
+        "primary_role": "SEGMENTATION_DRIVER",
+        "confidence": 0.75,
+        "role_arguments": {
+          "segments": [
+            "amount"
+          ]
+        },
+        "query_constraints": {
+          "can_group_by": true,
+          "can_filter_equality": true,
+          "can_compare_magnitude": false
+        },
+        "justification": {
+          "source": "validated_semantic_links",
+          "previous_role": "DESCRIPTIVE",
+          "link_count": 1
+        }
+      },
+      "query_constraints": {
+        "query_constraints": {
+          "supports_grouping": true,
+          "supports_equality_filtering": true,
+          "supports_segmentation": true,
+          "should_not_average": true,
+          "should_not_sum": true,
+          "supports_conditional_distribution": true,
+          "supports_group_conditioning": true,
+          "supports_cohort_analysis": true
+        },
+        "confidence": 0.85,
+        "rationale": "Operational query constraints inferred from semantic roles and value semantics."
+      }
+    }
+  },
+  "table_semantics": {
+    "semantic_links": [
+      {
+        "source": "bank_to",
+        "target": "account_to",
+        "relationship": "SEGMENTS",
+        "signal": "grouped_distribution",
+        "confidence": 0.75,
+        "rationale": "Grouping source values produces meaningfully different target distributions.",
+        "validation_status": "accepted",
+        "validation_evidence": {
+          "num_groups": 13,
+          "supported_groups": 13,
+          "group_counts": {
+            "YZ": 74,
+            "ST": 78,
+            "QR": 77,
+            "WX": 80,
+            "CD": 78,
+            "AB": 73,
+            "UV": 72,
+            "GH": 87,
+            "IJ": 84,
+            "KL": 89,
+            "EF": 73,
+            "MN": 71,
+            "OP": 64
+          }
+        },
+        "validation_reason": "Categorical source has sufficient support and segments quantitative target."
+      },
+      {
+        "source": "bank_to",
+        "target": "amount",
+        "relationship": "SEGMENTS",
+        "signal": "grouped_distribution",
+        "confidence": 0.75,
+        "rationale": "Grouping source values produces meaningfully different target distributions.",
+        "validation_status": "accepted",
+        "validation_evidence": {
+          "num_groups": 13,
+          "supported_groups": 13,
+          "group_counts": {
+            "YZ": 74,
+            "ST": 78,
+            "QR": 77,
+            "WX": 80,
+            "CD": 78,
+            "AB": 73,
+            "UV": 72,
+            "GH": 87,
+            "IJ": 84,
+            "KL": 89,
+            "EF": 73,
+            "MN": 71,
+            "OP": 64
+          }
+        },
+        "validation_reason": "Categorical source has sufficient support and segments quantitative target."
+      },
+      {
+        "source": "k_symbol",
+        "target": "amount",
+        "relationship": "SEGMENTS",
+        "signal": "grouped_distribution",
+        "confidence": 0.75,
+        "rationale": "Grouping source values produces meaningfully different target distributions.",
+        "validation_status": "accepted",
+        "validation_evidence": {
+          "num_groups": 5,
+          "supported_groups": 5,
+          "group_counts": {
+            "SIPO": 598,
+            "UVER": 41,
+            "": 214,
+            "POJISTNE": 85,
+            "LEASING": 62
+          }
+        },
+        "validation_reason": "Categorical source has sufficient support and segments quantitative target."
+      }
+    ]
+  }
+}
